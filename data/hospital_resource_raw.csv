@@ -1,0 +1,201 @@
+allocation_id,hospital_id,hospital_name,hospital_street_address,hospital_city,hospital_state,hospital_postal_code,hospital_country,allocation_date,bed_type,beds_allocated,beds_occupied,staff_type,staff_allocated,staff_on_duty,equipment_type,equipment_allocated,equipment_in_use,surge_status,notes
+AL001,HSP101,St. Anne Medical Center,480 Maple Ave,Boston,MA,02118,USA,2023-12-03,general,120,110,nurse,32,31,defibrillator,14,13,True,"Winter surge, high occupancy throughout week"
+AL002,HSP102,River Valley Hospital,215 Oak Blvd,Madison,WI,53703,USA,2024-01-10,icu,40,37,doctor,18,17,ventilator,16,15,True,"ICU at 92% occupancy, post-holiday spike"
+AL003,HSP103,Westside Children's Clinic,701 Elm St,Denver,CO,80218,USA,2024-03-14,pediatric,28,25,nurse,11,11,defibrillator,5,4,True,"Flu season peak, full staffing required"
+AL004,HSP104,Lakeside Surgery Institute,99 Lakeview Dr,Chicago,IL,60611,USA,2024-05-02,surgical,60,54,support_staff,20,18,ecmo,10,8,False,"Routine operations, elective surgeries resumed"
+AL005,HSP105,Maple Grove Hospital,3124 Woodrow Ln,Toronto,ON,M4W1A8,Canada,2023-11-18,maternity,20,17,nurse,7,7,ventilator,4,3,False,"Moderate admissions, stable demand"
+AL006,HSP106,Northern Regional Center,448 Pine Crescent,Seattle,WA,98109,USA,2024-02-26,general,85,83,doctor,24,22,dialysis_machine,14,13,True,"Near capacity, additional staff called in"
+AL007,HSP107,Glenridge Medical Center,109 Cypress Way,Dallas,TX,75219,USA,2024-04-13,icu,35,28,respiratory_therapist,13,12,ventilator,20,18,False,"ICU below critical levels, routine monitoring"
+AL008,HSP108,Pacific Community Hospital,52 Pacific Blvd,San Diego,CA,92103,USA,2024-05-20,general,112,101,support_staff,37,36,defibrillator,15,14,True,"High turnover, admissions up 20% this week"
+AL009,HSP109,Sunrise Women's Hospital,200 Sunrise Ave,Phoenix,AZ,85016,USA,2024-01-07,maternity,32,31,nurse,12,12,defibrillator,6,6,True,"Peak winter surge, nearly all beds full"
+AL010,HSP110,Central Health Institute,81 Central Ave,Minneapolis,MN,55404,USA,2024-04-02,general,130,124,nurse,35,34,ventilator,18,17,True,"End of quarter, max utilization"
+AL011,HSP111,Redwood Family Hospital,490 Redwood Rd,Portland,OR,97227,USA,2023-12-21,pediatric,19,16,doctor,7,6,ventilator,3,3,False,"Pre-holiday admissions, stable"
+AL012,HSP112,Halifax General Hospital,2 South St,Halifax,NS,B3H2Y9,Canada,2024-02-14,icu,22,21,respiratory_therapist,11,10,ecmo,7,6,True,"Respiratory admissions rising, staff at limit"
+AL013,HSP113,Sydney Bay Medical Center,88 Harbour Rd,Sydney,NSW,2000,Australia,2024-03-29,maternity,14,14,nurse,6,6,defibrillator,2,2,True,"Full capacity, seasonal admissions spike"
+AL014,HSP114,Oslo University Hospital,10 Ringveien,Oslo,Oslo,0455,Norway,2024-04-06,other,7,5,other,2,2,other,1,1,False,"Specialty care, low patient volume"
+AL015,HSP115,Pinecrest Community Clinic,74 Cedar St,San Jose,CA,95116,USA,2024-01-26,general,12,9,support_staff,3,2,other,1,1,False,"Steady admissions, no surge activity"
+AL016,HSP116,Monterey Surgical Hospital,21 Seaside Dr,Monterey,CA,93940,USA,2024-05-18,surgical,45,39,doctor,17,16,defibrillator,12,11,False,"Routine post-op care, moderate levels"
+AL017,HSP117,Great Plains Hospital,1839 Meadow Rd,Omaha,NE,68114,USA,2023-12-14,icu,48,45,nurse,22,20,ventilator,20,19,True,"ICU at 94% occupancy, surge protocols active"
+AL018,HSP118,Clinton Regional Hospital,67 Clinton St,Ottawa,ON,K1P5M6,Canada,2024-03-08,surgical,27,21,support_staff,8,8,dialysis_machine,7,6,False,Surgical volume below average this week
+AL019,HSP119,Springbrook Health Center,303 Main St,Springfield,MO,65807,USA,2024-02-01,other,3,0,other,1,0,other,0,0,False,"Unused ward, closed for renovation"
+AL020,HSP120,Grand View Hospital,120 Grandview Rd,St. Louis,MO,63110,USA,2024-03-22,general,104,95,doctor,29,29,ventilator,12,12,True,High demand after local event
+AL021,HSP121,Bay Area Pediatric Center,23 Bay St,San Francisco,CA,94109,USA,2024-04-25,pediatric,18,15,nurse,7,6,defibrillator,3,2,False,"Admissions steady, weekend schedule"
+AL022,HSP122,Evergreen Women's Hospital,15 Evergreen Ave,Vancouver,BC,V6Z2E7,Canada,2024-01-20,maternity,25,24,doctor,9,9,ventilator,5,5,True,"Winter maternity rush, staff overtime"
+AL023,HSP123,Riverfront Medical Institute,134 Riverfront Dr,New York,NY,10016,USA,2024-05-01,surgical,36,34,support_staff,15,14,ecmo,13,12,True,Elective surgeries at capacity
+AL024,HSP124,Sunnydale Clinic,4 Willow Dr,Sunnydale,CA,95037,USA,2024-02-12,other,0,0,other,0,0,other,0,0,False,Ward closed for maintenance
+AL025,HSP125,Bayshore Regional Hospital,201 Bayshore Blvd,Miami,FL,33136,USA,2023-11-30,icu,44,40,respiratory_therapist,15,14,ventilator,19,18,False,"ICU stable, below surge threshold"
+AL026,HSP126,Kingston Health Center,85 Queen St,Kingston,ON,K7L2M8,Canada,2024-05-16,general,96,86,nurse,30,28,defibrillator,11,11,True,"Admissions rising, extended shifts"
+AL027,HSP127,Sierra View Medical Center,390 Sierra St,Fresno,CA,93710,USA,2024-03-04,general,75,67,support_staff,22,20,defibrillator,10,9,False,"Routine week, no exceptional activity"
+AL028,HSP128,Harborview Medical Institute,564 Harbor Dr,Baltimore,MD,21201,USA,2024-02-27,icu,30,29,doctor,16,15,ecmo,9,8,True,"ICU at capacity, new admissions pending"
+AL029,HSP129,Lone Pine Regional Clinic,18 Pine Rd,Bismarck,ND,58501,USA,2024-02-24,other,2,2,other,1,1,other,1,1,True,"All beds full, limited resources"
+AL030,HSP130,Metro Health Center,210 Metro Ave,Cleveland,OH,44109,USA,2024-05-09,surgical,50,44,support_staff,19,19,ecmo,11,10,False,"Elective surgery week, efficient throughput"
+AL031,HSP131,Cedar Valley Hospital,320 Cedar Rd,Des Moines,IA,50309,USA,2024-03-26,general,127,114,doctor,33,32,ventilator,17,15,True,"High patient volume, overtime shifts"
+AL032,HSP132,Northshore Health Center,58 Northshore Dr,Chicago,IL,60640,USA,2024-04-18,pediatric,22,20,nurse,9,8,defibrillator,5,5,True,"Flu season, high occupancy"
+AL033,HSP133,Mountain View Regional,610 Mountain Rd,Boulder,CO,80301,USA,2024-05-21,general,92,87,nurse,26,25,defibrillator,12,11,True,Admissions up due to local outbreak
+AL034,HSP134,Blue Ridge Community Hospital,455 Ridge Rd,Asheville,NC,28801,USA,2024-03-10,maternity,15,12,nurse,6,6,ventilator,2,2,False,Normal seasonal variation
+AL035,HSP135,Riverside Health Clinic,211 Riverside Dr,Orlando,FL,32806,USA,2024-01-25,surgical,39,36,doctor,14,13,ecmo,8,7,False,"Post-holiday, routine volume"
+AL036,HSP136,Golden Gate Hospital,930 Golden Gate Ave,San Francisco,CA,94102,USA,2024-05-13,icu,52,51,doctor,25,25,ventilator,24,22,True,"ICU at 98% capacity, emergency protocols"
+AL037,HSP137,Forest Hill Hospital,47 Forest Hill Rd,Seattle,WA,98105,USA,2024-01-14,general,110,100,nurse,28,28,defibrillator,13,13,True,"Winter surge, overtime for nurses"
+AL038,HSP138,Arctic Circle Clinic,1 Nordlys St,Tromsø,Troms,9008,Norway,2024-02-21,other,4,1,support_staff,2,1,other,0,0,False,"Remote clinic, minimal resources"
+AL039,HSP139,Prairie Regional Hospital,93 Prairie Ave,Calgary,AB,T2P1A7,Canada,2023-12-29,general,80,77,doctor,25,24,ventilator,10,10,True,"Year-end surge, resources stretched"
+AL040,HSP140,Canyonview Women's Center,66 Canyon Rd,Salt Lake City,UT,84103,USA,2024-04-07,maternity,17,12,nurse,5,5,defibrillator,3,2,False,"Admissions below average, routine operations"
+AL041,HSP141,Capital City General,259 Capitol St,Washington,DC,20002,USA,2024-03-01,icu,38,36,doctor,16,15,ventilator,17,16,True,"ICU surge, late winter increase"
+AL042,HSP142,Eastside Pediatric Clinic,12 Eastside Dr,Montreal,QC,H2W2M9,Canada,2024-02-02,pediatric,16,15,nurse,8,8,defibrillator,4,3,True,"Flu season, high demand for beds"
+AL043,HSP143,Hillcrest Medical Institute,40 Crest Rd,Los Angeles,CA,90024,USA,2024-04-23,surgical,42,38,support_staff,16,15,ecmo,7,7,False,Routine elective procedures
+AL044,HSP144,Sunshine Maternity Center,27 Sunshine Ave,Perth,WA,6000,Australia,2024-01-05,maternity,10,10,nurse,5,5,defibrillator,2,2,True,"Full occupancy, holiday admissions"
+AL045,HSP145,Heritage General Hospital,315 Heritage Rd,Philadelphia,PA,19104,USA,2024-03-21,general,105,98,nurse,31,30,ventilator,14,13,True,Admissions above forecast
+AL046,HSP146,Valley Regional Clinic,9 Valley Ln,Fargo,ND,58102,USA,2024-02-18,other,5,2,support_staff,2,2,other,1,1,False,"Low admissions, steady staff"
+AL047,HSP147,Southtown Women's Hospital,70 South Ave,Dallas,TX,75204,USA,2024-01-30,maternity,18,17,nurse,8,8,defibrillator,3,3,True,"Seasonal admissions, high occupancy"
+AL048,HSP148,Red River Health Center,145 Red River Rd,Winnipeg,MB,R3C4T3,Canada,2024-02-09,general,86,81,doctor,27,25,ventilator,11,10,True,"Admissions up, additional doctor on duty"
+AL049,HSP149,Windsor Pediatric Center,222 Windsor St,Windsor,ON,N9A3G2,Canada,2024-03-18,pediatric,15,14,nurse,7,7,defibrillator,3,3,True,Flu admissions nearly fill beds
+AL050,HSP150,Northstar General Hospital,88 Northstar Dr,Anchorage,AK,99508,USA,2024-04-11,general,98,94,nurse,27,27,defibrillator,13,12,True,"Admissions up, full shift on duty"
+AL051,HSP201,Summit Valley Hospital,753 Mountain Dr,Bozeman,MT,59715,USA,2024-05-13,general,110,104,nurse,30,27,ventilator,14,12,True,High occupancy due to local event in May.
+AL052,HSP202,Eastside Medical Center,413 Elm Avenue,Burlington,VT,05401,USA,2024-03-04,icu,44,40,doctor,20,18,ventilator,18,17,True,ICU nearly full after regional outbreak.
+AL053,HSP203,Lakefront Children Hospital,99 Harbor Lane,Hamilton,ON,L8P3G2,Canada,2024-04-19,pediatric,28,26,nurse,12,12,defibrillator,5,4,True,Spring surge in pediatric admissions.
+AL054,HSP204,Pinecrest Health Center,22 Pinecrest Road,Denver,CO,80210,USA,2024-01-15,surgical,85,77,support_staff,30,28,defibrillator,12,10,False,Post-holiday elective surgery increase.
+AL055,HSP205,Tall Pines Community Clinic,700 Logan Ave,Bismarck,ND,58501,USA,2023-12-02,other,4,2,other,2,1,other,1,1,False,Low volume; limited operations for winter.
+AL056,HSP201,Summit Valley Hospital,753 Mountain Dr,Bozeman,MT,59715,USA,2024-04-24,icu,38,36,respiratory_therapist,10,10,ecmo,7,7,True,"Respiratory peak, all ECMO units active."
+AL057,HSP206,Pacific Hope Medical,512 Seaside Rd,Juneau,AK,99801,USA,2024-03-21,general,120,92,support_staff,40,37,defibrillator,16,13,False,"Routine operations, no surge."
+AL058,HSP207,Central Heart Institute,333 Heartway Blvd,Minneapolis,MN,55401,USA,2024-02-09,surgical,60,58,doctor,28,26,dialysis_machine,20,19,True,Surgical capacity nearly full post-accident.
+AL059,HSP208,Westbrook Regional Clinic,44 Main St,Portland,ME,04101,USA,2024-06-01,general,35,28,nurse,9,7,other,2,2,False,"Early summer, moderate occupancy."
+AL060,HSP209,St George's Maternity Center,12 Stork Lane,Sydney,NSW,2000,Australia,2024-05-30,maternity,22,22,nurse,8,8,defibrillator,3,3,True,"Seasonal birth peak, all beds full."
+AL061,HSP210,Midtown Medical Center,100 Lincoln Rd,Richmond,VA,23220,USA,2024-03-29,general,130,125,nurse,34,32,ventilator,14,13,True,Late March admissions surge.
+AL062,HSP211,Cedar Ridge Hospital,876 Oak Park Dr,Duluth,MN,55802,USA,2024-04-07,icu,32,29,doctor,14,12,ventilator,10,9,False,Routine ICU utilization.
+AL063,HSP212,Maple Leaf Medical Center,520 Bloor St W,Toronto,ON,M6G1K7,Canada,2024-05-02,surgical,40,36,support_staff,13,13,defibrillator,8,8,True,Elective surgery backlog managed in May.
+AL064,HSP213,Oslo Community Health,47 Sognsveien,Oslo,Oslo,0372,Norway,2024-02-12,other,6,6,other,2,2,other,1,1,True,"Limited resources, all beds full."
+AL065,HSP214,Golden Gate General Hospital,234 Golden Ave,San Francisco,CA,94102,USA,2024-06-03,general,200,158,nurse,40,38,ventilator,20,17,False,"Summer, routine utilization."
+AL066,HSP215,Evergreen Family Clinic,880 Spruce St,Olympia,WA,98501,USA,2024-03-10,maternity,18,17,nurse,7,7,defibrillator,2,2,False,Normal maternity ward operations.
+AL067,HSP210,Midtown Medical Center,100 Lincoln Rd,Richmond,VA,23220,USA,2024-05-11,icu,48,47,doctor,21,20,ventilator,17,16,True,High ICU utilization in spring.
+AL068,HSP216,Red River Regional,1000 River Rd,Fargo,ND,58103,USA,2024-01-31,pediatric,16,15,nurse,6,6,defibrillator,2,2,False,Winter pediatric admissions steady.
+AL069,HSP217,Blue Ridge Hospital,59 Ridge Rd,Asheville,NC,28801,USA,2024-04-13,general,80,71,support_staff,22,19,ventilator,12,11,False,"Spring, moderate staffing needs."
+AL070,HSP218,Lakeshore Health Center,77 Shoreline Dr,Buffalo,NY,14202,USA,2024-02-14,icu,35,32,respiratory_therapist,8,7,ecmo,6,5,True,"Peak respiratory admissions, Feb."
+AL071,HSP219,Sunrise Pediatric Hospital,48 Sunrise Ave,San Diego,CA,92103,USA,2024-03-18,pediatric,30,23,nurse,10,9,defibrillator,6,5,False,Pediatrics below winter peak.
+AL072,HSP220,St. Anne's Medical Center,792 Oakwood Rd,Hartford,CT,06106,USA,2024-05-01,maternity,35,33,nurse,14,13,defibrillator,5,5,True,High seasonal admissions in May.
+AL073,HSP221,Cascade Regional Hospital,900 Cascade Blvd,Seattle,WA,98101,USA,2024-02-22,surgical,70,63,doctor,25,23,dialysis_machine,13,12,False,"Routine post-op care, Feb."
+AL074,HSP222,Frontier Health Clinic,10 Prairie Ave,Billings,MT,59101,USA,2024-06-04,other,5,0,other,1,0,other,0,0,False,Ward closed for renovations.
+AL075,HSP223,Northern Light Hospital,45 Aurora St,Anchorage,AK,99501,USA,2024-01-18,general,25,18,support_staff,6,5,other,1,1,False,Routine winter admissions.
+AL076,HSP224,Green Valley Hospital,21 Valley Dr,Helena,MT,59601,USA,2024-04-17,pediatric,18,16,nurse,7,7,defibrillator,3,3,False,Moderate pediatric admissions.
+AL077,HSP225,Sunflower Women's Center,123 Blossom Ave,Topeka,KS,66606,USA,2024-03-04,maternity,28,27,nurse,10,10,defibrillator,4,4,True,Birth peak in early March.
+AL078,HSP226,Maple City Hospital,601 Maple St,Ottawa,ON,K1A0B1,Canada,2024-05-18,general,120,117,nurse,38,36,ventilator,15,15,True,"Spring, general beds at capacity."
+AL079,HSP227,Coastal Community Clinic,17 Beachside Dr,Perth,WA,6000,Australia,2024-01-23,other,3,1,support_staff,2,2,other,1,1,False,"Clinic open, minimal operations."
+AL080,HSP228,Rocky Mountain Health,999 Alpine Dr,Missoula,MT,59801,USA,2024-02-11,icu,24,22,respiratory_therapist,10,8,ecmo,6,6,False,Routine ICU workload.
+AL081,HSP229,Riverbend General Hospital,220 Riverbend Rd,Columbus,OH,43215,USA,2024-04-18,general,160,138,nurse,35,31,ventilator,17,16,False,Admissions high but below surge.
+AL082,HSP230,Aurora Regional Hospital,500 Aurora Rd,Aurora,CO,80012,USA,2024-06-10,surgical,55,52,doctor,26,25,dialysis_machine,20,19,True,Surgical post-incident response.
+AL083,HSP231,Desert Valley Health Center,800 Desert Rd,Phoenix,AZ,85004,USA,2024-03-28,general,95,90,support_staff,23,21,ventilator,12,11,True,Admissions spike due to heatwave.
+AL084,HSP232,Hilltop Memorial Hospital,321 Sunrise St,Cheyenne,WY,82001,USA,2024-01-27,maternity,14,13,nurse,5,5,defibrillator,2,2,False,Steady winter admissions.
+AL085,HSP233,Prairie Springs Clinic,60 Prairie Dr,Regina,SK,S4P3Y2,Canada,2024-06-05,other,2,0,other,0,0,other,0,0,False,Clinic wing closed for repairs.
+AL086,HSP234,Sunshine Children's Hospital,98 Sun St,Brisbane,QLD,4000,Australia,2024-02-04,pediatric,14,13,nurse,6,6,defibrillator,2,2,True,Winter admissions above average.
+AL087,HSP235,Starlight Medical Center,300 Galaxy Rd,Tucson,AZ,85701,USA,2024-03-12,icu,40,38,doctor,18,17,ventilator,15,14,True,"High ICU demand, March."
+AL088,HSP236,Oak Hill Family Clinic,19 Oak Hill Rd,Madison,WI,53703,USA,2024-02-28,general,10,8,nurse,3,3,other,1,1,False,"Small clinic, steady use."
+AL089,HSP237,Twin Lakes Regional,67 Lakeview Dr,Grand Rapids,MI,49503,USA,2024-05-25,surgical,40,36,support_staff,14,13,defibrillator,5,4,False,Routine surgical capacity.
+AL090,HSP221,Cascade Regional Hospital,900 Cascade Blvd,Seattle,WA,98101,USA,2024-06-08,general,140,127,nurse,34,32,ventilator,17,15,True,Early summer admissions surge.
+AL091,HSP238,White Pine Clinic,10 White Pine St,Whitehorse,YT,Y1A2B4,Canada,2024-01-05,other,2,0,other,0,0,other,0,0,False,Clinic closed for winter.
+AL092,HSP239,Sunset Regional Medical,30 Sunset Rd,Las Vegas,NV,89109,USA,2024-05-20,icu,50,45,respiratory_therapist,11,10,ecmo,9,8,False,"ICU below surge, routine use."
+AL093,HSP240,Rainier Family Health,88 Rainier Ave,Tacoma,WA,98402,USA,2024-03-22,maternity,20,19,nurse,8,8,defibrillator,2,2,True,Seasonal maternity ward surge.
+AL094,HSP241,Everest Medical Center,120 Everest Rd,Salt Lake City,UT,84101,USA,2024-06-12,general,110,97,nurse,28,25,ventilator,13,12,False,Routine summer admissions.
+AL095,HSP242,Silver Maple Center,45 Maple Dr,Thunder Bay,ON,P7B2Z7,Canada,2024-02-18,surgical,32,30,doctor,12,11,dialysis_machine,7,7,False,Surgical volume steady.
+AL096,HSP243,Stavanger Clinic,101 Fjord Rd,Stavanger,Rogaland,4001,Norway,2024-04-15,other,4,3,other,1,1,other,1,1,False,"Limited services, low volume."
+AL097,HSP244,Bayside Children's Hospital,81 Harbor Dr,Miami,FL,33132,USA,2024-01-25,pediatric,22,21,nurse,8,8,defibrillator,3,3,True,Winter pediatric admissions surge.
+AL098,HSP245,Avalon Health Center,321 Avalon Ave,Los Angeles,CA,90015,USA,2024-06-11,general,100,94,nurse,29,28,ventilator,12,11,True,"Late spring, high general occupancy."
+AL099,HSP246,River City Hospital,74 River Rd,Des Moines,IA,50309,USA,2024-04-26,surgical,60,58,doctor,23,22,dialysis_machine,16,15,True,"Elective surgeries, high volume."
+AL100,HSP247,Forest Hill Health,200 Forest Dr,Albany,NY,12207,USA,2024-03-08,general,90,79,support_staff,19,18,ventilator,10,9,False,"March, moderate occupancy and staffing."
+AL151,HSP201,Midwest Regional Hospital,732 Oak Avenue,Springfield,IL,62704,USA,2023-10-18,general,120,110,nurse,32,30,defibrillator,16,12,True,Higher than usual occupancy after flu season
+AL152,HSP202,Green Valley Medical Center,22 Cedar Lane,Dover,NH,03820,USA,2023-11-01,icu,50,47,doctor,22,20,ventilator,18,17,True,ICU surge due to respiratory illness spike
+AL153,HSP203,Bay Area Children's Hospital,1451 Ocean Blvd,San Mateo,CA,94401,USA,2024-01-02,pediatric,32,29,nurse,12,12,defibrillator,6,5,True,Winter admissions at expected maximum
+AL154,HSP204,Kingston District Clinic,16 Maple Road,Kingston,ON,K7L 2Y2,Canada,2023-12-10,maternity,24,21,doctor,8,8,ventilator,4,3,False,Seasonally high but not at surge
+AL155,HSP205,Southlake Surgical Center,909 Pine Street,Southlake,TX,76092,USA,2023-09-25,surgical,85,80,support_staff,25,23,defibrillator,14,13,True,Surgical ward at high capacity post-accident
+AL156,HSP206,Vancouver General Hospital,1267 Robson Street,Vancouver,BC,V6E 1C5,Canada,2024-02-14,icu,38,36,respiratory_therapist,18,16,ecmo,12,10,True,"Surge due to flu outbreak, ICU nearly full"
+AL157,HSP207,Riverbend Health Center,772 River Road,Hobart,TAS,7000,Australia,2024-01-22,general,12,10,other,3,2,other,1,1,False,Typical winter occupancy for small regional
+AL158,HSP208,Aspen Valley Medical Institute,338 Willow Way,Aspen,CO,81611,USA,2023-10-07,other,6,5,support_staff,2,2,defibrillator,1,1,False,"Limited resources, all beds nearly full"
+AL159,HSP209,Sunrise Community Hospital,511 Sunrise Ave,Mesa,AZ,85201,USA,2024-03-02,pediatric,20,19,nurse,8,8,ventilator,6,5,True,High pediatric demand during allergy season
+AL160,HSP210,Redwood Regional Medical Center,823 Redwood Road,Redwood City,CA,94061,USA,2024-01-10,surgical,120,115,doctor,40,39,ecmo,24,22,True,Post-holiday elective surgery peak
+AL161,HSP211,North Shore General Hospital,1400 Elm Street,Minneapolis,MN,55401,USA,2023-12-29,general,150,145,nurse,36,35,ventilator,18,17,True,General ward at winter surge levels
+AL162,HSP212,Stavanger Medical Center,8 Strandgata,Stavanger,Rogaland,4005,Norway,2024-03-12,maternity,18,17,nurse,7,7,other,2,2,True,"Spring birth season, full utilization"
+AL163,HSP213,Capital Heart Institute,55 Capitol Ave,Montpelier,VT,05602,USA,2024-03-22,icu,30,29,respiratory_therapist,15,14,dialysis_machine,6,5,True,ICU nearly full after local outbreak
+AL164,HSP214,Sierra West Clinic,201 Sierra Drive,Reno,NV,89503,USA,2024-02-01,other,4,0,other,0,0,other,0,0,False,Closed for renovations
+AL165,HSP215,Lakeshore Medical Institute,99 Lakeshore Rd,Madison,WI,53703,USA,2023-11-26,surgical,95,81,support_staff,25,23,ventilator,16,14,True,Elective surgery backlog managed
+AL166,HSP216,Twin Pines Hospital,401 Pinecrest Dr,Anchorage,AK,99501,USA,2024-02-20,general,60,59,nurse,20,19,defibrillator,8,8,True,High occupancy due to seasonal flu
+AL167,HSP217,Eastfield Pediatric Center,18 Willow Lane,Eastfield,NY,10010,USA,2023-09-12,pediatric,14,12,doctor,6,6,defibrillator,3,3,False,Back-to-school admissions
+AL168,HSP218,St. Mary's Regional Hospital,765 Church Hill Rd,Richmond,VA,23220,USA,2023-11-18,general,180,170,nurse,40,38,ventilator,20,18,True,Routine winter peak
+AL169,HSP219,Central City Medical Center,133 Main Street,Central City,CO,80427,USA,2023-10-04,icu,45,44,doctor,15,15,ecmo,10,10,True,"ICU full, all staff on duty"
+AL170,HSP220,Prairie Winds Clinic,65 Prairie Ave,Sioux Falls,SD,57104,USA,2024-03-05,other,8,8,other,2,2,other,1,1,True,"Small clinic, all beds full"
+AL171,HSP221,Maple Leaf Health Center,210 Maple Street,Ottawa,ON,K1A 0B1,Canada,2024-02-26,maternity,28,26,nurse,10,10,defibrillator,4,4,True,"Birth peak, full staff"
+AL172,HSP222,Desert Springs Health Center,18 Desert Road,Phoenix,AZ,85016,USA,2023-10-27,general,110,92,support_staff,28,25,ventilator,13,11,False,"Occupancy below surge, routine day"
+AL173,HSP223,Golden Coast Hospital,874 Ocean Drive,San Diego,CA,92101,USA,2023-11-14,surgical,40,39,doctor,16,16,defibrillator,8,8,True,Surgical floor at full capacity
+AL174,HSP224,Wellington Medical Clinic,33 Wellington Ave,Wellington,NSW,2820,Australia,2023-10-21,maternity,16,15,nurse,6,6,ventilator,3,3,False,Steady maternity admissions
+AL175,HSP225,Blue Ridge Health Center,452 Blue Ridge Ave,Boone,NC,28607,USA,2024-03-14,general,85,80,nurse,27,25,ventilator,12,12,True,"General beds at surge, all equipment in use"
+AL176,HSP226,Northern Lights Medical Center,601 Aurora Blvd,Duluth,MN,55802,USA,2023-12-02,icu,35,32,nurse,15,13,dialysis_machine,12,10,True,ICU occupancy above 90%
+AL177,HSP227,Cedar Grove Clinic,19 Cedar Grove Rd,Cedar Grove,NJ,07009,USA,2024-01-28,other,2,0,support_staff,0,0,other,0,0,False,"Ward unused, no staff on duty"
+AL178,HSP228,Great Plains Medical Center,321 Plains St,Lincoln,NE,68510,USA,2023-10-30,icu,60,58,doctor,23,21,ecmo,20,18,True,ICU surge post-major accident
+AL179,HSP229,Pine Hill Hospital,107 Pine Hill Dr,Pine Hill,ME,04901,USA,2024-02-15,general,45,42,support_staff,15,14,ventilator,7,7,False,General occupancy at routine levels
+AL180,HSP230,Summit Community Hospital,400 Summit Ave,Denver,CO,80202,USA,2023-12-20,surgical,38,34,nurse,12,11,ventilator,9,8,False,Surgical beds at normal post-holiday
+AL181,HSP231,Lone Star Medical Center,200 Lone Star Rd,Austin,TX,73301,USA,2024-03-18,general,210,200,nurse,41,40,ventilator,22,21,True,"Mega-facility general ward, above 90% occupied"
+AL182,HSP232,Seaside Regional Hospital,78 Seaside Blvd,Seaside,FL,32459,USA,2024-02-09,general,110,105,support_staff,34,33,defibrillator,18,16,True,"High census, routine winter surge"
+AL183,HSP233,Riverside Pediatric Hospital,333 Riverside Dr,Sacramento,CA,95814,USA,2023-10-13,pediatric,19,17,nurse,7,7,defibrillator,4,4,False,"Flu season, high peds occupancy"
+AL184,HSP234,Westmount Health Institute,201 Westmount Rd,Westmount,QC,H3Z 2T1,Canada,2024-03-11,icu,26,24,respiratory_therapist,11,11,ecmo,9,8,True,Post-COVID ICU usage remains elevated
+AL185,HSP235,Silver Lake Medical Center,11 Silver Lake Ave,Seattle,WA,98109,USA,2023-11-08,surgical,80,73,support_staff,20,19,ventilator,14,12,False,"Elective surgeries, below surge"
+AL186,HSP236,Mountainview General Hospital,420 Mountain Road,Helena,MT,59601,USA,2023-09-30,general,95,90,nurse,29,28,defibrillator,11,10,True,"Seasonal peak, near full"
+AL187,HSP237,Forest Ridge Clinic,12 Forest Ridge Rd,Greenville,SC,29601,USA,2023-12-08,other,6,6,other,3,3,other,2,2,True,Full occupancy for small rural clinic
+AL188,HSP238,Harborview Medical Center,200 Harborview St,Portland,OR,97209,USA,2024-01-23,icu,50,46,respiratory_therapist,24,21,ventilator,20,19,True,Critical care beds in high demand
+AL189,HSP239,St. Joseph's Medical Center,101 Joseph Ave,Buffalo,NY,14203,USA,2024-03-17,maternity,30,26,doctor,11,11,ventilator,5,5,True,Spring birth surge
+AL190,HSP240,Coastal Health Institute,892 Coastal Ave,Santa Cruz,CA,95060,USA,2023-11-13,general,70,66,support_staff,21,19,ecmo,10,9,False,Routine occupancy
+AL191,HSP241,Meadowbrook Medical Center,55 Meadowbrook Dr,Hartford,CT,06103,USA,2023-12-15,surgical,33,33,doctor,13,13,defibrillator,7,7,True,Operating at maximum
+AL192,HSP242,Sunset Hills General Hospital,700 Sunset Dr,Sunset Hills,MO,63127,USA,2024-01-30,general,90,83,nurse,31,31,ventilator,13,12,False,"Weekend, high staff on duty"
+AL193,HSP243,Oceanview Health Center,18 Oceanview Blvd,Newport,RI,02840,USA,2024-02-16,other,5,2,other,2,2,other,1,1,False,"Partial use, special procedure"
+AL194,HSP244,St. Michael's Hospital,9 Michael St,Toronto,ON,M5B 1W8,Canada,2023-09-20,icu,22,18,doctor,7,6,dialysis_machine,5,4,False,ICU below surge threshold
+AL195,HSP245,Bayside Medical Clinic,111 Bay St,Miami,FL,33132,USA,2024-02-07,maternity,11,11,nurse,5,5,defibrillator,2,2,True,Full maternity occupancy
+AL196,HSP246,Hillcrest Hospital,110 Hillcrest Ave,Cleveland,OH,44124,USA,2024-01-03,general,105,101,support_staff,30,28,defibrillator,13,12,True,"General beds at surge, winter flu"
+AL197,HSP247,Prairie View Clinic,203 Prairie View Rd,Bismarck,ND,58501,USA,2023-11-04,other,7,0,other,0,0,other,0,0,False,"No current use, awaiting reopening"
+AL198,HSP248,Willow Brook Medical Center,15 Willow Brook Dr,Little Rock,AR,72201,USA,2024-01-17,pediatric,22,18,nurse,8,8,defibrillator,5,5,False,Peak winter pediatric admissions
+AL199,HSP249,Summit Lakes Health Center,500 Summit Lakes Dr,Omaha,NE,68114,USA,2023-12-22,icu,42,38,respiratory_therapist,14,13,ecmo,8,7,False,High but manageable ICU load
+AL200,HSP250,City Health Institute,800 Main Street,New York,NY,10001,USA,2024-02-25,surgical,90,86,doctor,27,25,ventilator,16,15,True,Surgical beds high after major event
+AL151,HSP101,Riverside Regional Hospital,2345 Main St,Harrisburg,PA,17101,USA,2023-12-19,general,120,109,nurse,32,30,ventilator,14,11,True,Admissions increased following local flu outbreak.
+AL152,HSP102,Northside Medical Center,672 Maple Ave,Madison,WI,53703,USA,2024-01-20,icu,24,22,doctor,18,17,ventilator,12,11,True,ICU nearing capacity after accident response.
+AL153,HSP103,Bayview Pediatric Center,900 Lake Dr,San Diego,CA,92103,USA,2023-11-02,pediatric,28,26,nurse,10,10,defibrillator,4,4,True,High pediatric admissions during RSV season.
+AL154,HSP104,Summit Surgical Institute,1012 Ridge Rd,Denver,CO,80216,USA,2024-02-15,surgical,60,54,support_staff,24,21,defibrillator,11,9,False,"Routine post-operative monitoring, occupancy stable."
+AL155,HSP105,Evergreen Women's Clinic,212 Forest Ln,Portland,OR,97201,USA,2023-12-29,maternity,32,30,nurse,13,12,ventilator,6,6,True,"Winter baby boom, all staff on duty."
+AL156,HSP106,Oakwood Community Hospital,88 Elmwood St,St. Paul,MN,55102,USA,2024-03-02,general,95,77,support_staff,25,21,other,3,2,False,"Routine occupancy, maintenance ongoing."
+AL157,HSP107,Toronto Central Hospital,230 Front St W,Toronto,ON,M5V3G5,Canada,2024-03-28,icu,40,38,doctor,27,25,ecmo,10,9,True,ICU under pressure after local outbreak.
+AL158,HSP108,Sunrise Medical Center,450 Sunrise Blvd,Phoenix,AZ,85016,USA,2023-10-18,general,142,124,nurse,36,34,defibrillator,17,15,True,High demand due to flu season admissions.
+AL159,HSP109,Westlake Children's Hospital,2000 Willow Ave,Austin,TX,78703,USA,2024-03-13,pediatric,19,18,doctor,8,7,defibrillator,5,4,True,"Near full pediatric occupancy, RSV surge."
+AL160,HSP110,Cascade General Hospital,780 Cascade Ave,Seattle,WA,98104,USA,2024-02-25,surgical,41,33,support_staff,16,15,ventilator,10,6,False,"Scheduled surgeries, routine day."
+AL161,HSP111,Grand Forks Health Center,222 8th Ave S,Grand Forks,ND,58201,USA,2024-03-06,other,8,4,other,2,1,other,1,1,False,"Limited resources, minimal occupancy."
+AL162,HSP112,St. George Regional,1210 Pioneer Rd,St. George,UT,84770,USA,2024-01-31,icu,38,35,respiratory_therapist,14,13,dialysis_machine,8,8,True,"ICU at high capacity, dialysis demand up."
+AL163,HSP113,Maple Leaf Medical Center,310 Maple St,Ottawa,ON,K1P5J2,Canada,2023-12-04,maternity,28,20,nurse,11,10,defibrillator,4,3,False,Steady maternity admissions in winter.
+AL164,HSP114,Mornington Regional Clinic,66 Beach St,Melbourne,VIC,3004,Australia,2024-02-11,general,12,10,support_staff,3,2,other,0,0,False,"Small clinic, resource constraints."
+AL165,HSP115,Midtown Health Institute,430 5th Ave,New York,NY,10016,USA,2023-09-15,surgical,120,112,doctor,41,40,ventilator,20,18,True,"Major incident, full staff on hand."
+AL166,HSP116,Arctic Valley Hospital,17 Glacier Rd,Tromsø,Troms,9016,Norway,2024-03-18,other,6,6,other,2,2,other,1,1,True,"Small rural facility, full occupancy."
+AL167,HSP117,Mountain View Medical,501 Summit Dr,Boulder,CO,80302,USA,2024-01-10,general,88,75,support_staff,27,24,defibrillator,12,8,False,"Seasonal flu, moderate occupancy."
+AL168,HSP118,Central Valley Hospital,800 Valley Rd,Fresno,CA,93721,USA,2023-10-27,icu,50,45,doctor,28,25,ventilator,15,13,True,ICU at high occupancy after local accident.
+AL169,HSP119,Northern Plains Clinic,12 Prairie St,Fargo,ND,58103,USA,2023-11-14,pediatric,14,13,nurse,5,5,defibrillator,2,2,True,"Seasonal surge, high pediatric demand."
+AL170,HSP120,Starlight Medical Center,500 Star Ave,Houston,TX,77002,USA,2024-03-23,maternity,24,22,nurse,8,8,ventilator,5,5,True,"March baby boom, full staff on duty."
+AL171,HSP121,Blue Lake Surgical Center,800 Blue Lake Dr,Orlando,FL,32801,USA,2024-01-05,surgical,85,79,support_staff,32,28,defibrillator,13,10,False,"Elective surgeries, steady patient flow."
+AL172,HSP122,Willowbrook Clinic,321 Willow Rd,Springfield,IL,62704,USA,2024-03-22,other,3,0,other,0,0,other,0,0,False,"Closed for renovation, no activity."
+AL173,HSP123,Green Mountain Hospital,77 Greenway,Burlington,VT,05401,USA,2023-09-27,general,15,12,nurse,4,3,defibrillator,2,2,False,"Small regional hospital, normal operations."
+AL174,HSP124,Redwood Regional Hospital,99 Redwood Rd,Eureka,CA,95501,USA,2023-12-26,pediatric,37,32,doctor,14,13,ventilator,7,7,True,"Winter RSV surge, high pediatric admissions."
+AL175,HSP125,St. Michael's Hospital,55 Church St,Boston,MA,02110,USA,2023-10-10,icu,22,19,doctor,9,8,ecmo,5,4,False,"ICU occupancy up, but under control."
+AL176,HSP126,Prairie Family Clinic,45 Prairie Ave,Minot,ND,58701,USA,2024-02-01,other,2,2,support_staff,1,1,other,1,1,True,All beds full at local rural clinic.
+AL177,HSP127,Silver Lake Women's Center,389 Lake View Dr,Tacoma,WA,98402,USA,2023-11-22,maternity,14,12,nurse,6,5,defibrillator,3,3,False,Steady maternity occupancy before holidays.
+AL178,HSP128,Pacific View Hospital,150 Ocean Ave,San Francisco,CA,94109,USA,2024-02-07,general,170,155,nurse,39,36,ventilator,18,16,True,"High flu admissions, hospital under strain."
+AL179,HSP129,Pine Ridge Health Center,980 Forest Ave,Bangor,ME,04401,USA,2023-09-18,surgical,54,52,support_staff,21,20,defibrillator,9,8,True,Surgical ward at near full occupancy.
+AL180,HSP130,Liberty Medical Institute,11 Liberty St,Philadelphia,PA,19103,USA,2024-03-10,icu,36,30,respiratory_therapist,13,12,dialysis_machine,7,6,False,"ICU load stable, routine day."
+AL181,HSP131,Glacier Bay Clinic,5 Glacier Dr,Anchorage,AK,99501,USA,2023-12-08,other,4,0,other,0,0,other,0,0,False,Ward closed for winter break.
+AL182,HSP132,Sunshine Children's Hospital,600 Sunshine Rd,Los Angeles,CA,90036,USA,2024-01-19,pediatric,35,33,doctor,11,10,defibrillator,5,4,True,Post-holiday pediatric admissions remain high.
+AL183,HSP133,Hudson Valley Medical Center,899 Hudson Ave,Albany,NY,12207,USA,2023-11-17,general,108,97,nurse,28,26,ventilator,13,12,True,"Admissions up, staff stretched thin."
+AL184,HSP134,Cedar Grove Regional,77 Cedar St,Cedar Rapids,IA,52404,USA,2024-02-27,maternity,16,14,nurse,7,7,defibrillator,3,3,False,"Maternity admissions steady, no surge."
+AL185,HSP135,Lakewood Health Clinic,22 Lakewood Dr,Lakewood,CO,80226,USA,2024-03-30,other,5,3,support_staff,2,1,other,1,0,False,"Partially used ward, low occupancy."
+AL186,HSP136,Southgate Hospital,499 Southgate Blvd,San Jose,CA,95113,USA,2023-10-31,surgical,140,134,support_staff,39,38,defibrillator,18,17,True,"Post-accident, surgical ward at capacity."
+AL187,HSP137,Broadway Medical Center,100 Broadway Ave,Nashville,TN,37203,USA,2024-01-23,icu,19,16,doctor,10,9,ecmo,4,4,False,Critical care load manageable.
+AL188,HSP138,St. John's Hospital,2100 5th St,Chicago,IL,60616,USA,2023-11-27,general,102,90,nurse,27,24,ventilator,15,14,True,Admissions up after local outbreak.
+AL189,HSP139,St. Albert Medical Center,88 King St,Edmonton,AB,T5J3N5,Canada,2024-02-17,icu,28,22,respiratory_therapist,9,8,dialysis_machine,4,3,False,"ICU admissions stable, no surge."
+AL190,HSP140,West Perth Hospital,123 Murray St,Perth,WA,6000,Australia,2023-12-12,general,7,6,nurse,2,2,other,1,1,True,"Small rural hospital, all beds full."
+AL191,HSP141,Fairview Health Institute,7500 Fairview Rd,Charlotte,NC,28226,USA,2024-03-09,maternity,19,15,nurse,7,6,ventilator,3,3,False,Maternity occupancy stable.
+AL192,HSP142,Kingston Community Hospital,300 Ontario St,Kingston,ON,K7L2Z4,Canada,2023-09-21,surgical,39,37,support_staff,13,12,defibrillator,6,5,True,"High surgical load, post-accident response."
+AL193,HSP143,Riverbend Clinic,810 River Rd,Columbus,OH,43215,USA,2024-03-14,other,8,0,other,0,0,other,0,0,False,"Unused ward, staff reassigned."
+AL194,HSP144,Clearwater Medical Center,210 Clearwater Dr,Clearwater,FL,33756,USA,2023-10-25,general,22,19,nurse,6,5,defibrillator,2,1,False,"General admissions, typical day."
+AL195,HSP145,Sunset Bay Hospital,999 Bay St,Tampa,FL,33606,USA,2024-02-04,pediatric,16,11,nurse,6,5,defibrillator,2,2,False,Pediatric admissions below peak.
+AL196,HSP146,Golden State Medical,523 Golden Ave,Sacramento,CA,95814,USA,2023-09-19,icu,50,48,doctor,28,28,ventilator,15,15,True,"ICU capacity reached, surge protocol."
+AL197,HSP147,South Coast Hospital,201 Coast Rd,San Diego,CA,92113,USA,2024-03-27,general,111,103,nurse,21,20,defibrillator,13,12,True,General admission surge after spring break.
+AL198,HSP148,Meadowbrook Clinic,17 Meadow Ln,Cleveland,OH,44115,USA,2023-11-13,other,7,1,support_staff,1,1,other,1,0,False,"Low occupancy, some beds unused."
+AL199,HSP149,Blackwood Regional Hospital,11 Blackwood St,Blackwood,WA,6225,Australia,2024-02-13,maternity,7,5,nurse,2,2,other,1,1,False,"Small maternity ward, low admissions."
+AL200,HSP150,Rosewood Health Center,55 Rosewood Dr,Dallas,TX,75201,USA,2024-03-29,general,102,97,nurse,24,23,ventilator,12,11,True,"Admissions peaking, surge protocol active."
