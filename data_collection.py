@@ -1,11 +1,15 @@
+from pathlib import Path
+
 import pandas as pd
 
 # ==========================================
 # 1. LOAD DATASET
 # ==========================================
 
-input_file = "healthcare_dataset.csv"
-output_file = "hospital_raw_data.csv"
+project_dir = Path(__file__).resolve().parent
+input_file = project_dir / "healthcare_dataset.csv"
+output_file = project_dir / "hospital_raw_data.csv"
+cleaned_output_file = project_dir / "hospital_cleaned.csv"
 
 df = pd.read_csv(input_file)
 
@@ -32,8 +36,15 @@ df.columns = (
     df.columns
     .str.strip()
     .str.lower()
-    .str.replace(" ", "_")
+    .str.replace(r"\s+", "_", regex=True)
 )
+
+for column in df.columns:
+    if pd.api.types.is_string_dtype(df[column].dtype):
+        df[column] = df[column].str.strip().replace("", pd.NA)
+
+for column in ("age", "billing_amount", "room_number"):
+    df[column] = pd.to_numeric(df[column], errors="coerce")
 
 print("\nStandardized columns:")
 print(df.columns.tolist())
@@ -172,14 +183,25 @@ completeness = (
 
 print(f"Data completeness: {completeness:.2f}%")
 
+missing_percentage = (missing_values / total_cells) * 100
+if completeness <= 95:
+    raise ValueError(f"Dataset completeness is below the 95% target: {completeness:.2f}%")
+if missing_percentage >= 2:
+    raise ValueError(f"Missing values meet or exceed the 2% limit: {missing_percentage:.2f}%")
+if df.duplicated().any():
+    raise ValueError("Duplicate rows remain after integration")
+
 
 # ==========================================
 # 14. SAVE FINAL DATASET
 # ==========================================
 
 df.to_csv(output_file, index=False)
+df.to_csv(cleaned_output_file, index=False)
 
 print("\nFinal integrated dataset saved as:")
 print(output_file)
+print("Tableau-ready cleaned dataset saved as:")
+print(cleaned_output_file)
 
 print("Final dataset shape:", df.shape)
