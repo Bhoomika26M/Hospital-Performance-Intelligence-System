@@ -40,7 +40,7 @@ MedTrack is a hospital analytics dashboard built with Python, Streamlit, Pandas,
 
 ## Data Note
 Patient admission and billing analyses use the supplied dataset. Department assignments, transfer destinations, bed occupancy, staffing, and equipment metrics are simulated for demonstration and must not be treated as actual hospital operational measurements.
-data/hospital_dashboard_demo_data.csv is the final datset after adding the demo datas.
+data/hospital_dashboard_demo_data.csv is the final dataset after adding the demo datas.
 
 ## Project Status
 Milestone 3 – Interactive hospital analytics dashboard.completed
