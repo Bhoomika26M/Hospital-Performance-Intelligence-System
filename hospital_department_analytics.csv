@@ -1,0 +1,7 @@
+department,total_admissions,average_length_of_stay,average_billing_amount,unique_doctors,admissions_per_doctor,admissions_score,stay_score,department_efficiency_score,efficiency_score_note
+Cardiology,9151,15.436236476887771,25503.058720123983,7884,1.160705225773719,76.0875676958903,97.74058780382894,86.91,Provisional score based on admissions per listed doctor and length of stay; not clinically validated
+Endocrinology,9216,15.4306640625,25660.47863524394,7941,1.1605591235360786,74.75002374245722,100.0,87.38,Provisional score based on admissions per listed doctor and length of stay; not clinically validated
+General Medicine,9146,15.447627378088782,25804.361901759086,7862,1.1633172220808954,100.0,93.121989955933,96.56,Provisional score based on admissions per listed doctor and length of stay; not clinically validated
+Oncology,9140,15.501203501094093,25152.32294662751,7874,1.1607823215646431,76.79336803578407,71.39881265465246,74.1,Provisional score based on admissions per listed doctor and length of stay; not clinically validated
+Pulmonology,9095,15.677295217152281,25633.461696246093,7838,1.1603725440163306,73.04191637528795,0.0,36.52,Provisional score based on admissions per listed doctor and length of stay; not clinically validated
+Rheumatology,9218,15.50423085267954,25511.78324627509,7999,1.152394049256157,0.0,70.1713312402648,35.09,Provisional score based on admissions per listed doctor and length of stay; not clinically validated

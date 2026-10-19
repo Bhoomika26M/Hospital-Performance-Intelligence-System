@@ -1,0 +1,6 @@
+KPI,Value,Status
+Total Admissions,54966.0,Calculated from dataset records
+Average Length of Stay (Days),15.5,Calculated from admission and discharge dates
+Occupancy Rate (%),,Unavailable: bed occupancy data required
+Readmission Rate (%),,Unavailable: patient IDs and visit history required
+Bed Utilization Rate (%),,Unavailable: bed capacity and occupancy data required
