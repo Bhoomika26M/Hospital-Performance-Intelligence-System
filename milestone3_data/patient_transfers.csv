@@ -1,0 +1,937 @@
+patient_id,admission_id,hospital,from_department,to_department,transfer_date,transfer_reason
+DEMO-P000001,DEMO-A0000002,Ltd Smith,Pulmonology,General Medicine,2020-11-13,Specialist consultation
+DEMO-P000003,DEMO-A0000004,Smith Inc,Pulmonology,General Medicine,2021-04-14,Specialist consultation
+DEMO-P000008,DEMO-A0000013,LLC Smith,Endocrinology,General Medicine,2020-04-02,Step-down care
+DEMO-P000010,DEMO-A0000015,Smith Ltd,Pulmonology,General Medicine,2021-03-10,Service availability
+DEMO-P000012,DEMO-A0000019,Smith PLC,Pulmonology,Rheumatology,2020-03-17,Service availability
+DEMO-P000018,DEMO-A0000027,LLC Smith,Oncology,General Medicine,2020-03-11,Step-down care
+DEMO-P000019,DEMO-A0000028,Smith PLC,Pulmonology,General Medicine,2023-10-21,Step-down care
+DEMO-P000028,DEMO-A0000044,Johnson PLC,Cardiology,Pulmonology,2024-02-27,Step-down care
+DEMO-P000030,DEMO-A0000048,LLC Smith,General Medicine,Cardiology,2019-10-08,Step-down care
+DEMO-P000030,DEMO-A0000050,Johnson Inc,General Medicine,Pulmonology,2020-04-27,Specialist consultation
+DEMO-P000032,DEMO-A0000052,Johnson Inc,Endocrinology,Cardiology,2020-07-23,Service availability
+DEMO-P000039,DEMO-A0000062,Smith Inc,General Medicine,Pulmonology,2023-01-08,Step-down care
+DEMO-P000040,DEMO-A0000064,Smith Group,Cardiology,Endocrinology,2020-03-20,Service availability
+DEMO-P000044,DEMO-A0000068,Smith Group,Endocrinology,Cardiology,2023-06-27,Higher level of care
+DEMO-P000047,DEMO-A0000074,Smith PLC,Rheumatology,Oncology,2022-08-15,Step-down care
+DEMO-P000051,DEMO-A0000078,Smith Ltd,Rheumatology,Cardiology,2022-07-05,Step-down care
+DEMO-P000056,DEMO-A0000088,Smith Ltd,Rheumatology,General Medicine,2021-10-25,Step-down care
+DEMO-P000060,DEMO-A0000093,Smith Group,Endocrinology,General Medicine,2020-06-16,Service availability
+DEMO-P000066,DEMO-A0000102,Smith PLC,Endocrinology,Cardiology,2019-08-05,Higher level of care
+DEMO-P000068,DEMO-A0000105,Johnson Inc,General Medicine,Oncology,2023-07-14,Step-down care
+DEMO-P000073,DEMO-A0000115,Smith PLC,Oncology,Pulmonology,2021-11-15,Specialist consultation
+DEMO-P000074,DEMO-A0000116,Smith Inc,Cardiology,General Medicine,2022-05-12,Higher level of care
+DEMO-P000075,DEMO-A0000118,Ltd Smith,Pulmonology,Cardiology,2022-08-16,Service availability
+DEMO-P000076,DEMO-A0000120,Ltd Smith,Oncology,Endocrinology,2021-01-14,Service availability
+DEMO-P000076,DEMO-A0000121,Smith Group,Cardiology,Rheumatology,2021-01-25,Service availability
+DEMO-P000089,DEMO-A0000137,Smith Ltd,Rheumatology,Endocrinology,2021-04-24,Specialist consultation
+DEMO-P000097,DEMO-A0000147,Ltd Smith,General Medicine,Endocrinology,2022-08-12,Specialist consultation
+DEMO-P000104,DEMO-A0000159,Johnson PLC,Cardiology,Endocrinology,2020-03-07,Higher level of care
+DEMO-P000108,DEMO-A0000166,Smith Inc,Rheumatology,Cardiology,2019-08-03,Step-down care
+DEMO-P000110,DEMO-A0000168,Johnson Inc,Endocrinology,Rheumatology,2023-11-26,Specialist consultation
+DEMO-P000113,DEMO-A0000172,Smith PLC,Rheumatology,Cardiology,2021-08-02,Specialist consultation
+DEMO-P000114,DEMO-A0000175,Smith PLC,Endocrinology,Rheumatology,2022-09-10,Step-down care
+DEMO-P000115,DEMO-A0000176,LLC Smith,Cardiology,General Medicine,2023-03-27,Service availability
+DEMO-P000117,DEMO-A0000181,Smith Inc,Pulmonology,Oncology,2023-01-14,Specialist consultation
+DEMO-P000117,DEMO-A0000182,Johnson Inc,Pulmonology,Oncology,2023-05-07,Service availability
+DEMO-P000125,DEMO-A0000193,LLC Smith,Endocrinology,Pulmonology,2019-11-24,Step-down care
+DEMO-P000130,DEMO-A0000199,Johnson Inc,Oncology,Endocrinology,2023-09-09,Service availability
+DEMO-P000134,DEMO-A0000204,Smith PLC,Rheumatology,Cardiology,2021-06-07,Specialist consultation
+DEMO-P000136,DEMO-A0000207,Johnson PLC,Cardiology,Oncology,2020-05-13,Specialist consultation
+DEMO-P000138,DEMO-A0000211,Smith Group,Pulmonology,General Medicine,2021-05-29,Step-down care
+DEMO-P000138,DEMO-A0000212,Johnson Inc,Endocrinology,Oncology,2021-06-14,Step-down care
+DEMO-P000143,DEMO-A0000219,Ltd Smith,Rheumatology,Oncology,2023-07-27,Service availability
+DEMO-P000145,DEMO-A0000222,Ltd Smith,Oncology,Cardiology,2024-04-07,Step-down care
+DEMO-P000147,DEMO-A0000224,Johnson PLC,Endocrinology,Oncology,2022-12-06,Specialist consultation
+DEMO-P000149,DEMO-A0000227,Johnson Inc,Endocrinology,Rheumatology,2022-02-12,Higher level of care
+DEMO-P000153,DEMO-A0000232,Johnson Inc,Cardiology,Rheumatology,2023-04-02,Service availability
+DEMO-P000154,DEMO-A0000234,Johnson PLC,General Medicine,Rheumatology,2021-02-12,Service availability
+DEMO-P000158,DEMO-A0000242,Smith Group,Rheumatology,Pulmonology,2020-05-29,Step-down care
+DEMO-P000161,DEMO-A0000246,Smith Inc,Rheumatology,Pulmonology,2021-11-09,Specialist consultation
+DEMO-P000163,DEMO-A0000249,Smith Group,Pulmonology,Rheumatology,2023-05-01,Higher level of care
+DEMO-P000164,DEMO-A0000250,Smith PLC,Cardiology,Oncology,2020-08-26,Service availability
+DEMO-P000167,DEMO-A0000254,Johnson PLC,Endocrinology,General Medicine,2021-09-03,Specialist consultation
+DEMO-P000175,DEMO-A0000265,Johnson PLC,General Medicine,Rheumatology,2019-08-11,Service availability
+DEMO-P000176,DEMO-A0000266,Smith Ltd,Oncology,Pulmonology,2019-09-05,Higher level of care
+DEMO-P000183,DEMO-A0000280,Smith Group,General Medicine,Endocrinology,2022-02-19,Service availability
+DEMO-P000185,DEMO-A0000283,LLC Smith,Cardiology,Endocrinology,2020-10-14,Higher level of care
+DEMO-P000186,DEMO-A0000286,Johnson PLC,Oncology,Rheumatology,2022-05-28,Higher level of care
+DEMO-P000188,DEMO-A0000288,Smith Ltd,Endocrinology,Oncology,2024-05-08,Higher level of care
+DEMO-P000189,DEMO-A0000289,Ltd Smith,Oncology,General Medicine,2022-08-15,Service availability
+DEMO-P000191,DEMO-A0000292,Ltd Smith,Cardiology,Rheumatology,2022-01-14,Specialist consultation
+DEMO-P000194,DEMO-A0000299,Ltd Smith,General Medicine,Pulmonology,2023-05-08,Step-down care
+DEMO-P000198,DEMO-A0000304,Smith Inc,Cardiology,Oncology,2020-08-27,Service availability
+DEMO-P000199,DEMO-A0000308,Ltd Smith,Pulmonology,Cardiology,2022-12-11,Service availability
+DEMO-P000201,DEMO-A0000311,Smith Inc,Cardiology,Endocrinology,2022-04-03,Service availability
+DEMO-P000201,DEMO-A0000312,LLC Smith,General Medicine,Pulmonology,2022-04-14,Higher level of care
+DEMO-P000203,DEMO-A0000317,LLC Smith,Oncology,Endocrinology,2022-09-12,Higher level of care
+DEMO-P000209,DEMO-A0000324,Smith Inc,Cardiology,General Medicine,2022-10-17,Step-down care
+DEMO-P000210,DEMO-A0000325,Smith Inc,Pulmonology,Cardiology,2019-07-11,Specialist consultation
+DEMO-P000211,DEMO-A0000328,Ltd Smith,Endocrinology,Pulmonology,2021-10-29,Specialist consultation
+DEMO-P000217,DEMO-A0000335,Smith Inc,Pulmonology,Endocrinology,2020-09-09,Service availability
+DEMO-P000220,DEMO-A0000341,Smith PLC,General Medicine,Oncology,2023-09-29,Service availability
+DEMO-P000226,DEMO-A0000349,Smith Ltd,Oncology,Rheumatology,2022-06-24,Service availability
+DEMO-P000226,DEMO-A0000350,LLC Smith,Cardiology,Endocrinology,2022-07-12,Specialist consultation
+DEMO-P000238,DEMO-A0000365,Smith Ltd,Cardiology,Endocrinology,2020-09-02,Step-down care
+DEMO-P000245,DEMO-A0000377,Smith Inc,Rheumatology,Endocrinology,2024-04-29,Service availability
+DEMO-P000250,DEMO-A0000383,Smith Ltd,Rheumatology,Cardiology,2020-12-04,Service availability
+DEMO-P000252,DEMO-A0000387,Smith Inc,Cardiology,General Medicine,2023-07-05,Service availability
+DEMO-P000259,DEMO-A0000396,Johnson PLC,Oncology,Endocrinology,2022-08-11,Higher level of care
+DEMO-P000259,DEMO-A0000398,Ltd Smith,General Medicine,Endocrinology,2023-03-20,Higher level of care
+DEMO-P000260,DEMO-A0000400,LLC Smith,Oncology,Rheumatology,2020-01-05,Specialist consultation
+DEMO-P000263,DEMO-A0000403,Smith Ltd,Cardiology,Endocrinology,2020-10-08,Service availability
+DEMO-P000265,DEMO-A0000405,Smith Ltd,Pulmonology,Cardiology,2020-05-18,Service availability
+DEMO-P000267,DEMO-A0000408,Smith Inc,Oncology,Cardiology,2019-10-17,Higher level of care
+DEMO-P000267,DEMO-A0000409,Smith Group,Rheumatology,General Medicine,2019-11-02,Higher level of care
+DEMO-P000272,DEMO-A0000418,Ltd Smith,Endocrinology,General Medicine,2021-08-14,Service availability
+DEMO-P000272,DEMO-A0000419,Smith PLC,Oncology,General Medicine,2021-12-05,Specialist consultation
+DEMO-P000276,DEMO-A0000424,Johnson PLC,Oncology,General Medicine,2023-05-24,Service availability
+DEMO-P000280,DEMO-A0000431,Johnson PLC,Rheumatology,Cardiology,2022-12-07,Service availability
+DEMO-P000285,DEMO-A0000438,Smith PLC,General Medicine,Pulmonology,2021-06-17,Specialist consultation
+DEMO-P000289,DEMO-A0000444,Smith PLC,Oncology,General Medicine,2023-01-16,Specialist consultation
+DEMO-P000291,DEMO-A0000448,LLC Smith,Rheumatology,Oncology,2022-02-04,Step-down care
+DEMO-P000292,DEMO-A0000450,Johnson PLC,Oncology,Pulmonology,2019-08-04,Higher level of care
+DEMO-P000298,DEMO-A0000460,Smith Group,Endocrinology,Oncology,2021-08-21,Service availability
+DEMO-P000302,DEMO-A0000465,Johnson Inc,Rheumatology,General Medicine,2024-03-26,Service availability
+DEMO-P000307,DEMO-A0000471,Smith PLC,Oncology,General Medicine,2022-12-29,Step-down care
+DEMO-P000309,DEMO-A0000473,Smith Inc,General Medicine,Oncology,2020-04-30,Specialist consultation
+DEMO-P000309,DEMO-A0000474,Johnson PLC,Cardiology,Oncology,2020-05-27,Step-down care
+DEMO-P000310,DEMO-A0000475,Smith Ltd,Rheumatology,General Medicine,2023-05-25,Specialist consultation
+DEMO-P000311,DEMO-A0000476,LLC Smith,Endocrinology,Cardiology,2023-09-28,Specialist consultation
+DEMO-P000317,DEMO-A0000482,Johnson PLC,Oncology,Pulmonology,2020-03-16,Service availability
+DEMO-P000318,DEMO-A0000484,Ltd Smith,Rheumatology,Cardiology,2022-05-20,Service availability
+DEMO-P000325,DEMO-A0000498,LLC Smith,Endocrinology,Cardiology,2019-11-21,Service availability
+DEMO-P000326,DEMO-A0000499,Smith PLC,Oncology,Cardiology,2024-02-25,Specialist consultation
+DEMO-P000329,DEMO-A0000504,Johnson Inc,Cardiology,Endocrinology,2020-03-18,Step-down care
+DEMO-P000332,DEMO-A0000507,Johnson PLC,Rheumatology,Oncology,2021-01-04,Service availability
+DEMO-P000332,DEMO-A0000509,LLC Smith,Oncology,Rheumatology,2021-07-06,Service availability
+DEMO-P000334,DEMO-A0000512,Smith Inc,Endocrinology,Rheumatology,2021-05-03,Step-down care
+DEMO-P000346,DEMO-A0000527,Johnson PLC,Pulmonology,Oncology,2022-05-02,Step-down care
+DEMO-P000347,DEMO-A0000530,Ltd Smith,Oncology,Pulmonology,2022-03-16,Higher level of care
+DEMO-P000350,DEMO-A0000535,Smith Ltd,General Medicine,Cardiology,2022-09-19,Specialist consultation
+DEMO-P000352,DEMO-A0000539,Ltd Smith,Endocrinology,Pulmonology,2023-07-31,Step-down care
+DEMO-P000361,DEMO-A0000552,Smith Inc,Pulmonology,Rheumatology,2023-02-03,Step-down care
+DEMO-P000365,DEMO-A0000559,Smith PLC,Cardiology,Rheumatology,2022-12-27,Specialist consultation
+DEMO-P000366,DEMO-A0000560,Smith Ltd,Rheumatology,Pulmonology,2020-02-05,Specialist consultation
+DEMO-P000370,DEMO-A0000566,Smith Group,Pulmonology,Endocrinology,2022-04-23,Service availability
+DEMO-P000380,DEMO-A0000578,Smith PLC,Rheumatology,Cardiology,2023-12-27,Higher level of care
+DEMO-P000385,DEMO-A0000584,Smith Inc,Pulmonology,Cardiology,2019-08-03,Specialist consultation
+DEMO-P000385,DEMO-A0000585,Johnson PLC,Cardiology,Pulmonology,2019-09-18,Step-down care
+DEMO-P000392,DEMO-A0000594,Smith PLC,General Medicine,Pulmonology,2020-05-16,Step-down care
+DEMO-P000394,DEMO-A0000596,Smith Inc,General Medicine,Oncology,2021-10-19,Specialist consultation
+DEMO-P000395,DEMO-A0000598,Smith PLC,Endocrinology,Pulmonology,2020-01-23,Specialist consultation
+DEMO-P000400,DEMO-A0000604,LLC Smith,General Medicine,Endocrinology,2022-04-02,Service availability
+DEMO-P000402,DEMO-A0000608,Johnson PLC,Endocrinology,Oncology,2023-09-12,Specialist consultation
+DEMO-P000405,DEMO-A0000613,Johnson PLC,Oncology,Endocrinology,2021-12-31,Service availability
+DEMO-P000405,DEMO-A0000614,Smith Group,General Medicine,Cardiology,2022-03-14,Service availability
+DEMO-P000410,DEMO-A0000620,Smith PLC,General Medicine,Cardiology,2021-09-05,Step-down care
+DEMO-P000412,DEMO-A0000623,Smith PLC,Cardiology,Endocrinology,2024-04-28,Higher level of care
+DEMO-P000425,DEMO-A0000640,Smith Group,Cardiology,Pulmonology,2023-08-25,Service availability
+DEMO-P000425,DEMO-A0000641,LLC Smith,Oncology,General Medicine,2023-09-08,Higher level of care
+DEMO-P000427,DEMO-A0000644,Johnson Inc,Oncology,Rheumatology,2023-07-05,Step-down care
+DEMO-P000428,DEMO-A0000647,Smith Group,Cardiology,Rheumatology,2021-09-19,Higher level of care
+DEMO-P000436,DEMO-A0000658,Smith Inc,Rheumatology,Endocrinology,2023-05-25,Higher level of care
+DEMO-P000437,DEMO-A0000660,Johnson PLC,Cardiology,Rheumatology,2021-04-08,Step-down care
+DEMO-P000438,DEMO-A0000662,Johnson PLC,Pulmonology,Cardiology,2022-02-20,Specialist consultation
+DEMO-P000440,DEMO-A0000666,Johnson Inc,Pulmonology,Rheumatology,2024-04-28,Service availability
+DEMO-P000449,DEMO-A0000677,Smith PLC,Pulmonology,General Medicine,2021-02-23,Service availability
+DEMO-P000453,DEMO-A0000685,Smith Inc,Rheumatology,Cardiology,2021-05-14,Step-down care
+DEMO-P000454,DEMO-A0000686,Smith PLC,Oncology,Endocrinology,2019-11-17,Step-down care
+DEMO-P000458,DEMO-A0000692,Smith PLC,Endocrinology,Oncology,2020-01-03,Service availability
+DEMO-P000478,DEMO-A0000723,Smith Ltd,Rheumatology,General Medicine,2020-02-12,Service availability
+DEMO-P000481,DEMO-A0000728,Smith Inc,Rheumatology,Endocrinology,2022-01-17,Specialist consultation
+DEMO-P000484,DEMO-A0000732,Smith Ltd,Oncology,General Medicine,2022-01-04,Step-down care
+DEMO-P000485,DEMO-A0000735,Ltd Smith,Oncology,Endocrinology,2020-12-30,Step-down care
+DEMO-P000486,DEMO-A0000736,Johnson Inc,Oncology,General Medicine,2021-08-01,Step-down care
+DEMO-P000495,DEMO-A0000748,Johnson Inc,Cardiology,Rheumatology,2020-09-15,Service availability
+DEMO-P000496,DEMO-A0000750,Ltd Smith,Oncology,Cardiology,2020-05-18,Specialist consultation
+DEMO-P000499,DEMO-A0000754,Ltd Smith,Oncology,Endocrinology,2020-10-31,Service availability
+DEMO-P000499,DEMO-A0000755,Johnson PLC,Endocrinology,Cardiology,2020-11-29,Step-down care
+DEMO-P000505,DEMO-A0000762,Smith Ltd,Oncology,General Medicine,2021-01-27,Higher level of care
+DEMO-P000506,DEMO-A0000764,Smith Group,Rheumatology,Cardiology,2022-01-13,Specialist consultation
+DEMO-P000507,DEMO-A0000766,LLC Smith,Rheumatology,General Medicine,2021-11-09,Service availability
+DEMO-P000510,DEMO-A0000769,Smith Inc,General Medicine,Pulmonology,2020-07-11,Higher level of care
+DEMO-P000522,DEMO-A0000785,LLC Smith,Pulmonology,Cardiology,2024-04-21,Higher level of care
+DEMO-P000523,DEMO-A0000786,Smith Ltd,Pulmonology,Cardiology,2019-08-20,Specialist consultation
+DEMO-P000523,DEMO-A0000787,LLC Smith,Pulmonology,Endocrinology,2019-12-18,Specialist consultation
+DEMO-P000526,DEMO-A0000791,LLC Smith,Endocrinology,General Medicine,2024-04-05,Service availability
+DEMO-P000528,DEMO-A0000794,Smith Inc,Cardiology,Oncology,2024-02-14,Step-down care
+DEMO-P000529,DEMO-A0000796,Johnson Inc,General Medicine,Rheumatology,2022-05-01,Higher level of care
+DEMO-P000532,DEMO-A0000800,Smith Group,Endocrinology,Pulmonology,2024-04-09,Specialist consultation
+DEMO-P000536,DEMO-A0000806,Smith PLC,General Medicine,Endocrinology,2019-12-31,Service availability
+DEMO-P000538,DEMO-A0000810,LLC Smith,Cardiology,Endocrinology,2023-03-05,Step-down care
+DEMO-P000539,DEMO-A0000813,LLC Smith,General Medicine,Oncology,2020-02-28,Step-down care
+DEMO-P000552,DEMO-A0000832,Johnson PLC,Cardiology,General Medicine,2020-03-18,Specialist consultation
+DEMO-P000552,DEMO-A0000833,Smith Ltd,Endocrinology,Cardiology,2020-04-24,Specialist consultation
+DEMO-P000553,DEMO-A0000834,Ltd Smith,Pulmonology,Cardiology,2024-01-23,Higher level of care
+DEMO-P000555,DEMO-A0000836,Smith Group,General Medicine,Rheumatology,2022-09-24,Specialist consultation
+DEMO-P000556,DEMO-A0000839,Johnson Inc,Pulmonology,Oncology,2023-11-10,Step-down care
+DEMO-P000557,DEMO-A0000840,Smith Ltd,Cardiology,Oncology,2021-06-25,Service availability
+DEMO-P000562,DEMO-A0000846,Johnson PLC,Rheumatology,Cardiology,2021-03-11,Step-down care
+DEMO-P000562,DEMO-A0000847,Johnson Inc,Endocrinology,Rheumatology,2021-03-27,Higher level of care
+DEMO-P000566,DEMO-A0000854,LLC Smith,Oncology,Endocrinology,2019-05-23,Specialist consultation
+DEMO-P000567,DEMO-A0000857,Smith Ltd,General Medicine,Endocrinology,2023-04-24,Step-down care
+DEMO-P000571,DEMO-A0000861,LLC Smith,Oncology,Rheumatology,2020-11-13,Service availability
+DEMO-P000578,DEMO-A0000871,Johnson PLC,General Medicine,Endocrinology,2019-09-09,Specialist consultation
+DEMO-P000579,DEMO-A0000873,Smith Group,Pulmonology,Rheumatology,2023-07-06,Higher level of care
+DEMO-P000585,DEMO-A0000881,LLC Smith,Pulmonology,Rheumatology,2021-03-28,Higher level of care
+DEMO-P000586,DEMO-A0000882,Johnson Inc,Rheumatology,Oncology,2022-06-05,Service availability
+DEMO-P000586,DEMO-A0000883,Smith PLC,Endocrinology,Cardiology,2022-06-14,Step-down care
+DEMO-P000587,DEMO-A0000884,Smith PLC,Rheumatology,Oncology,2021-05-22,Higher level of care
+DEMO-P000589,DEMO-A0000887,Johnson Inc,Pulmonology,General Medicine,2021-11-27,Specialist consultation
+DEMO-P000589,DEMO-A0000888,Ltd Smith,Cardiology,Endocrinology,2022-05-31,Specialist consultation
+DEMO-P000591,DEMO-A0000893,Johnson Inc,Rheumatology,Oncology,2023-02-02,Step-down care
+DEMO-P000597,DEMO-A0000899,Johnson Inc,Rheumatology,Oncology,2021-11-25,Step-down care
+DEMO-P000597,DEMO-A0000900,Johnson PLC,General Medicine,Cardiology,2022-04-23,Specialist consultation
+DEMO-P000598,DEMO-A0000901,Smith Inc,General Medicine,Pulmonology,2023-12-08,Step-down care
+DEMO-P000600,DEMO-A0000903,Johnson PLC,Oncology,Pulmonology,2020-07-07,Step-down care
+DEMO-P000601,DEMO-A0000904,Smith Inc,Pulmonology,Cardiology,2022-01-15,Step-down care
+DEMO-P000607,DEMO-A0000915,Smith Inc,General Medicine,Endocrinology,2022-08-03,Step-down care
+DEMO-P000609,DEMO-A0000917,Ltd Smith,General Medicine,Oncology,2022-11-30,Higher level of care
+DEMO-P000610,DEMO-A0000918,Smith Group,Cardiology,Oncology,2020-08-15,Specialist consultation
+DEMO-P000612,DEMO-A0000921,LLC Smith,Oncology,Endocrinology,2021-11-25,Higher level of care
+DEMO-P000613,DEMO-A0000922,Smith Inc,Oncology,Endocrinology,2020-06-10,Service availability
+DEMO-P000614,DEMO-A0000926,Smith PLC,Cardiology,General Medicine,2022-11-04,Service availability
+DEMO-P000617,DEMO-A0000930,Johnson PLC,Oncology,Rheumatology,2020-12-22,Specialist consultation
+DEMO-P000617,DEMO-A0000931,Smith Group,Pulmonology,Endocrinology,2021-01-11,Step-down care
+DEMO-P000619,DEMO-A0000934,Johnson PLC,Pulmonology,Cardiology,2023-11-08,Higher level of care
+DEMO-P000622,DEMO-A0000938,Johnson PLC,Pulmonology,Endocrinology,2023-06-08,Specialist consultation
+DEMO-P000624,DEMO-A0000941,Smith Group,Rheumatology,General Medicine,2019-06-05,Higher level of care
+DEMO-P000628,DEMO-A0000946,Smith PLC,General Medicine,Rheumatology,2023-02-13,Specialist consultation
+DEMO-P000629,DEMO-A0000949,Smith PLC,Oncology,General Medicine,2020-04-16,Step-down care
+DEMO-P000630,DEMO-A0000950,Smith PLC,Pulmonology,Rheumatology,2019-11-24,Service availability
+DEMO-P000634,DEMO-A0000957,Ltd Smith,Oncology,Pulmonology,2022-02-21,Specialist consultation
+DEMO-P000636,DEMO-A0000959,LLC Smith,Endocrinology,Cardiology,2021-03-30,Higher level of care
+DEMO-P000637,DEMO-A0000961,LLC Smith,Cardiology,Oncology,2022-08-11,Specialist consultation
+DEMO-P000638,DEMO-A0000962,Smith Ltd,Cardiology,Pulmonology,2020-03-02,Step-down care
+DEMO-P000643,DEMO-A0000969,Johnson Inc,Cardiology,Oncology,2024-01-25,Step-down care
+DEMO-P000649,DEMO-A0000976,Smith Inc,Pulmonology,Cardiology,2022-12-19,Service availability
+DEMO-P000650,DEMO-A0000978,Smith Ltd,Endocrinology,Pulmonology,2023-08-04,Step-down care
+DEMO-P000653,DEMO-A0000981,Smith PLC,Endocrinology,Rheumatology,2020-05-04,Step-down care
+DEMO-P000659,DEMO-A0000989,Smith PLC,General Medicine,Pulmonology,2020-08-19,Service availability
+DEMO-P000664,DEMO-A0000998,Johnson PLC,Oncology,Rheumatology,2023-08-14,Specialist consultation
+DEMO-P000668,DEMO-A0001003,LLC Smith,Cardiology,Endocrinology,2024-02-17,Step-down care
+DEMO-P000672,DEMO-A0001009,Smith Group,Rheumatology,General Medicine,2024-01-22,Step-down care
+DEMO-P000672,DEMO-A0001011,Smith Ltd,Endocrinology,Cardiology,2024-04-20,Higher level of care
+DEMO-P000673,DEMO-A0001012,Johnson PLC,Oncology,Cardiology,2023-12-22,Higher level of care
+DEMO-P000674,DEMO-A0001016,Smith PLC,General Medicine,Endocrinology,2024-01-22,Specialist consultation
+DEMO-P000677,DEMO-A0001020,LLC Smith,Pulmonology,Cardiology,2021-03-18,Step-down care
+DEMO-P000678,DEMO-A0001021,Smith Ltd,Rheumatology,Cardiology,2021-09-07,Step-down care
+DEMO-P000679,DEMO-A0001023,LLC Smith,Cardiology,Endocrinology,2023-04-16,Higher level of care
+DEMO-P000685,DEMO-A0001032,Smith Inc,Rheumatology,Endocrinology,2023-08-23,Service availability
+DEMO-P000688,DEMO-A0001037,Ltd Smith,Endocrinology,Rheumatology,2020-02-04,Service availability
+DEMO-P000689,DEMO-A0001040,Smith Group,Cardiology,Endocrinology,2024-01-29,Step-down care
+DEMO-P000689,DEMO-A0001041,LLC Smith,Pulmonology,Rheumatology,2024-02-26,Step-down care
+DEMO-P000691,DEMO-A0001044,Johnson PLC,Pulmonology,Endocrinology,2020-03-10,Service availability
+DEMO-P000694,DEMO-A0001049,Smith Ltd,Endocrinology,Pulmonology,2022-07-10,Specialist consultation
+DEMO-P000694,DEMO-A0001050,Ltd Smith,Oncology,General Medicine,2023-01-08,Higher level of care
+DEMO-P000696,DEMO-A0001053,LLC Smith,Rheumatology,Cardiology,2021-01-12,Specialist consultation
+DEMO-P000708,DEMO-A0001071,LLC Smith,Cardiology,Pulmonology,2023-07-15,Higher level of care
+DEMO-P000709,DEMO-A0001074,Johnson PLC,General Medicine,Oncology,2020-11-16,Step-down care
+DEMO-P000717,DEMO-A0001089,Smith PLC,Oncology,Pulmonology,2020-04-17,Higher level of care
+DEMO-P000722,DEMO-A0001096,Smith PLC,General Medicine,Cardiology,2024-03-01,Specialist consultation
+DEMO-P000731,DEMO-A0001109,Smith Group,Oncology,Cardiology,2019-08-09,Step-down care
+DEMO-P000735,DEMO-A0001114,Smith Ltd,Oncology,Cardiology,2024-04-24,Service availability
+DEMO-P000739,DEMO-A0001119,Johnson Inc,Pulmonology,Cardiology,2020-02-03,Higher level of care
+DEMO-P000739,DEMO-A0001120,Ltd Smith,Pulmonology,Oncology,2020-03-06,Step-down care
+DEMO-P000743,DEMO-A0001128,Smith Inc,Oncology,General Medicine,2021-06-23,Step-down care
+DEMO-P000748,DEMO-A0001139,Johnson PLC,Rheumatology,Endocrinology,2022-02-25,Higher level of care
+DEMO-P000750,DEMO-A0001141,Smith Inc,Oncology,Pulmonology,2021-04-30,Service availability
+DEMO-P000760,DEMO-A0001153,LLC Smith,Rheumatology,Endocrinology,2023-11-29,Step-down care
+DEMO-P000765,DEMO-A0001159,Smith Inc,General Medicine,Pulmonology,2023-05-12,Service availability
+DEMO-P000767,DEMO-A0001162,LLC Smith,Oncology,General Medicine,2021-10-08,Specialist consultation
+DEMO-P000770,DEMO-A0001166,Smith Ltd,General Medicine,Cardiology,2022-11-23,Service availability
+DEMO-P000777,DEMO-A0001177,Johnson Inc,Oncology,Pulmonology,2020-08-27,Step-down care
+DEMO-P000777,DEMO-A0001178,Johnson Inc,General Medicine,Rheumatology,2020-12-13,Step-down care
+DEMO-P000781,DEMO-A0001185,Smith Ltd,Pulmonology,Rheumatology,2022-01-01,Higher level of care
+DEMO-P000785,DEMO-A0001189,Johnson PLC,Cardiology,Endocrinology,2022-03-04,Service availability
+DEMO-P000786,DEMO-A0001192,Johnson Inc,Pulmonology,Cardiology,2021-10-17,Step-down care
+DEMO-P000790,DEMO-A0001199,Johnson Inc,Pulmonology,Cardiology,2023-09-16,Specialist consultation
+DEMO-P000793,DEMO-A0001204,Smith PLC,Endocrinology,General Medicine,2021-11-25,Step-down care
+DEMO-P000799,DEMO-A0001211,Johnson PLC,General Medicine,Oncology,2022-05-01,Specialist consultation
+DEMO-P000802,DEMO-A0001216,Smith Group,Oncology,Endocrinology,2024-02-06,Service availability
+DEMO-P000804,DEMO-A0001219,LLC Smith,Endocrinology,General Medicine,2019-10-31,Service availability
+DEMO-P000805,DEMO-A0001220,Ltd Smith,General Medicine,Rheumatology,2022-03-15,Specialist consultation
+DEMO-P000813,DEMO-A0001232,Smith Group,Oncology,General Medicine,2024-04-01,Higher level of care
+DEMO-P000818,DEMO-A0001238,Smith PLC,Rheumatology,Pulmonology,2024-01-25,Higher level of care
+DEMO-P000821,DEMO-A0001241,LLC Smith,General Medicine,Endocrinology,2019-09-01,Service availability
+DEMO-P000822,DEMO-A0001244,LLC Smith,General Medicine,Endocrinology,2020-03-23,Service availability
+DEMO-P000823,DEMO-A0001245,Johnson Inc,Endocrinology,Pulmonology,2020-08-30,Service availability
+DEMO-P000827,DEMO-A0001252,Johnson Inc,Rheumatology,General Medicine,2023-06-19,Specialist consultation
+DEMO-P000830,DEMO-A0001256,LLC Smith,Rheumatology,Endocrinology,2023-08-17,Step-down care
+DEMO-P000830,DEMO-A0001257,Ltd Smith,General Medicine,Rheumatology,2023-08-27,Specialist consultation
+DEMO-P000833,DEMO-A0001260,Ltd Smith,Rheumatology,Pulmonology,2021-10-22,Higher level of care
+DEMO-P000836,DEMO-A0001265,Smith Ltd,Cardiology,Endocrinology,2022-11-22,Higher level of care
+DEMO-P000836,DEMO-A0001266,Smith Inc,General Medicine,Pulmonology,2023-02-20,Specialist consultation
+DEMO-P000841,DEMO-A0001275,LLC Smith,Cardiology,Pulmonology,2023-05-18,Step-down care
+DEMO-P000845,DEMO-A0001282,LLC Smith,Oncology,Pulmonology,2021-08-17,Higher level of care
+DEMO-P000846,DEMO-A0001286,Ltd Smith,Rheumatology,General Medicine,2020-11-12,Specialist consultation
+DEMO-P000851,DEMO-A0001293,Smith Ltd,Endocrinology,General Medicine,2022-10-26,Specialist consultation
+DEMO-P000851,DEMO-A0001294,Smith Inc,Oncology,General Medicine,2022-12-01,Specialist consultation
+DEMO-P000853,DEMO-A0001300,Smith Ltd,Oncology,Pulmonology,2021-01-27,Specialist consultation
+DEMO-P000855,DEMO-A0001303,Johnson Inc,Rheumatology,Endocrinology,2022-07-07,Higher level of care
+DEMO-P000856,DEMO-A0001305,Johnson Inc,Pulmonology,Cardiology,2023-04-28,Service availability
+DEMO-P000857,DEMO-A0001306,Ltd Smith,Oncology,Cardiology,2021-09-21,Step-down care
+DEMO-P000860,DEMO-A0001311,Smith Ltd,Pulmonology,General Medicine,2020-03-08,Specialist consultation
+DEMO-P000864,DEMO-A0001317,Smith Inc,General Medicine,Rheumatology,2024-01-10,Higher level of care
+DEMO-P000868,DEMO-A0001323,Ltd Smith,Pulmonology,General Medicine,2023-03-07,Specialist consultation
+DEMO-P000872,DEMO-A0001328,Smith Inc,Oncology,General Medicine,2022-03-23,Higher level of care
+DEMO-P000872,DEMO-A0001329,Smith Inc,Rheumatology,Pulmonology,2022-04-25,Service availability
+DEMO-P000876,DEMO-A0001333,Johnson Inc,Cardiology,Oncology,2024-04-03,Step-down care
+DEMO-P000877,DEMO-A0001334,Smith Inc,Endocrinology,Rheumatology,2022-08-05,Specialist consultation
+DEMO-P000885,DEMO-A0001347,Johnson PLC,Oncology,Endocrinology,2021-08-29,Step-down care
+DEMO-P000890,DEMO-A0001356,Johnson PLC,Oncology,General Medicine,2020-07-25,Higher level of care
+DEMO-P000891,DEMO-A0001358,Smith Inc,Cardiology,General Medicine,2022-11-30,Service availability
+DEMO-P000893,DEMO-A0001363,Johnson PLC,Oncology,General Medicine,2019-07-14,Specialist consultation
+DEMO-P000902,DEMO-A0001379,Smith Group,General Medicine,Cardiology,2019-12-31,Specialist consultation
+DEMO-P000903,DEMO-A0001381,Smith Inc,Pulmonology,General Medicine,2022-01-06,Service availability
+DEMO-P000906,DEMO-A0001385,Ltd Smith,Pulmonology,Cardiology,2024-03-07,Specialist consultation
+DEMO-P000907,DEMO-A0001387,Smith PLC,Rheumatology,Pulmonology,2019-11-12,Higher level of care
+DEMO-P000908,DEMO-A0001388,Smith Ltd,Oncology,Rheumatology,2021-02-01,Higher level of care
+DEMO-P000910,DEMO-A0001392,Johnson Inc,Pulmonology,Rheumatology,2020-09-26,Higher level of care
+DEMO-P000926,DEMO-A0001417,LLC Smith,Pulmonology,General Medicine,2022-03-11,Service availability
+DEMO-P000937,DEMO-A0001434,LLC Smith,Pulmonology,Rheumatology,2022-10-11,Higher level of care
+DEMO-P000939,DEMO-A0001436,Ltd Smith,Oncology,General Medicine,2019-07-26,Higher level of care
+DEMO-P000939,DEMO-A0001437,Smith PLC,Cardiology,Rheumatology,2020-01-04,Step-down care
+DEMO-P000941,DEMO-A0001439,Johnson Inc,Pulmonology,General Medicine,2023-09-14,Specialist consultation
+DEMO-P000942,DEMO-A0001440,Smith Ltd,Cardiology,Oncology,2022-04-24,Specialist consultation
+DEMO-P000943,DEMO-A0001441,Smith Ltd,Rheumatology,Endocrinology,2022-06-07,Specialist consultation
+DEMO-P000947,DEMO-A0001448,Ltd Smith,Oncology,Cardiology,2023-06-08,Service availability
+DEMO-P000950,DEMO-A0001453,Ltd Smith,Oncology,Cardiology,2023-11-30,Step-down care
+DEMO-P000951,DEMO-A0001454,Smith PLC,Rheumatology,Pulmonology,2022-03-17,Specialist consultation
+DEMO-P000952,DEMO-A0001456,Smith PLC,Endocrinology,General Medicine,2023-11-14,Higher level of care
+DEMO-P000954,DEMO-A0001458,Smith PLC,Rheumatology,Oncology,2021-11-12,Service availability
+DEMO-P000959,DEMO-A0001464,Ltd Smith,Rheumatology,Pulmonology,2023-05-29,Higher level of care
+DEMO-P000966,DEMO-A0001473,Johnson Inc,Cardiology,General Medicine,2023-03-08,Step-down care
+DEMO-P000969,DEMO-A0001479,Smith Ltd,Oncology,Cardiology,2021-11-07,Step-down care
+DEMO-P000972,DEMO-A0001485,Smith Ltd,Endocrinology,Pulmonology,2024-01-09,Specialist consultation
+DEMO-P000974,DEMO-A0001488,LLC Smith,Rheumatology,Oncology,2022-01-28,Step-down care
+DEMO-P000981,DEMO-A0001495,Johnson Inc,Oncology,Cardiology,2021-02-26,Specialist consultation
+DEMO-P000986,DEMO-A0001503,Johnson Inc,Cardiology,Oncology,2022-01-30,Service availability
+DEMO-P000988,DEMO-A0001505,Smith Group,Cardiology,Oncology,2020-08-11,Step-down care
+DEMO-P000997,DEMO-A0001521,Johnson PLC,Pulmonology,General Medicine,2024-05-03,Service availability
+DEMO-P001001,DEMO-A0001526,Smith Group,Endocrinology,Oncology,2022-04-18,Specialist consultation
+DEMO-P001002,DEMO-A0001527,Smith Inc,Endocrinology,Oncology,2019-08-26,Service availability
+DEMO-P001002,DEMO-A0001529,Smith Ltd,Endocrinology,General Medicine,2020-06-10,Higher level of care
+DEMO-P001005,DEMO-A0001533,Smith PLC,General Medicine,Pulmonology,2023-05-21,Step-down care
+DEMO-P001007,DEMO-A0001538,Johnson PLC,Rheumatology,Pulmonology,2020-03-18,Step-down care
+DEMO-P001019,DEMO-A0001553,Smith PLC,Endocrinology,Rheumatology,2020-10-04,Service availability
+DEMO-P001024,DEMO-A0001560,Johnson Inc,Pulmonology,Rheumatology,2021-10-22,Service availability
+DEMO-P001028,DEMO-A0001564,Smith Group,Oncology,Rheumatology,2022-08-02,Higher level of care
+DEMO-P001031,DEMO-A0001569,Ltd Smith,General Medicine,Oncology,2019-10-26,Service availability
+DEMO-P001031,DEMO-A0001570,Smith PLC,General Medicine,Rheumatology,2020-03-28,Higher level of care
+DEMO-P001037,DEMO-A0001580,Ltd Smith,Pulmonology,Rheumatology,2023-06-09,Specialist consultation
+DEMO-P001038,DEMO-A0001581,Ltd Smith,Cardiology,General Medicine,2020-08-13,Step-down care
+DEMO-P001040,DEMO-A0001583,Ltd Smith,General Medicine,Oncology,2019-09-26,Specialist consultation
+DEMO-P001042,DEMO-A0001586,Smith Ltd,Oncology,Pulmonology,2019-11-06,Specialist consultation
+DEMO-P001044,DEMO-A0001589,Smith Inc,Endocrinology,Cardiology,2022-03-08,Service availability
+DEMO-P001047,DEMO-A0001594,LLC Smith,Cardiology,Pulmonology,2023-11-06,Higher level of care
+DEMO-P001051,DEMO-A0001602,Smith Inc,Oncology,Rheumatology,2023-04-19,Specialist consultation
+DEMO-P001052,DEMO-A0001603,Smith Inc,Oncology,Pulmonology,2020-02-15,Specialist consultation
+DEMO-P001053,DEMO-A0001604,Smith PLC,General Medicine,Cardiology,2021-03-04,Higher level of care
+DEMO-P001055,DEMO-A0001609,Johnson Inc,Rheumatology,Oncology,2023-11-05,Higher level of care
+DEMO-P001059,DEMO-A0001613,Ltd Smith,Rheumatology,Cardiology,2020-08-06,Service availability
+DEMO-P001061,DEMO-A0001617,Smith Group,Endocrinology,Rheumatology,2022-08-28,Specialist consultation
+DEMO-P001066,DEMO-A0001624,Smith PLC,Cardiology,Rheumatology,2019-10-24,Service availability
+DEMO-P001070,DEMO-A0001629,Smith Ltd,Endocrinology,Cardiology,2020-06-20,Specialist consultation
+DEMO-P001073,DEMO-A0001633,Johnson Inc,Cardiology,Endocrinology,2019-10-07,Higher level of care
+DEMO-P001074,DEMO-A0001634,Smith Group,General Medicine,Pulmonology,2021-12-08,Specialist consultation
+DEMO-P001077,DEMO-A0001639,Johnson PLC,Pulmonology,Oncology,2021-01-28,Higher level of care
+DEMO-P001080,DEMO-A0001644,Smith Group,Rheumatology,General Medicine,2020-08-23,Service availability
+DEMO-P001083,DEMO-A0001648,LLC Smith,Rheumatology,Pulmonology,2023-07-28,Step-down care
+DEMO-P001084,DEMO-A0001649,Johnson Inc,General Medicine,Oncology,2021-03-03,Specialist consultation
+DEMO-P001086,DEMO-A0001653,Johnson PLC,Endocrinology,Pulmonology,2022-02-04,Service availability
+DEMO-P001087,DEMO-A0001655,Smith Group,General Medicine,Pulmonology,2019-12-18,Service availability
+DEMO-P001091,DEMO-A0001660,Smith PLC,Rheumatology,Oncology,2023-05-19,Higher level of care
+DEMO-P001092,DEMO-A0001662,Johnson Inc,Pulmonology,Endocrinology,2022-12-26,Step-down care
+DEMO-P001098,DEMO-A0001674,Johnson Inc,Pulmonology,Endocrinology,2021-03-25,Step-down care
+DEMO-P001102,DEMO-A0001678,Smith Ltd,Cardiology,Rheumatology,2022-05-16,Specialist consultation
+DEMO-P001106,DEMO-A0001685,LLC Smith,Endocrinology,Pulmonology,2022-07-13,Service availability
+DEMO-P001108,DEMO-A0001688,Johnson PLC,General Medicine,Rheumatology,2019-07-22,Service availability
+DEMO-P001111,DEMO-A0001691,Smith Group,General Medicine,Endocrinology,2022-04-04,Higher level of care
+DEMO-P001114,DEMO-A0001696,Johnson Inc,Pulmonology,Rheumatology,2022-10-31,Higher level of care
+DEMO-P001115,DEMO-A0001697,LLC Smith,Cardiology,General Medicine,2024-03-18,Higher level of care
+DEMO-P001115,DEMO-A0001698,Smith PLC,Endocrinology,Rheumatology,2024-03-22,Step-down care
+DEMO-P001117,DEMO-A0001700,Smith PLC,Pulmonology,Endocrinology,2020-01-02,Step-down care
+DEMO-P001117,DEMO-A0001701,Johnson Inc,Oncology,General Medicine,2020-01-21,Service availability
+DEMO-P001118,DEMO-A0001703,Smith PLC,Oncology,Pulmonology,2023-12-28,Service availability
+DEMO-P001121,DEMO-A0001709,LLC Smith,Endocrinology,General Medicine,2023-06-05,Service availability
+DEMO-P001122,DEMO-A0001710,Johnson PLC,General Medicine,Pulmonology,2022-12-07,Specialist consultation
+DEMO-P001143,DEMO-A0001740,Smith PLC,Pulmonology,Oncology,2023-10-27,Higher level of care
+DEMO-P001147,DEMO-A0001746,Smith Group,Oncology,Endocrinology,2023-07-12,Step-down care
+DEMO-P001155,DEMO-A0001760,Smith Inc,General Medicine,Oncology,2019-11-18,Step-down care
+DEMO-P001156,DEMO-A0001763,Ltd Smith,Pulmonology,Oncology,2020-11-14,Step-down care
+DEMO-P001161,DEMO-A0001772,LLC Smith,Pulmonology,Rheumatology,2019-09-05,Higher level of care
+DEMO-P001165,DEMO-A0001779,Ltd Smith,Pulmonology,General Medicine,2021-12-29,Higher level of care
+DEMO-P001168,DEMO-A0001783,Smith Group,Pulmonology,General Medicine,2020-11-30,Service availability
+DEMO-P001173,DEMO-A0001790,Johnson PLC,Pulmonology,Endocrinology,2023-08-13,Specialist consultation
+DEMO-P001174,DEMO-A0001794,Smith Group,Rheumatology,Endocrinology,2022-11-10,Higher level of care
+DEMO-P001176,DEMO-A0001796,Smith PLC,General Medicine,Pulmonology,2022-07-16,Service availability
+DEMO-P001181,DEMO-A0001804,LLC Smith,Oncology,General Medicine,2020-10-24,Higher level of care
+DEMO-P001182,DEMO-A0001805,LLC Smith,Cardiology,Pulmonology,2021-01-05,Higher level of care
+DEMO-P001185,DEMO-A0001808,Johnson PLC,Rheumatology,Endocrinology,2023-02-18,Step-down care
+DEMO-P001188,DEMO-A0001811,LLC Smith,General Medicine,Endocrinology,2022-04-24,Step-down care
+DEMO-P001189,DEMO-A0001813,Johnson Inc,Oncology,Cardiology,2021-08-05,Service availability
+DEMO-P001193,DEMO-A0001819,Ltd Smith,Endocrinology,Oncology,2022-03-10,Higher level of care
+DEMO-P001196,DEMO-A0001823,Johnson PLC,Oncology,Pulmonology,2023-12-24,Service availability
+DEMO-P001198,DEMO-A0001826,Smith Inc,Rheumatology,Cardiology,2023-05-21,Specialist consultation
+DEMO-P001199,DEMO-A0001827,Smith Ltd,Rheumatology,General Medicine,2023-11-05,Step-down care
+DEMO-P001206,DEMO-A0001839,Smith Inc,Cardiology,Rheumatology,2019-09-24,Specialist consultation
+DEMO-P001207,DEMO-A0001841,Johnson Inc,Cardiology,Pulmonology,2023-06-02,Service availability
+DEMO-P001211,DEMO-A0001845,LLC Smith,Cardiology,Pulmonology,2023-06-06,Step-down care
+DEMO-P001213,DEMO-A0001847,Smith Group,Cardiology,Pulmonology,2022-09-27,Step-down care
+DEMO-P001213,DEMO-A0001848,Johnson PLC,Endocrinology,Cardiology,2022-10-21,Specialist consultation
+DEMO-P001214,DEMO-A0001849,Johnson PLC,General Medicine,Rheumatology,2022-10-06,Higher level of care
+DEMO-P001216,DEMO-A0001851,Smith PLC,Pulmonology,Cardiology,2023-03-30,Service availability
+DEMO-P001224,DEMO-A0001862,Ltd Smith,Oncology,General Medicine,2023-05-24,Higher level of care
+DEMO-P001226,DEMO-A0001866,Smith Inc,Pulmonology,Cardiology,2020-10-05,Higher level of care
+DEMO-P001227,DEMO-A0001868,Johnson Inc,Endocrinology,Pulmonology,2022-05-18,Specialist consultation
+DEMO-P001231,DEMO-A0001874,LLC Smith,Rheumatology,Endocrinology,2019-07-15,Service availability
+DEMO-P001233,DEMO-A0001877,LLC Smith,Rheumatology,General Medicine,2022-05-05,Step-down care
+DEMO-P001234,DEMO-A0001880,Johnson PLC,Cardiology,Rheumatology,2023-10-31,Service availability
+DEMO-P001239,DEMO-A0001890,Johnson PLC,Oncology,Pulmonology,2023-10-28,Higher level of care
+DEMO-P001244,DEMO-A0001897,Johnson Inc,Rheumatology,Pulmonology,2021-01-27,Service availability
+DEMO-P001244,DEMO-A0001898,Smith Group,Pulmonology,Endocrinology,2021-03-26,Service availability
+DEMO-P001246,DEMO-A0001901,Smith Inc,Cardiology,Endocrinology,2020-08-21,Higher level of care
+DEMO-P001248,DEMO-A0001903,Smith Group,Oncology,Rheumatology,2022-09-21,Higher level of care
+DEMO-P001249,DEMO-A0001905,Smith PLC,General Medicine,Cardiology,2022-09-24,Higher level of care
+DEMO-P001251,DEMO-A0001907,Smith PLC,Cardiology,Pulmonology,2024-03-15,Higher level of care
+DEMO-P001252,DEMO-A0001908,Smith Ltd,Endocrinology,Pulmonology,2020-09-01,Service availability
+DEMO-P001256,DEMO-A0001916,Smith Inc,Oncology,Pulmonology,2020-11-09,Specialist consultation
+DEMO-P001257,DEMO-A0001917,LLC Smith,Oncology,Rheumatology,2020-12-13,Specialist consultation
+DEMO-P001263,DEMO-A0001923,Johnson PLC,Cardiology,General Medicine,2019-08-03,Service availability
+DEMO-P001268,DEMO-A0001932,Ltd Smith,Cardiology,Rheumatology,2022-04-19,Specialist consultation
+DEMO-P001269,DEMO-A0001933,Smith PLC,Oncology,Cardiology,2021-02-17,Specialist consultation
+DEMO-P001270,DEMO-A0001934,Smith PLC,Rheumatology,Oncology,2023-08-19,Specialist consultation
+DEMO-P001274,DEMO-A0001939,Smith PLC,Cardiology,Rheumatology,2020-02-22,Step-down care
+DEMO-P001278,DEMO-A0001944,Ltd Smith,General Medicine,Oncology,2019-10-11,Specialist consultation
+DEMO-P001280,DEMO-A0001946,Smith PLC,Rheumatology,Oncology,2021-07-02,Higher level of care
+DEMO-P001290,DEMO-A0001960,Smith Group,Cardiology,Oncology,2023-11-29,Specialist consultation
+DEMO-P001295,DEMO-A0001969,Smith PLC,Oncology,Pulmonology,2020-05-17,Service availability
+DEMO-P001296,DEMO-A0001970,LLC Smith,Cardiology,Oncology,2023-09-11,Specialist consultation
+DEMO-P001296,DEMO-A0001971,Johnson PLC,Pulmonology,Endocrinology,2023-12-11,Service availability
+DEMO-P001297,DEMO-A0001972,LLC Smith,Pulmonology,Endocrinology,2022-05-06,Step-down care
+DEMO-P001299,DEMO-A0001974,Smith Ltd,Rheumatology,Cardiology,2023-02-18,Specialist consultation
+DEMO-P001299,DEMO-A0001975,Ltd Smith,Pulmonology,Cardiology,2023-07-12,Step-down care
+DEMO-P001303,DEMO-A0001983,Smith Inc,Oncology,Cardiology,2019-11-24,Specialist consultation
+DEMO-P001305,DEMO-A0001985,Ltd Smith,Oncology,Endocrinology,2023-02-21,Service availability
+DEMO-P001312,DEMO-A0001994,Ltd Smith,General Medicine,Endocrinology,2019-08-20,Higher level of care
+DEMO-P001314,DEMO-A0001998,LLC Smith,General Medicine,Endocrinology,2020-10-02,Higher level of care
+DEMO-P001315,DEMO-A0001999,Smith Inc,Rheumatology,Cardiology,2021-12-14,Higher level of care
+DEMO-P001321,DEMO-A0002005,Ltd Smith,Oncology,Endocrinology,2021-12-03,Step-down care
+DEMO-P001323,DEMO-A0002009,Ltd Smith,General Medicine,Cardiology,2020-05-12,Step-down care
+DEMO-P001323,DEMO-A0002010,Ltd Smith,Cardiology,General Medicine,2020-08-03,Specialist consultation
+DEMO-P001330,DEMO-A0002020,Smith Ltd,General Medicine,Pulmonology,2020-12-03,Service availability
+DEMO-P001331,DEMO-A0002022,LLC Smith,Pulmonology,General Medicine,2022-09-10,Higher level of care
+DEMO-P001337,DEMO-A0002032,Johnson Inc,Pulmonology,Cardiology,2023-11-02,Step-down care
+DEMO-P001338,DEMO-A0002033,Smith Ltd,Endocrinology,Cardiology,2022-11-04,Service availability
+DEMO-P001349,DEMO-A0002051,Johnson Inc,Oncology,Rheumatology,2021-01-16,Specialist consultation
+DEMO-P001354,DEMO-A0002057,Johnson PLC,Oncology,Rheumatology,2020-10-27,Service availability
+DEMO-P001355,DEMO-A0002058,Smith PLC,Rheumatology,Oncology,2022-12-05,Step-down care
+DEMO-P001359,DEMO-A0002063,LLC Smith,Pulmonology,Oncology,2022-11-20,Service availability
+DEMO-P001360,DEMO-A0002064,LLC Smith,Cardiology,General Medicine,2022-10-19,Step-down care
+DEMO-P001368,DEMO-A0002076,LLC Smith,Rheumatology,Cardiology,2021-02-05,Step-down care
+DEMO-P001368,DEMO-A0002077,Smith Inc,Oncology,Rheumatology,2021-04-27,Service availability
+DEMO-P001377,DEMO-A0002088,Johnson Inc,Endocrinology,General Medicine,2023-04-12,Higher level of care
+DEMO-P001377,DEMO-A0002089,LLC Smith,Cardiology,Oncology,2023-07-18,Specialist consultation
+DEMO-P001381,DEMO-A0002098,LLC Smith,Rheumatology,Oncology,2023-01-17,Higher level of care
+DEMO-P001384,DEMO-A0002103,Smith PLC,Pulmonology,Cardiology,2023-07-19,Specialist consultation
+DEMO-P001386,DEMO-A0002106,Johnson PLC,Rheumatology,Pulmonology,2021-08-30,Step-down care
+DEMO-P001390,DEMO-A0002111,LLC Smith,General Medicine,Rheumatology,2020-02-19,Specialist consultation
+DEMO-P001394,DEMO-A0002116,Ltd Smith,Rheumatology,General Medicine,2020-06-11,Service availability
+DEMO-P001397,DEMO-A0002120,Johnson PLC,Oncology,General Medicine,2022-12-26,Higher level of care
+DEMO-P001399,DEMO-A0002126,Smith Group,Cardiology,Pulmonology,2019-08-02,Step-down care
+DEMO-P001402,DEMO-A0002129,Smith Ltd,Rheumatology,Cardiology,2021-08-21,Higher level of care
+DEMO-P001403,DEMO-A0002131,Johnson Inc,Endocrinology,Oncology,2020-05-16,Step-down care
+DEMO-P001411,DEMO-A0002141,Johnson Inc,Rheumatology,Pulmonology,2021-03-18,Specialist consultation
+DEMO-P001413,DEMO-A0002143,Smith Group,Oncology,Rheumatology,2022-11-15,Higher level of care
+DEMO-P001414,DEMO-A0002146,Johnson PLC,Rheumatology,Pulmonology,2021-08-07,Specialist consultation
+DEMO-P001415,DEMO-A0002149,Smith Ltd,Cardiology,Rheumatology,2021-05-02,Service availability
+DEMO-P001415,DEMO-A0002150,Smith Group,General Medicine,Endocrinology,2021-06-03,Specialist consultation
+DEMO-P001416,DEMO-A0002152,Smith Ltd,Rheumatology,Oncology,2024-03-20,Service availability
+DEMO-P001420,DEMO-A0002160,Smith PLC,Rheumatology,Endocrinology,2021-04-22,Higher level of care
+DEMO-P001422,DEMO-A0002164,Smith Group,General Medicine,Endocrinology,2023-02-28,Service availability
+DEMO-P001426,DEMO-A0002169,LLC Smith,Pulmonology,Cardiology,2021-02-21,Specialist consultation
+DEMO-P001427,DEMO-A0002170,Smith Inc,Cardiology,Rheumatology,2021-08-28,Higher level of care
+DEMO-P001428,DEMO-A0002172,Johnson PLC,Rheumatology,Pulmonology,2023-03-25,Service availability
+DEMO-P001433,DEMO-A0002179,Smith Ltd,Cardiology,General Medicine,2022-09-28,Specialist consultation
+DEMO-P001433,DEMO-A0002180,LLC Smith,General Medicine,Pulmonology,2023-02-15,Higher level of care
+DEMO-P001434,DEMO-A0002181,Johnson Inc,Cardiology,Endocrinology,2023-04-05,Higher level of care
+DEMO-P001435,DEMO-A0002183,LLC Smith,General Medicine,Oncology,2022-04-24,Step-down care
+DEMO-P001437,DEMO-A0002186,Johnson PLC,Endocrinology,Cardiology,2024-03-30,Step-down care
+DEMO-P001438,DEMO-A0002188,Smith Inc,Cardiology,Endocrinology,2020-11-06,Higher level of care
+DEMO-P001443,DEMO-A0002194,Smith Inc,Oncology,Endocrinology,2023-06-04,Service availability
+DEMO-P001443,DEMO-A0002195,Ltd Smith,Pulmonology,Oncology,2023-10-10,Service availability
+DEMO-P001445,DEMO-A0002198,Smith Group,Endocrinology,Pulmonology,2022-01-28,Service availability
+DEMO-P001450,DEMO-A0002205,LLC Smith,Pulmonology,Cardiology,2021-11-04,Specialist consultation
+DEMO-P001451,DEMO-A0002206,Smith Group,General Medicine,Rheumatology,2021-04-25,Service availability
+DEMO-P001452,DEMO-A0002207,Smith PLC,Oncology,Endocrinology,2020-04-28,Higher level of care
+DEMO-P001455,DEMO-A0002212,Smith PLC,Pulmonology,Endocrinology,2019-08-07,Service availability
+DEMO-P001461,DEMO-A0002219,Johnson Inc,General Medicine,Oncology,2022-09-24,Higher level of care
+DEMO-P001461,DEMO-A0002221,Smith PLC,Endocrinology,General Medicine,2023-02-05,Step-down care
+DEMO-P001468,DEMO-A0002229,Smith Ltd,Rheumatology,Oncology,2022-04-28,Service availability
+DEMO-P001470,DEMO-A0002231,Johnson PLC,General Medicine,Pulmonology,2023-01-06,Service availability
+DEMO-P001471,DEMO-A0002233,Johnson Inc,Pulmonology,Oncology,2023-03-18,Service availability
+DEMO-P001475,DEMO-A0002240,Smith Inc,Endocrinology,General Medicine,2021-03-13,Step-down care
+DEMO-P001478,DEMO-A0002246,Johnson PLC,Endocrinology,Rheumatology,2023-01-12,Service availability
+DEMO-P001484,DEMO-A0002254,Smith Ltd,Endocrinology,Pulmonology,2023-01-04,Step-down care
+DEMO-P001487,DEMO-A0002258,Smith PLC,Oncology,Rheumatology,2020-11-07,Higher level of care
+DEMO-P001488,DEMO-A0002261,Smith Group,General Medicine,Pulmonology,2023-02-28,Service availability
+DEMO-P001489,DEMO-A0002263,Smith Group,Pulmonology,General Medicine,2023-07-22,Higher level of care
+DEMO-P001495,DEMO-A0002272,Johnson Inc,Rheumatology,Oncology,2023-06-02,Higher level of care
+DEMO-P001499,DEMO-A0002278,Smith PLC,Oncology,General Medicine,2023-06-06,Service availability
+DEMO-P001499,DEMO-A0002279,Smith Group,Endocrinology,General Medicine,2023-10-28,Higher level of care
+DEMO-P001500,DEMO-A0002280,Ltd Smith,Pulmonology,Rheumatology,2021-04-25,Service availability
+DEMO-P001502,DEMO-A0002282,Smith Inc,General Medicine,Pulmonology,2023-03-26,Specialist consultation
+DEMO-P001503,DEMO-A0002283,Johnson Inc,Rheumatology,Endocrinology,2020-05-29,Higher level of care
+DEMO-P001508,DEMO-A0002290,Johnson PLC,Oncology,Cardiology,2022-01-25,Specialist consultation
+DEMO-P001511,DEMO-A0002294,Smith Ltd,Rheumatology,Cardiology,2020-04-14,Higher level of care
+DEMO-P001511,DEMO-A0002295,Smith Group,Pulmonology,Rheumatology,2020-06-14,Step-down care
+DEMO-P001517,DEMO-A0002303,Smith Inc,Oncology,General Medicine,2022-06-08,Step-down care
+DEMO-P001518,DEMO-A0002305,Smith Group,General Medicine,Endocrinology,2021-10-02,Higher level of care
+DEMO-P001520,DEMO-A0002308,Smith Ltd,Pulmonology,Rheumatology,2023-03-30,Service availability
+DEMO-P001522,DEMO-A0002313,Smith Inc,Cardiology,General Medicine,2019-07-26,Specialist consultation
+DEMO-P001524,DEMO-A0002315,Smith Group,Pulmonology,Rheumatology,2021-02-20,Higher level of care
+DEMO-P001530,DEMO-A0002323,Johnson Inc,Rheumatology,Pulmonology,2020-11-25,Service availability
+DEMO-P001530,DEMO-A0002325,Johnson PLC,General Medicine,Cardiology,2021-01-21,Specialist consultation
+DEMO-P001538,DEMO-A0002339,Smith Inc,Pulmonology,Oncology,2020-06-17,Step-down care
+DEMO-P001542,DEMO-A0002343,Smith Group,Rheumatology,Endocrinology,2022-11-15,Specialist consultation
+DEMO-P001545,DEMO-A0002350,Ltd Smith,General Medicine,Pulmonology,2023-01-07,Higher level of care
+DEMO-P001546,DEMO-A0002353,Smith Inc,Oncology,Pulmonology,2020-12-23,Higher level of care
+DEMO-P001551,DEMO-A0002359,Smith PLC,Rheumatology,Endocrinology,2022-12-28,Step-down care
+DEMO-P001556,DEMO-A0002368,Ltd Smith,Oncology,Rheumatology,2021-01-25,Service availability
+DEMO-P001557,DEMO-A0002369,Ltd Smith,General Medicine,Oncology,2020-07-07,Specialist consultation
+DEMO-P001560,DEMO-A0002372,LLC Smith,Pulmonology,Rheumatology,2019-10-14,Step-down care
+DEMO-P001562,DEMO-A0002374,Smith Inc,Endocrinology,Oncology,2023-01-22,Specialist consultation
+DEMO-P001564,DEMO-A0002377,Johnson Inc,Pulmonology,Cardiology,2019-06-13,Specialist consultation
+DEMO-P001568,DEMO-A0002382,Johnson PLC,General Medicine,Pulmonology,2020-04-10,Higher level of care
+DEMO-P001569,DEMO-A0002386,Smith Group,Oncology,Endocrinology,2023-09-01,Step-down care
+DEMO-P001572,DEMO-A0002390,Johnson Inc,Pulmonology,General Medicine,2022-10-09,Specialist consultation
+DEMO-P001578,DEMO-A0002401,Smith Inc,Cardiology,Oncology,2022-11-16,Specialist consultation
+DEMO-P001582,DEMO-A0002405,Smith Inc,Cardiology,General Medicine,2023-03-17,Step-down care
+DEMO-P001597,DEMO-A0002427,LLC Smith,Cardiology,General Medicine,2020-03-07,Step-down care
+DEMO-P001605,DEMO-A0002436,Johnson PLC,Cardiology,Endocrinology,2020-04-11,Service availability
+DEMO-P001607,DEMO-A0002439,Ltd Smith,General Medicine,Cardiology,2021-03-29,Service availability
+DEMO-P001615,DEMO-A0002452,LLC Smith,Pulmonology,Rheumatology,2020-07-07,Step-down care
+DEMO-P001617,DEMO-A0002456,Smith Group,Rheumatology,Oncology,2023-09-02,Higher level of care
+DEMO-P001619,DEMO-A0002460,Johnson Inc,Rheumatology,Cardiology,2022-07-15,Service availability
+DEMO-P001628,DEMO-A0002474,Smith Group,Cardiology,General Medicine,2024-02-05,Higher level of care
+DEMO-P001631,DEMO-A0002479,Ltd Smith,Endocrinology,General Medicine,2021-09-19,Step-down care
+DEMO-P001632,DEMO-A0002481,Smith Ltd,Cardiology,Rheumatology,2023-03-05,Specialist consultation
+DEMO-P001648,DEMO-A0002503,Ltd Smith,Rheumatology,Endocrinology,2023-11-02,Higher level of care
+DEMO-P001649,DEMO-A0002504,Johnson PLC,General Medicine,Oncology,2022-07-11,Service availability
+DEMO-P001652,DEMO-A0002509,LLC Smith,Pulmonology,General Medicine,2020-06-04,Specialist consultation
+DEMO-P001656,DEMO-A0002515,Johnson Inc,Rheumatology,Oncology,2024-03-07,Specialist consultation
+DEMO-P001664,DEMO-A0002528,Smith PLC,Cardiology,Oncology,2021-06-30,Step-down care
+DEMO-P001667,DEMO-A0002533,Smith Inc,Cardiology,Oncology,2023-10-21,Higher level of care
+DEMO-P001672,DEMO-A0002542,Johnson PLC,Pulmonology,General Medicine,2022-05-24,Specialist consultation
+DEMO-P001673,DEMO-A0002543,Johnson PLC,Rheumatology,General Medicine,2023-06-29,Specialist consultation
+DEMO-P001683,DEMO-A0002562,Ltd Smith,Cardiology,Endocrinology,2022-05-02,Higher level of care
+DEMO-P001685,DEMO-A0002566,Smith PLC,Endocrinology,General Medicine,2022-07-31,Specialist consultation
+DEMO-P001685,DEMO-A0002567,Johnson PLC,Oncology,Rheumatology,2022-12-13,Service availability
+DEMO-P001686,DEMO-A0002568,Smith PLC,Endocrinology,General Medicine,2024-01-20,Higher level of care
+DEMO-P001690,DEMO-A0002572,Johnson Inc,Oncology,Endocrinology,2020-11-04,Service availability
+DEMO-P001691,DEMO-A0002573,Johnson Inc,Cardiology,Oncology,2022-03-28,Service availability
+DEMO-P001695,DEMO-A0002578,LLC Smith,Endocrinology,Oncology,2023-10-03,Service availability
+DEMO-P001699,DEMO-A0002584,LLC Smith,General Medicine,Oncology,2022-12-31,Step-down care
+DEMO-P001705,DEMO-A0002592,Johnson Inc,General Medicine,Cardiology,2023-11-30,Step-down care
+DEMO-P001706,DEMO-A0002594,Smith PLC,Rheumatology,Oncology,2022-07-11,Step-down care
+DEMO-P001708,DEMO-A0002597,LLC Smith,Pulmonology,Oncology,2020-08-05,Specialist consultation
+DEMO-P001709,DEMO-A0002599,Smith Ltd,Oncology,Rheumatology,2022-08-03,Specialist consultation
+DEMO-P001710,DEMO-A0002600,Smith Ltd,Cardiology,Rheumatology,2023-07-29,Higher level of care
+DEMO-P001712,DEMO-A0002604,LLC Smith,General Medicine,Pulmonology,2022-03-04,Higher level of care
+DEMO-P001715,DEMO-A0002610,LLC Smith,Endocrinology,Pulmonology,2021-06-25,Service availability
+DEMO-P001718,DEMO-A0002613,LLC Smith,Endocrinology,Cardiology,2022-12-18,Higher level of care
+DEMO-P001718,DEMO-A0002614,Smith PLC,Pulmonology,Cardiology,2023-03-22,Step-down care
+DEMO-P001729,DEMO-A0002628,Ltd Smith,Oncology,Pulmonology,2023-05-16,Specialist consultation
+DEMO-P001730,DEMO-A0002630,Smith PLC,Pulmonology,General Medicine,2023-02-05,Service availability
+DEMO-P001734,DEMO-A0002637,Ltd Smith,General Medicine,Oncology,2022-08-29,Service availability
+DEMO-P001735,DEMO-A0002638,LLC Smith,General Medicine,Endocrinology,2022-01-10,Higher level of care
+DEMO-P001738,DEMO-A0002641,Johnson Inc,Rheumatology,Pulmonology,2021-01-01,Step-down care
+DEMO-P001745,DEMO-A0002653,Smith Group,Endocrinology,Rheumatology,2022-05-09,Higher level of care
+DEMO-P001753,DEMO-A0002664,Smith Group,Cardiology,Oncology,2023-04-09,Service availability
+DEMO-P001754,DEMO-A0002665,LLC Smith,Cardiology,Endocrinology,2019-11-21,Step-down care
+DEMO-P001758,DEMO-A0002671,Ltd Smith,Oncology,General Medicine,2020-05-10,Service availability
+DEMO-P001763,DEMO-A0002680,Johnson Inc,Cardiology,Rheumatology,2022-02-19,Higher level of care
+DEMO-P001768,DEMO-A0002691,LLC Smith,Pulmonology,Rheumatology,2023-02-20,Step-down care
+DEMO-P001774,DEMO-A0002699,Smith Group,Pulmonology,General Medicine,2022-03-25,Step-down care
+DEMO-P001776,DEMO-A0002701,Johnson Inc,Rheumatology,Pulmonology,2020-06-22,Step-down care
+DEMO-P001779,DEMO-A0002704,Ltd Smith,General Medicine,Cardiology,2021-01-14,Service availability
+DEMO-P001780,DEMO-A0002705,LLC Smith,Pulmonology,General Medicine,2022-10-08,Service availability
+DEMO-P001785,DEMO-A0002712,Smith Inc,Pulmonology,General Medicine,2022-04-18,Step-down care
+DEMO-P001788,DEMO-A0002716,Smith Ltd,Pulmonology,Rheumatology,2024-02-14,Higher level of care
+DEMO-P001790,DEMO-A0002719,Smith Ltd,Endocrinology,Oncology,2022-09-06,Step-down care
+DEMO-P001791,DEMO-A0002721,Smith Inc,Endocrinology,Pulmonology,2020-09-06,Higher level of care
+DEMO-P001797,DEMO-A0002732,Smith Group,General Medicine,Endocrinology,2022-06-12,Specialist consultation
+DEMO-P001803,DEMO-A0002740,LLC Smith,Endocrinology,Oncology,2021-09-17,Service availability
+DEMO-P001805,DEMO-A0002744,Johnson PLC,Cardiology,Oncology,2022-02-10,Higher level of care
+DEMO-P001806,DEMO-A0002745,Johnson PLC,Cardiology,Endocrinology,2022-02-12,Higher level of care
+DEMO-P001809,DEMO-A0002749,Smith Group,Endocrinology,Oncology,2021-02-24,Step-down care
+DEMO-P001812,DEMO-A0002754,Smith Group,Endocrinology,General Medicine,2020-06-12,Higher level of care
+DEMO-P001820,DEMO-A0002766,Smith Group,Rheumatology,Cardiology,2021-01-23,Specialist consultation
+DEMO-P001820,DEMO-A0002767,Ltd Smith,General Medicine,Rheumatology,2021-04-24,Higher level of care
+DEMO-P001822,DEMO-A0002769,Smith PLC,Pulmonology,Rheumatology,2020-02-07,Step-down care
+DEMO-P001827,DEMO-A0002774,Smith Inc,Pulmonology,General Medicine,2021-11-29,Service availability
+DEMO-P001833,DEMO-A0002782,Ltd Smith,Cardiology,General Medicine,2023-11-07,Specialist consultation
+DEMO-P001837,DEMO-A0002787,Smith Ltd,Rheumatology,Oncology,2023-02-20,Service availability
+DEMO-P001839,DEMO-A0002791,Smith Inc,General Medicine,Rheumatology,2020-04-14,Service availability
+DEMO-P001843,DEMO-A0002795,Smith Ltd,Pulmonology,Rheumatology,2020-04-08,Step-down care
+DEMO-P001845,DEMO-A0002797,Smith PLC,General Medicine,Pulmonology,2022-02-21,Specialist consultation
+DEMO-P001848,DEMO-A0002802,Johnson PLC,Oncology,General Medicine,2021-01-09,Step-down care
+DEMO-P001849,DEMO-A0002803,Johnson PLC,General Medicine,Pulmonology,2022-03-10,Higher level of care
+DEMO-P001850,DEMO-A0002806,LLC Smith,General Medicine,Rheumatology,2023-02-01,Specialist consultation
+DEMO-P001853,DEMO-A0002811,Ltd Smith,Endocrinology,Oncology,2022-05-06,Step-down care
+DEMO-P001866,DEMO-A0002830,Smith PLC,General Medicine,Pulmonology,2019-12-23,Step-down care
+DEMO-P001872,DEMO-A0002840,Smith Inc,Cardiology,Endocrinology,2023-09-13,Specialist consultation
+DEMO-P001875,DEMO-A0002845,Johnson Inc,Cardiology,Rheumatology,2022-07-02,Service availability
+DEMO-P001882,DEMO-A0002854,Johnson PLC,Pulmonology,General Medicine,2024-02-25,Higher level of care
+DEMO-P001886,DEMO-A0002860,Smith Group,Rheumatology,General Medicine,2023-05-15,Specialist consultation
+DEMO-P001890,DEMO-A0002867,Smith PLC,Cardiology,Rheumatology,2023-05-24,Specialist consultation
+DEMO-P001891,DEMO-A0002870,Johnson Inc,Rheumatology,Cardiology,2019-08-08,Step-down care
+DEMO-P001892,DEMO-A0002871,Johnson Inc,Rheumatology,General Medicine,2023-09-07,Service availability
+DEMO-P001893,DEMO-A0002872,Smith Ltd,General Medicine,Rheumatology,2023-08-16,Higher level of care
+DEMO-P001893,DEMO-A0002873,Smith Inc,Endocrinology,General Medicine,2023-12-27,Higher level of care
+DEMO-P001894,DEMO-A0002875,Ltd Smith,Endocrinology,Oncology,2022-12-14,Specialist consultation
+DEMO-P001895,DEMO-A0002876,Johnson Inc,Cardiology,Pulmonology,2020-03-10,Specialist consultation
+DEMO-P001896,DEMO-A0002878,Johnson Inc,Rheumatology,Pulmonology,2020-04-03,Step-down care
+DEMO-P001897,DEMO-A0002880,Johnson PLC,Rheumatology,Oncology,2022-05-17,Service availability
+DEMO-P001901,DEMO-A0002885,Johnson PLC,Oncology,Endocrinology,2024-01-02,Service availability
+DEMO-P001906,DEMO-A0002891,Johnson PLC,Pulmonology,General Medicine,2020-06-01,Step-down care
+DEMO-P001909,DEMO-A0002897,Smith Ltd,General Medicine,Pulmonology,2021-05-09,Higher level of care
+DEMO-P001913,DEMO-A0002901,Johnson PLC,General Medicine,Cardiology,2024-03-05,Service availability
+DEMO-P001914,DEMO-A0002904,Johnson Inc,Rheumatology,General Medicine,2021-08-28,Higher level of care
+DEMO-P001918,DEMO-A0002908,Smith Ltd,Pulmonology,General Medicine,2021-03-03,Higher level of care
+DEMO-P001920,DEMO-A0002911,Ltd Smith,General Medicine,Oncology,2024-02-23,Specialist consultation
+DEMO-P001926,DEMO-A0002918,Ltd Smith,Cardiology,General Medicine,2021-09-06,Service availability
+DEMO-P001930,DEMO-A0002922,Smith Ltd,Oncology,Endocrinology,2021-11-05,Step-down care
+DEMO-P001932,DEMO-A0002925,Smith Group,Pulmonology,Cardiology,2020-02-28,Higher level of care
+DEMO-P001934,DEMO-A0002928,LLC Smith,Cardiology,Rheumatology,2021-01-01,Step-down care
+DEMO-P001940,DEMO-A0002935,Smith Ltd,Oncology,Cardiology,2021-12-11,Specialist consultation
+DEMO-P001941,DEMO-A0002938,Smith Group,Endocrinology,Pulmonology,2020-01-13,Specialist consultation
+DEMO-P001950,DEMO-A0002950,Johnson PLC,Cardiology,Rheumatology,2021-10-09,Step-down care
+DEMO-P001951,DEMO-A0002951,Johnson Inc,Rheumatology,Endocrinology,2023-11-24,Higher level of care
+DEMO-P001953,DEMO-A0002954,Smith Ltd,Rheumatology,Oncology,2019-05-22,Step-down care
+DEMO-P001954,DEMO-A0002956,Smith PLC,Pulmonology,Oncology,2024-02-16,Service availability
+DEMO-P001956,DEMO-A0002961,Johnson Inc,General Medicine,Cardiology,2021-11-10,Specialist consultation
+DEMO-P001956,DEMO-A0002962,Ltd Smith,Rheumatology,Oncology,2021-11-27,Higher level of care
+DEMO-P001957,DEMO-A0002965,Johnson Inc,Oncology,Rheumatology,2022-02-23,Service availability
+DEMO-P001958,DEMO-A0002967,Smith PLC,Cardiology,Oncology,2023-09-03,Specialist consultation
+DEMO-P001958,DEMO-A0002968,Smith Inc,Cardiology,Pulmonology,2023-11-25,Service availability
+DEMO-P001965,DEMO-A0002978,Smith Group,Endocrinology,Oncology,2023-08-19,Step-down care
+DEMO-P001969,DEMO-A0002983,Smith Group,Pulmonology,Oncology,2022-06-24,Specialist consultation
+DEMO-P001972,DEMO-A0002987,Smith Ltd,Cardiology,General Medicine,2023-11-28,Step-down care
+DEMO-P001974,DEMO-A0002990,Smith Group,Endocrinology,Cardiology,2020-11-11,Step-down care
+DEMO-P001975,DEMO-A0002992,Johnson PLC,General Medicine,Cardiology,2024-02-01,Higher level of care
+DEMO-P001977,DEMO-A0002994,Smith Inc,Pulmonology,Oncology,2020-12-03,Service availability
+DEMO-P001986,DEMO-A0003007,Smith PLC,General Medicine,Oncology,2021-01-24,Service availability
+DEMO-P001989,DEMO-A0003011,Smith PLC,Rheumatology,Pulmonology,2023-04-07,Higher level of care
+DEMO-P001993,DEMO-A0003017,Ltd Smith,Rheumatology,General Medicine,2022-07-07,Higher level of care
+DEMO-P001995,DEMO-A0003020,Smith PLC,Endocrinology,Rheumatology,2022-08-22,Step-down care
+DEMO-P001997,DEMO-A0003023,Smith Group,Oncology,General Medicine,2021-04-07,Higher level of care
+DEMO-P001998,DEMO-A0003024,Johnson PLC,Endocrinology,Pulmonology,2023-10-16,Higher level of care
+DEMO-P002001,DEMO-A0003028,LLC Smith,Cardiology,Pulmonology,2019-08-31,Step-down care
+DEMO-P002004,DEMO-A0003033,LLC Smith,Endocrinology,Oncology,2022-02-06,Higher level of care
+DEMO-P002005,DEMO-A0003035,Smith Ltd,Cardiology,Pulmonology,2019-08-26,Specialist consultation
+DEMO-P002007,DEMO-A0003038,Smith Inc,Oncology,Cardiology,2021-05-26,Specialist consultation
+DEMO-P002009,DEMO-A0003041,Smith PLC,Rheumatology,Cardiology,2023-12-03,Service availability
+DEMO-P002012,DEMO-A0003044,Smith PLC,Cardiology,Rheumatology,2021-02-11,Higher level of care
+DEMO-P002017,DEMO-A0003051,Ltd Smith,Oncology,Pulmonology,2019-10-29,Step-down care
+DEMO-P002029,DEMO-A0003070,Smith Inc,General Medicine,Pulmonology,2021-03-23,Step-down care
+DEMO-P002039,DEMO-A0003083,Smith Ltd,General Medicine,Pulmonology,2020-02-10,Higher level of care
+DEMO-P002040,DEMO-A0003085,Johnson PLC,Pulmonology,Endocrinology,2019-07-08,Service availability
+DEMO-P002042,DEMO-A0003087,Smith Inc,Rheumatology,General Medicine,2020-06-27,Higher level of care
+DEMO-P002044,DEMO-A0003089,Smith Ltd,General Medicine,Oncology,2023-03-01,Specialist consultation
+DEMO-P002052,DEMO-A0003099,Johnson Inc,Rheumatology,Cardiology,2021-08-01,Specialist consultation
+DEMO-P002053,DEMO-A0003103,Smith Inc,Endocrinology,Rheumatology,2022-03-25,Service availability
+DEMO-P002059,DEMO-A0003110,Smith Inc,Rheumatology,Oncology,2022-07-09,Higher level of care
+DEMO-P002063,DEMO-A0003118,Smith Ltd,General Medicine,Cardiology,2019-09-03,Specialist consultation
+DEMO-P002064,DEMO-A0003120,Johnson PLC,General Medicine,Endocrinology,2023-03-18,Service availability
+DEMO-P002070,DEMO-A0003130,LLC Smith,Endocrinology,Cardiology,2019-12-18,Specialist consultation
+DEMO-P002070,DEMO-A0003131,Smith PLC,Cardiology,Endocrinology,2020-06-24,Service availability
+DEMO-P002072,DEMO-A0003133,Smith Group,Oncology,Pulmonology,2024-03-30,Service availability
+DEMO-P002075,DEMO-A0003139,Johnson Inc,Endocrinology,General Medicine,2021-01-06,Step-down care
+DEMO-P002079,DEMO-A0003145,LLC Smith,Pulmonology,General Medicine,2021-09-07,Step-down care
+DEMO-P002079,DEMO-A0003146,Smith Inc,Endocrinology,Rheumatology,2021-12-13,Service availability
+DEMO-P002079,DEMO-A0003147,LLC Smith,Pulmonology,Rheumatology,2022-05-21,Step-down care
+DEMO-P002092,DEMO-A0003165,Johnson PLC,Pulmonology,Rheumatology,2024-01-04,Step-down care
+DEMO-P002096,DEMO-A0003170,Ltd Smith,Cardiology,Endocrinology,2023-11-04,Specialist consultation
+DEMO-P002096,DEMO-A0003171,LLC Smith,Cardiology,Endocrinology,2024-05-03,Higher level of care
+DEMO-P002097,DEMO-A0003173,Ltd Smith,General Medicine,Endocrinology,2022-08-04,Service availability
+DEMO-P002099,DEMO-A0003177,Johnson PLC,Rheumatology,General Medicine,2021-05-11,Higher level of care
+DEMO-P002101,DEMO-A0003179,Ltd Smith,Rheumatology,Pulmonology,2021-09-18,Higher level of care
+DEMO-P002112,DEMO-A0003194,Smith Inc,General Medicine,Endocrinology,2023-08-13,Higher level of care
+DEMO-P002115,DEMO-A0003197,Ltd Smith,Rheumatology,General Medicine,2023-06-25,Specialist consultation
+DEMO-P002116,DEMO-A0003198,Smith Group,Cardiology,Endocrinology,2019-05-30,Step-down care
+DEMO-P002117,DEMO-A0003200,Johnson PLC,Pulmonology,Oncology,2022-08-21,Higher level of care
+DEMO-P002117,DEMO-A0003201,LLC Smith,Rheumatology,Endocrinology,2023-02-11,Step-down care
+DEMO-P002120,DEMO-A0003205,Smith Ltd,Cardiology,General Medicine,2021-02-27,Service availability
+DEMO-P002124,DEMO-A0003210,Johnson Inc,Endocrinology,General Medicine,2021-07-27,Specialist consultation
+DEMO-P002134,DEMO-A0003222,Smith Inc,Cardiology,Pulmonology,2022-06-16,Higher level of care
+DEMO-P002138,DEMO-A0003227,Smith Group,Oncology,Pulmonology,2022-01-16,Service availability
+DEMO-P002140,DEMO-A0003230,Smith Group,Cardiology,Pulmonology,2023-04-04,Service availability
+DEMO-P002148,DEMO-A0003239,LLC Smith,Rheumatology,General Medicine,2021-01-26,Service availability
+DEMO-P002148,DEMO-A0003241,Smith Inc,General Medicine,Cardiology,2021-03-29,Step-down care
+DEMO-P002150,DEMO-A0003243,Johnson PLC,Pulmonology,Endocrinology,2023-12-24,Higher level of care
+DEMO-P002152,DEMO-A0003245,Smith Ltd,Endocrinology,General Medicine,2021-07-03,Service availability
+DEMO-P002155,DEMO-A0003250,Johnson Inc,Pulmonology,General Medicine,2023-02-02,Step-down care
+DEMO-P002156,DEMO-A0003252,Smith Group,Endocrinology,Rheumatology,2022-06-27,Higher level of care
+DEMO-P002157,DEMO-A0003253,Johnson Inc,Cardiology,Oncology,2020-03-29,Specialist consultation
+DEMO-P002160,DEMO-A0003258,Smith Ltd,Oncology,General Medicine,2019-05-28,Step-down care
+DEMO-P002161,DEMO-A0003259,Ltd Smith,Rheumatology,Oncology,2020-06-08,Higher level of care
+DEMO-P002162,DEMO-A0003263,Smith Group,Pulmonology,Oncology,2022-01-02,Higher level of care
+DEMO-P002165,DEMO-A0003267,Smith PLC,Cardiology,Endocrinology,2021-06-05,Higher level of care
+DEMO-P002184,DEMO-A0003292,Smith PLC,Rheumatology,Oncology,2021-08-12,Higher level of care
+DEMO-P002185,DEMO-A0003293,Smith Inc,Pulmonology,General Medicine,2019-11-10,Service availability
+DEMO-P002187,DEMO-A0003296,Smith Group,Oncology,General Medicine,2022-05-02,Specialist consultation
+DEMO-P002189,DEMO-A0003299,Johnson PLC,Pulmonology,Oncology,2022-04-04,Step-down care
+DEMO-P002191,DEMO-A0003305,Smith Ltd,Oncology,General Medicine,2022-07-27,Step-down care
+DEMO-P002191,DEMO-A0003306,LLC Smith,General Medicine,Endocrinology,2022-10-30,Step-down care
+DEMO-P002192,DEMO-A0003308,Smith Ltd,Rheumatology,Cardiology,2024-03-03,Higher level of care
+DEMO-P002197,DEMO-A0003314,Smith Inc,Pulmonology,Oncology,2021-04-30,Higher level of care
+DEMO-P002199,DEMO-A0003316,Smith Group,Pulmonology,Oncology,2023-11-08,Higher level of care
+DEMO-P002199,DEMO-A0003317,Smith Ltd,Rheumatology,General Medicine,2024-02-10,Step-down care
+DEMO-P002206,DEMO-A0003328,Smith PLC,Oncology,General Medicine,2022-07-07,Specialist consultation
+DEMO-P002208,DEMO-A0003332,Johnson PLC,Pulmonology,Rheumatology,2023-12-13,Specialist consultation
+DEMO-P002212,DEMO-A0003336,Johnson PLC,Rheumatology,Cardiology,2020-12-20,Service availability
+DEMO-P002213,DEMO-A0003337,Smith Group,Pulmonology,Endocrinology,2022-03-26,Step-down care
+DEMO-P002214,DEMO-A0003338,Johnson Inc,Rheumatology,Endocrinology,2019-09-07,Higher level of care
+DEMO-P002218,DEMO-A0003344,Ltd Smith,General Medicine,Rheumatology,2023-05-01,Step-down care
+DEMO-P002222,DEMO-A0003349,Smith Group,Endocrinology,Oncology,2020-02-19,Step-down care
+DEMO-P002224,DEMO-A0003352,Smith Group,Pulmonology,Endocrinology,2022-06-18,Step-down care
+DEMO-P002225,DEMO-A0003353,Smith Inc,Endocrinology,Pulmonology,2023-03-21,Service availability
+DEMO-P002230,DEMO-A0003363,LLC Smith,General Medicine,Rheumatology,2020-09-09,Higher level of care
+DEMO-P002234,DEMO-A0003368,Johnson Inc,Oncology,Pulmonology,2024-03-23,Specialist consultation
+DEMO-P002236,DEMO-A0003372,Johnson Inc,Oncology,General Medicine,2020-03-16,Step-down care
+DEMO-P002237,DEMO-A0003373,Smith PLC,Cardiology,Endocrinology,2022-05-14,Specialist consultation
+DEMO-P002248,DEMO-A0003390,Ltd Smith,Endocrinology,General Medicine,2023-01-04,Service availability
+DEMO-P002251,DEMO-A0003395,Smith PLC,General Medicine,Oncology,2023-11-02,Specialist consultation
+DEMO-P002252,DEMO-A0003396,Ltd Smith,Pulmonology,Endocrinology,2021-10-30,Step-down care
+DEMO-P002254,DEMO-A0003400,Johnson PLC,General Medicine,Cardiology,2019-10-09,Step-down care
+DEMO-P002254,DEMO-A0003401,Smith PLC,Oncology,Pulmonology,2019-12-15,Higher level of care
+DEMO-P002258,DEMO-A0003406,Smith PLC,Cardiology,Oncology,2021-09-15,Higher level of care
+DEMO-P002266,DEMO-A0003418,Ltd Smith,Rheumatology,Pulmonology,2022-04-16,Higher level of care
+DEMO-P002269,DEMO-A0003422,Johnson Inc,General Medicine,Oncology,2023-07-18,Step-down care
+DEMO-P002271,DEMO-A0003424,Johnson PLC,Pulmonology,General Medicine,2023-11-12,Specialist consultation
+DEMO-P002271,DEMO-A0003425,LLC Smith,Oncology,Pulmonology,2024-02-18,Step-down care
+DEMO-P002273,DEMO-A0003427,Smith Group,Cardiology,Oncology,2019-06-02,Step-down care
+DEMO-P002277,DEMO-A0003432,Ltd Smith,Endocrinology,Cardiology,2024-01-22,Specialist consultation
+DEMO-P002281,DEMO-A0003437,Smith Ltd,Cardiology,Endocrinology,2023-09-02,Step-down care
+DEMO-P002283,DEMO-A0003439,Smith Group,Oncology,General Medicine,2021-09-22,Step-down care
+DEMO-P002284,DEMO-A0003440,Johnson Inc,Cardiology,Pulmonology,2023-06-06,Service availability
+DEMO-P002284,DEMO-A0003442,Smith Group,Pulmonology,Rheumatology,2024-01-10,Service availability
+DEMO-P002287,DEMO-A0003446,Johnson PLC,Oncology,Endocrinology,2020-11-18,Service availability
+DEMO-P002289,DEMO-A0003449,Smith Ltd,Pulmonology,General Medicine,2020-08-05,Step-down care
+DEMO-P002293,DEMO-A0003455,LLC Smith,Cardiology,General Medicine,2021-04-16,Higher level of care
+DEMO-P002299,DEMO-A0003462,Smith Inc,Cardiology,General Medicine,2020-02-11,Higher level of care
+DEMO-P002302,DEMO-A0003465,Smith PLC,General Medicine,Cardiology,2022-11-13,Service availability
+DEMO-P002303,DEMO-A0003467,Smith Group,Rheumatology,Pulmonology,2022-09-19,Higher level of care
+DEMO-P002306,DEMO-A0003472,Johnson Inc,Rheumatology,General Medicine,2020-04-03,Step-down care
+DEMO-P002309,DEMO-A0003476,Smith Inc,General Medicine,Oncology,2021-01-19,Step-down care
+DEMO-P002311,DEMO-A0003479,Johnson PLC,Pulmonology,Oncology,2019-07-12,Step-down care
+DEMO-P002314,DEMO-A0003483,Smith PLC,Oncology,Cardiology,2019-05-18,Step-down care
+DEMO-P002317,DEMO-A0003488,Johnson Inc,Cardiology,Pulmonology,2020-10-16,Higher level of care
+DEMO-P002318,DEMO-A0003489,Johnson PLC,Endocrinology,Oncology,2024-01-13,Higher level of care
+DEMO-P002319,DEMO-A0003490,Smith PLC,Endocrinology,General Medicine,2021-11-10,Step-down care
+DEMO-P002325,DEMO-A0003498,Smith Group,General Medicine,Endocrinology,2022-05-10,Higher level of care
+DEMO-P002327,DEMO-A0003500,Johnson Inc,Pulmonology,Endocrinology,2021-11-15,Specialist consultation
+DEMO-P002327,DEMO-A0003501,Ltd Smith,Endocrinology,Oncology,2021-12-06,Specialist consultation
+DEMO-P002328,DEMO-A0003502,Smith Group,General Medicine,Rheumatology,2020-05-05,Higher level of care
+DEMO-P002332,DEMO-A0003509,Smith PLC,Rheumatology,Pulmonology,2020-05-25,Specialist consultation
+DEMO-P002332,DEMO-A0003510,Smith PLC,Endocrinology,Oncology,2020-10-23,Specialist consultation
+DEMO-P002334,DEMO-A0003514,Smith Ltd,Pulmonology,General Medicine,2022-11-29,Step-down care
+DEMO-P002344,DEMO-A0003530,Smith Inc,Pulmonology,Rheumatology,2019-10-10,Specialist consultation
+DEMO-P002347,DEMO-A0003535,Johnson Inc,Endocrinology,General Medicine,2022-01-31,Higher level of care
+DEMO-P002352,DEMO-A0003544,Smith Group,Cardiology,Rheumatology,2021-08-27,Step-down care
+DEMO-P002355,DEMO-A0003549,Smith PLC,Cardiology,General Medicine,2021-11-22,Specialist consultation
+DEMO-P002355,DEMO-A0003550,Johnson Inc,Pulmonology,Rheumatology,2021-12-08,Specialist consultation
+DEMO-P002356,DEMO-A0003551,Smith Group,Pulmonology,Rheumatology,2022-02-03,Specialist consultation
+DEMO-P002360,DEMO-A0003558,Smith PLC,Endocrinology,Cardiology,2021-06-24,Service availability
+DEMO-P002363,DEMO-A0003562,Ltd Smith,Oncology,Cardiology,2019-11-26,Specialist consultation
+DEMO-P002369,DEMO-A0003570,Ltd Smith,General Medicine,Pulmonology,2020-05-17,Service availability
+DEMO-P002370,DEMO-A0003571,LLC Smith,Cardiology,Endocrinology,2024-04-23,Step-down care
+DEMO-P002373,DEMO-A0003574,Smith PLC,General Medicine,Oncology,2020-03-22,Service availability
+DEMO-P002375,DEMO-A0003576,Smith Group,Rheumatology,Oncology,2021-02-01,Specialist consultation
+DEMO-P002377,DEMO-A0003579,Ltd Smith,Cardiology,General Medicine,2020-04-17,Service availability
+DEMO-P002377,DEMO-A0003580,Smith Group,General Medicine,Pulmonology,2020-05-22,Service availability
+DEMO-P002378,DEMO-A0003581,Smith PLC,Rheumatology,Endocrinology,2022-12-12,Higher level of care
+DEMO-P002386,DEMO-A0003590,Smith PLC,Pulmonology,General Medicine,2024-03-29,Higher level of care
+DEMO-P002387,DEMO-A0003593,Johnson Inc,Rheumatology,Cardiology,2023-04-30,Higher level of care
+DEMO-P002388,DEMO-A0003594,Smith Ltd,Rheumatology,Oncology,2021-10-23,Service availability
+DEMO-P002388,DEMO-A0003596,Ltd Smith,Oncology,Cardiology,2022-02-19,Higher level of care
+DEMO-P002389,DEMO-A0003597,Smith Group,Rheumatology,Oncology,2021-01-30,Service availability
+DEMO-P002398,DEMO-A0003610,LLC Smith,Cardiology,General Medicine,2021-08-31,Higher level of care
+DEMO-P002407,DEMO-A0003621,LLC Smith,Cardiology,Pulmonology,2021-10-11,Step-down care
+DEMO-P002408,DEMO-A0003622,Smith Inc,Cardiology,Rheumatology,2023-11-18,Higher level of care
+DEMO-P002413,DEMO-A0003628,Smith PLC,General Medicine,Endocrinology,2023-09-29,Higher level of care
+DEMO-P002414,DEMO-A0003629,Johnson PLC,Cardiology,Endocrinology,2021-12-22,Higher level of care
+DEMO-P002415,DEMO-A0003630,LLC Smith,Rheumatology,Oncology,2023-12-31,Higher level of care
+DEMO-P002416,DEMO-A0003631,Smith PLC,Rheumatology,Pulmonology,2021-11-06,Specialist consultation
+DEMO-P002417,DEMO-A0003633,Smith Inc,Endocrinology,Rheumatology,2021-05-27,Service availability
+DEMO-P002419,DEMO-A0003638,LLC Smith,Pulmonology,Rheumatology,2022-02-07,Step-down care
+DEMO-P002420,DEMO-A0003639,Smith Group,Endocrinology,Pulmonology,2020-09-25,Higher level of care
+DEMO-P002421,DEMO-A0003642,Smith Ltd,Oncology,Pulmonology,2022-07-25,Service availability
+DEMO-P002422,DEMO-A0003644,Smith Inc,Cardiology,General Medicine,2023-03-04,Step-down care
+DEMO-P002425,DEMO-A0003650,Smith Ltd,Cardiology,Endocrinology,2020-01-23,Step-down care
+DEMO-P002427,DEMO-A0003656,Johnson Inc,Oncology,Endocrinology,2022-04-01,Higher level of care
+DEMO-P002434,DEMO-A0003668,Smith Group,Endocrinology,Rheumatology,2022-06-05,Higher level of care
+DEMO-P002435,DEMO-A0003669,Johnson Inc,Cardiology,Pulmonology,2021-04-13,Higher level of care
+DEMO-P002437,DEMO-A0003671,Johnson Inc,General Medicine,Oncology,2022-05-05,Step-down care
+DEMO-P002438,DEMO-A0003674,Smith PLC,Pulmonology,General Medicine,2022-11-19,Service availability
+DEMO-P002441,DEMO-A0003679,Smith PLC,Cardiology,Oncology,2019-09-27,Service availability
+DEMO-P002442,DEMO-A0003680,Ltd Smith,Oncology,General Medicine,2021-04-29,Higher level of care
+DEMO-P002443,DEMO-A0003681,Johnson Inc,Cardiology,Rheumatology,2020-07-29,Higher level of care
+DEMO-P002447,DEMO-A0003685,Johnson Inc,Rheumatology,General Medicine,2021-11-11,Higher level of care
+DEMO-P002450,DEMO-A0003691,Johnson PLC,Pulmonology,General Medicine,2021-11-28,Service availability
+DEMO-P002454,DEMO-A0003697,Smith PLC,Endocrinology,Pulmonology,2023-10-05,Service availability
+DEMO-P002457,DEMO-A0003700,Johnson PLC,General Medicine,Endocrinology,2021-03-28,Step-down care
+DEMO-P002462,DEMO-A0003706,Ltd Smith,Endocrinology,Cardiology,2019-10-04,Specialist consultation
+DEMO-P002463,DEMO-A0003709,Johnson Inc,Cardiology,Endocrinology,2021-04-12,Higher level of care
+DEMO-P002464,DEMO-A0003710,Smith Inc,Oncology,Pulmonology,2021-03-21,Step-down care
+DEMO-P002466,DEMO-A0003714,Ltd Smith,Rheumatology,General Medicine,2022-03-07,Higher level of care
+DEMO-P002468,DEMO-A0003717,Ltd Smith,Oncology,Cardiology,2022-03-23,Specialist consultation
+DEMO-P002469,DEMO-A0003719,Johnson Inc,General Medicine,Pulmonology,2022-01-26,Higher level of care
+DEMO-P002471,DEMO-A0003723,Smith Inc,General Medicine,Cardiology,2024-03-13,Step-down care
+DEMO-P002478,DEMO-A0003734,Johnson PLC,General Medicine,Endocrinology,2019-08-13,Specialist consultation
+DEMO-P002479,DEMO-A0003736,Smith Ltd,General Medicine,Cardiology,2023-02-12,Service availability
+DEMO-P002480,DEMO-A0003737,Smith Inc,Cardiology,Endocrinology,2021-07-03,Higher level of care
+DEMO-P002481,DEMO-A0003738,Smith PLC,Cardiology,Oncology,2019-10-13,Higher level of care
+DEMO-P002482,DEMO-A0003740,Johnson PLC,Endocrinology,Cardiology,2020-10-17,Specialist consultation
+DEMO-P002484,DEMO-A0003742,Smith Inc,Rheumatology,Endocrinology,2023-07-05,Service availability
+DEMO-P002485,DEMO-A0003743,Smith Group,General Medicine,Rheumatology,2022-01-27,Specialist consultation
+DEMO-P002487,DEMO-A0003745,Smith PLC,Oncology,Pulmonology,2020-11-01,Service availability
+DEMO-P002493,DEMO-A0003755,Johnson PLC,Cardiology,Endocrinology,2020-07-15,Service availability
+DEMO-P002498,DEMO-A0003763,LLC Smith,Cardiology,Rheumatology,2021-06-13,Step-down care
+DEMO-P002501,DEMO-A0003767,Johnson Inc,Oncology,Cardiology,2019-08-04,Step-down care
+DEMO-P002509,DEMO-A0003781,Johnson Inc,Cardiology,General Medicine,2024-01-22,Specialist consultation
+DEMO-P002510,DEMO-A0003783,LLC Smith,Pulmonology,General Medicine,2023-06-03,Higher level of care
+DEMO-P002516,DEMO-A0003791,Johnson PLC,Pulmonology,General Medicine,2023-10-05,Specialist consultation
+DEMO-P002524,DEMO-A0003801,Ltd Smith,Cardiology,General Medicine,2022-11-23,Higher level of care
+DEMO-P002525,DEMO-A0003802,Johnson PLC,Rheumatology,Oncology,2023-02-03,Higher level of care
+DEMO-P002526,DEMO-A0003803,Smith PLC,Endocrinology,General Medicine,2022-11-14,Service availability
+DEMO-P002527,DEMO-A0003806,Smith PLC,General Medicine,Endocrinology,2022-10-24,Higher level of care
+DEMO-P002530,DEMO-A0003811,Smith Ltd,Endocrinology,Rheumatology,2022-09-28,Higher level of care
+DEMO-P002532,DEMO-A0003816,Smith Ltd,Endocrinology,Oncology,2020-05-09,Higher level of care
+DEMO-P002536,DEMO-A0003823,Smith Group,General Medicine,Pulmonology,2019-07-11,Service availability
+DEMO-P002540,DEMO-A0003828,Johnson PLC,Oncology,Cardiology,2023-01-27,Specialist consultation
+DEMO-P002541,DEMO-A0003830,Johnson Inc,General Medicine,Pulmonology,2023-10-01,Higher level of care
+DEMO-P002542,DEMO-A0003832,Johnson Inc,Rheumatology,Endocrinology,2020-10-08,Higher level of care
+DEMO-P002543,DEMO-A0003833,LLC Smith,Oncology,Endocrinology,2019-06-03,Higher level of care
+DEMO-P002544,DEMO-A0003836,LLC Smith,General Medicine,Oncology,2020-09-21,Service availability
+DEMO-P002546,DEMO-A0003839,LLC Smith,General Medicine,Pulmonology,2021-12-06,Higher level of care
+DEMO-P002546,DEMO-A0003840,Smith PLC,Pulmonology,Endocrinology,2022-01-11,Step-down care
+DEMO-P002547,DEMO-A0003841,Johnson PLC,Cardiology,Oncology,2019-08-23,Step-down care
+DEMO-P002549,DEMO-A0003843,Johnson PLC,Rheumatology,General Medicine,2021-06-17,Service availability
+DEMO-P002556,DEMO-A0003857,Johnson Inc,Endocrinology,Pulmonology,2020-08-06,Service availability
+DEMO-P002557,DEMO-A0003860,LLC Smith,General Medicine,Endocrinology,2024-04-29,Step-down care
+DEMO-P002558,DEMO-A0003861,LLC Smith,Cardiology,General Medicine,2022-12-07,Higher level of care
+DEMO-P002562,DEMO-A0003868,Smith Inc,Oncology,Pulmonology,2022-10-18,Specialist consultation
+DEMO-P002563,DEMO-A0003871,Ltd Smith,Endocrinology,General Medicine,2021-04-10,Higher level of care
+DEMO-P002568,DEMO-A0003876,Smith Ltd,Cardiology,Pulmonology,2019-11-28,Specialist consultation
+DEMO-P002573,DEMO-A0003882,Ltd Smith,Pulmonology,Oncology,2020-08-21,Step-down care
+DEMO-P002574,DEMO-A0003884,LLC Smith,Rheumatology,Cardiology,2022-10-05,Higher level of care
+DEMO-P002575,DEMO-A0003887,Smith PLC,Pulmonology,General Medicine,2020-07-31,Service availability
+DEMO-P002580,DEMO-A0003894,Smith Inc,Endocrinology,Pulmonology,2022-05-15,Specialist consultation
+DEMO-P002585,DEMO-A0003901,Smith PLC,Pulmonology,Rheumatology,2022-08-29,Higher level of care
+DEMO-P002586,DEMO-A0003902,Johnson PLC,Endocrinology,Pulmonology,2020-09-26,Specialist consultation
+DEMO-P002591,DEMO-A0003909,Johnson PLC,Oncology,Pulmonology,2021-12-26,Step-down care
+DEMO-P002595,DEMO-A0003916,Smith Inc,General Medicine,Oncology,2021-09-16,Step-down care
+DEMO-P002598,DEMO-A0003922,Smith Group,Oncology,Rheumatology,2019-06-10,Specialist consultation
+DEMO-P002598,DEMO-A0003923,Ltd Smith,Oncology,Rheumatology,2019-06-18,Specialist consultation
+DEMO-P002612,DEMO-A0003945,Ltd Smith,Endocrinology,Pulmonology,2021-05-26,Step-down care
+DEMO-P002613,DEMO-A0003947,Smith Inc,General Medicine,Endocrinology,2023-06-09,Higher level of care
+DEMO-P002616,DEMO-A0003951,Smith Group,Cardiology,General Medicine,2021-04-21,Higher level of care
+DEMO-P002619,DEMO-A0003957,Ltd Smith,Rheumatology,Oncology,2020-12-25,Service availability
+DEMO-P002622,DEMO-A0003962,LLC Smith,General Medicine,Pulmonology,2023-10-08,Specialist consultation
+DEMO-P002623,DEMO-A0003964,Smith PLC,Rheumatology,General Medicine,2020-02-12,Specialist consultation
+DEMO-P002631,DEMO-A0003974,Ltd Smith,General Medicine,Oncology,2022-04-30,Specialist consultation
+DEMO-P002644,DEMO-A0003990,LLC Smith,Endocrinology,Pulmonology,2022-08-19,Step-down care
+DEMO-P002645,DEMO-A0003991,LLC Smith,Oncology,Endocrinology,2022-07-16,Step-down care
+DEMO-P002655,DEMO-A0004008,LLC Smith,Pulmonology,Oncology,2023-01-25,Specialist consultation
+DEMO-P002663,DEMO-A0004023,Smith PLC,Pulmonology,General Medicine,2023-01-12,Service availability
+DEMO-P002666,DEMO-A0004026,Smith Inc,General Medicine,Cardiology,2021-06-09,Step-down care
+DEMO-P002673,DEMO-A0004035,Johnson Inc,Rheumatology,Oncology,2022-12-08,Higher level of care
+DEMO-P002674,DEMO-A0004038,Smith Ltd,Pulmonology,Cardiology,2022-09-28,Specialist consultation
+DEMO-P002676,DEMO-A0004042,Smith Inc,Oncology,Endocrinology,2023-05-25,Higher level of care
+DEMO-P002691,DEMO-A0004062,Johnson PLC,Rheumatology,Endocrinology,2024-03-10,Specialist consultation
+DEMO-P002695,DEMO-A0004069,Smith PLC,Cardiology,Oncology,2021-12-28,Service availability
+DEMO-P002702,DEMO-A0004078,Smith Inc,Rheumatology,Endocrinology,2023-09-15,Step-down care
+DEMO-P002706,DEMO-A0004084,Johnson Inc,Rheumatology,Endocrinology,2021-06-12,Specialist consultation
+DEMO-P002706,DEMO-A0004085,Johnson Inc,Cardiology,General Medicine,2021-06-23,Specialist consultation
+DEMO-P002714,DEMO-A0004098,Smith Inc,General Medicine,Pulmonology,2022-10-11,Specialist consultation
+DEMO-P002724,DEMO-A0004112,Ltd Smith,Rheumatology,Endocrinology,2020-07-23,Service availability
+DEMO-P002724,DEMO-A0004114,Johnson PLC,Rheumatology,Pulmonology,2020-12-27,Service availability
+DEMO-P002728,DEMO-A0004118,Ltd Smith,Pulmonology,Cardiology,2022-02-24,Step-down care
+DEMO-P002742,DEMO-A0004136,LLC Smith,Cardiology,Pulmonology,2021-05-15,Specialist consultation
+DEMO-P002746,DEMO-A0004142,Smith Ltd,Rheumatology,Cardiology,2019-07-11,Service availability
+DEMO-P002756,DEMO-A0004154,Ltd Smith,Pulmonology,Oncology,2022-08-19,Higher level of care
+DEMO-P002758,DEMO-A0004156,Smith Ltd,General Medicine,Oncology,2023-11-23,Higher level of care
+DEMO-P002758,DEMO-A0004157,LLC Smith,Pulmonology,Endocrinology,2024-02-21,Specialist consultation
+DEMO-P002761,DEMO-A0004160,LLC Smith,Rheumatology,Cardiology,2021-05-30,Higher level of care
+DEMO-P002761,DEMO-A0004161,Smith Group,Rheumatology,General Medicine,2021-10-07,Step-down care
+DEMO-P002766,DEMO-A0004167,Smith Inc,Oncology,Endocrinology,2023-12-30,Specialist consultation
+DEMO-P002767,DEMO-A0004168,Johnson Inc,Rheumatology,Cardiology,2022-05-28,Service availability
+DEMO-P002768,DEMO-A0004170,Smith Group,Cardiology,General Medicine,2023-03-09,Service availability
+DEMO-P002776,DEMO-A0004180,Johnson PLC,Pulmonology,General Medicine,2020-08-17,Service availability
+DEMO-P002779,DEMO-A0004186,Smith Inc,Endocrinology,Oncology,2019-08-11,Step-down care
+DEMO-P002782,DEMO-A0004191,Smith Ltd,Rheumatology,General Medicine,2023-11-11,Step-down care
+DEMO-P002785,DEMO-A0004195,Johnson Inc,Pulmonology,Rheumatology,2020-12-03,Higher level of care
+DEMO-P002786,DEMO-A0004197,Smith PLC,Endocrinology,Pulmonology,2023-07-06,Specialist consultation
+DEMO-P002791,DEMO-A0004204,Smith Inc,General Medicine,Oncology,2019-06-19,Step-down care
+DEMO-P002795,DEMO-A0004210,Smith Ltd,Endocrinology,Rheumatology,2023-10-17,Higher level of care
+DEMO-P002795,DEMO-A0004211,Smith Inc,General Medicine,Rheumatology,2024-01-11,Service availability
+DEMO-P002803,DEMO-A0004221,Johnson Inc,General Medicine,Oncology,2023-10-27,Service availability
+DEMO-P002806,DEMO-A0004224,Johnson Inc,General Medicine,Cardiology,2019-10-13,Specialist consultation
+DEMO-P002808,DEMO-A0004226,Johnson PLC,Endocrinology,Cardiology,2019-09-03,Specialist consultation
+DEMO-P002814,DEMO-A0004235,Smith Ltd,Oncology,Pulmonology,2023-11-24,Service availability
+DEMO-P002818,DEMO-A0004242,Smith Ltd,Pulmonology,Rheumatology,2019-08-04,Service availability
+DEMO-P002824,DEMO-A0004252,Ltd Smith,Rheumatology,Oncology,2024-03-01,Step-down care
+DEMO-P002828,DEMO-A0004259,Smith PLC,Cardiology,Pulmonology,2021-10-27,Service availability
+DEMO-P002837,DEMO-A0004271,Smith Ltd,Rheumatology,Oncology,2020-08-26,Step-down care
+DEMO-P002839,DEMO-A0004273,Johnson PLC,Endocrinology,General Medicine,2021-10-17,Higher level of care
+DEMO-P002842,DEMO-A0004279,Smith Inc,Endocrinology,Rheumatology,2023-12-22,Service availability
+DEMO-P002843,DEMO-A0004280,Smith Group,Oncology,Pulmonology,2022-04-28,Specialist consultation
+DEMO-P002847,DEMO-A0004289,Smith PLC,Rheumatology,Endocrinology,2021-02-02,Higher level of care
+DEMO-P002851,DEMO-A0004295,LLC Smith,General Medicine,Pulmonology,2022-01-14,Service availability
+DEMO-P002852,DEMO-A0004296,Ltd Smith,General Medicine,Rheumatology,2022-04-29,Service availability
+DEMO-P002854,DEMO-A0004299,Smith Ltd,Cardiology,Pulmonology,2021-08-24,Service availability
+DEMO-P002862,DEMO-A0004314,Smith Group,Pulmonology,Rheumatology,2023-05-11,Higher level of care
+DEMO-P002866,DEMO-A0004321,Johnson PLC,Oncology,Endocrinology,2024-01-31,Higher level of care
+DEMO-P002868,DEMO-A0004325,Smith Group,Cardiology,Pulmonology,2021-11-04,Specialist consultation
+DEMO-P002870,DEMO-A0004329,Smith Group,Oncology,Pulmonology,2024-03-07,Specialist consultation
+DEMO-P002874,DEMO-A0004335,LLC Smith,Cardiology,Rheumatology,2020-03-25,Specialist consultation
+DEMO-P002876,DEMO-A0004338,Johnson PLC,General Medicine,Cardiology,2019-09-21,Service availability
+DEMO-P002878,DEMO-A0004340,Johnson Inc,General Medicine,Rheumatology,2023-04-04,Step-down care
+DEMO-P002880,DEMO-A0004343,LLC Smith,Cardiology,Oncology,2020-12-23,Step-down care
+DEMO-P002886,DEMO-A0004353,Smith Ltd,Cardiology,Pulmonology,2024-03-11,Service availability
+DEMO-P002888,DEMO-A0004355,Johnson PLC,Endocrinology,Pulmonology,2023-01-05,Higher level of care
+DEMO-P002890,DEMO-A0004358,Smith PLC,Oncology,Pulmonology,2022-02-19,Higher level of care
+DEMO-P002904,DEMO-A0004378,LLC Smith,Endocrinology,Pulmonology,2022-10-19,Specialist consultation
+DEMO-P002908,DEMO-A0004384,Ltd Smith,Oncology,General Medicine,2023-07-31,Service availability
+DEMO-P002910,DEMO-A0004388,Johnson PLC,Cardiology,General Medicine,2023-01-03,Higher level of care
+DEMO-P002911,DEMO-A0004390,LLC Smith,Pulmonology,Oncology,2019-07-28,Step-down care
+DEMO-P002913,DEMO-A0004392,Smith Inc,Pulmonology,Oncology,2023-10-22,Service availability
+DEMO-P002914,DEMO-A0004395,Smith PLC,Cardiology,Endocrinology,2021-06-25,Specialist consultation
+DEMO-P002915,DEMO-A0004396,LLC Smith,Endocrinology,Pulmonology,2023-07-22,Higher level of care
+DEMO-P002916,DEMO-A0004398,Johnson PLC,General Medicine,Pulmonology,2020-10-22,Specialist consultation
+DEMO-P002918,DEMO-A0004402,Johnson PLC,Pulmonology,Cardiology,2020-01-03,Specialist consultation
+DEMO-P002919,DEMO-A0004405,Ltd Smith,Rheumatology,Endocrinology,2020-06-06,Higher level of care
+DEMO-P002925,DEMO-A0004414,Johnson PLC,Pulmonology,Rheumatology,2021-08-20,Service availability
+DEMO-P002925,DEMO-A0004415,Smith Inc,Endocrinology,Rheumatology,2021-12-27,Step-down care
+DEMO-P002932,DEMO-A0004425,Ltd Smith,General Medicine,Pulmonology,2022-07-02,Service availability
+DEMO-P002932,DEMO-A0004426,Johnson Inc,Oncology,General Medicine,2022-11-20,Specialist consultation
+DEMO-P002936,DEMO-A0004431,LLC Smith,Rheumatology,Oncology,2019-09-18,Higher level of care
+DEMO-P002940,DEMO-A0004436,Johnson PLC,Rheumatology,General Medicine,2020-09-20,Specialist consultation
+DEMO-P002941,DEMO-A0004437,Johnson Inc,Rheumatology,General Medicine,2021-10-13,Specialist consultation
+DEMO-P002943,DEMO-A0004440,Johnson Inc,Oncology,General Medicine,2023-09-22,Service availability
+DEMO-P002944,DEMO-A0004441,Smith Inc,General Medicine,Cardiology,2020-05-22,Higher level of care
+DEMO-P002951,DEMO-A0004449,Johnson Inc,General Medicine,Rheumatology,2020-02-11,Higher level of care
+DEMO-P002952,DEMO-A0004450,Ltd Smith,General Medicine,Cardiology,2019-10-26,Higher level of care
+DEMO-P002957,DEMO-A0004456,Smith Ltd,Cardiology,General Medicine,2021-12-14,Step-down care
+DEMO-P002959,DEMO-A0004460,Smith PLC,Endocrinology,General Medicine,2023-08-03,Specialist consultation
+DEMO-P002961,DEMO-A0004464,Smith PLC,Rheumatology,General Medicine,2020-02-06,Higher level of care
+DEMO-P002962,DEMO-A0004466,Smith PLC,Rheumatology,Pulmonology,2024-04-08,Higher level of care
+DEMO-P002965,DEMO-A0004471,Smith Ltd,Endocrinology,General Medicine,2020-01-11,Higher level of care
+DEMO-P002971,DEMO-A0004479,Johnson Inc,Rheumatology,Oncology,2022-02-17,Specialist consultation
+DEMO-P002981,DEMO-A0004495,Johnson PLC,Endocrinology,Oncology,2022-05-21,Service availability
+DEMO-P002988,DEMO-A0004505,Johnson Inc,Cardiology,General Medicine,2022-07-23,Service availability
+DEMO-P003000,DEMO-A0004522,Smith PLC,Cardiology,Pulmonology,2020-03-15,Specialist consultation
