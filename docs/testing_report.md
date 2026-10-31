@@ -37,3 +37,92 @@ The expected Tableau packaged workbook `MedTrack_DV.twbx` was not present in the
 2. Run the Streamlit app and execute T-01 through T-08 and T-10 through T-12 in a browser, recording observed results and evidence.
 3. Resolve the noted chart/filter scope differences or explicitly document them as intentional.
 4. Retest any changes and update each case's actual result and status.
+
+
+
+## Milestone 4 – Testing and Validation
+
+### 1. KPI Validation
+
+Independent Python validation was performed using
+hospital_cleaned.csv.
+
+Results:
+- Total admissions: 54,966 – PASS
+- Average length of stay: 15.50 days – PASS
+- Negative length-of-stay records: 0 – PASS
+- Department admissions total: 54,966 – PASS
+
+### 2. Healthcare Metrics Validation
+
+Supplementary datasets were independently inspected
+and validated.
+
+- Daily occupancy records: 87,696
+- Synthetic readmission records: 4,522
+- Synthetic transfer records: 936
+- Average synthetic occupancy: 69.88%
+- Synthetic readmission flags: 548
+- Synthetic flagged-record percentage: 12.12%
+
+Bed calculations, occupancy rates, duplicate checks,
+readmission flags and transfer relationships passed
+the implemented validation checks.
+
+### 3. Tableau Dashboard Testing
+
+Four dashboards were visually inspected:
+
+1. Hospital Overview
+2. Patient Flow
+3. Department Analytics
+4. Resource Utilization
+
+Hospital Overview:
+- Dashboard loading: Passed
+- Department filter: Passed
+- Date filter: Passed
+- Navigation: Passed
+
+Patient Flow:
+- Four expected charts visually verified.
+- Department and date filters are not provided.
+- Cross-chart filtering was not available.
+
+Department Analytics:
+- Four expected charts visually verified.
+- Department filter showed inconsistent behaviour
+  during testing and requires further verification.
+
+Resource Utilization:
+- Four expected charts visually verified.
+
+### 4. Patient Flow Validation
+
+Department-wise incoming transfer counts were compared
+with the supplementary transfer dataset.
+
+All six department counts matched, with 936 total
+transfers.
+
+### 5. Pending Issues
+
+The synthetic readmission KPI differs between Python
+and Tableau (12.12% versus 36.01%).
+
+This discrepancy requires investigation before the
+readmission KPI can be marked accurate.
+
+Department Analytics filter behaviour also requires
+final verification.
+
+### 6. Testing Conclusion
+
+Core KPI calculations and supplementary dataset
+consistency checks passed.
+
+All four dashboards were visually inspected.
+
+The project has completed substantial testing, but
+final QA closure remains pending until the outstanding
+issues are investigated and documented.
