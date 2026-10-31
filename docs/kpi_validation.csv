@@ -1,0 +1,26 @@
+check,status,script_value,independent_value
+Total admissions,PASS,54966.0,54966.0
+Avg length of stay,PASS,15.5,15.4993
+Readmission rate %,PASS,0.082,0.0819
+Discharges,PASS,54438.0,54438.0
+Occupancy %,PASS,77.73,77.7298
+Peak bed utilization %,PASS,92.0,92.0
+Monthly row count,PASS,,"(script 59, independent 59)"
+No partial months,PASS,,
+Monthly months match,PASS,,
+Monthly admissions (largest gap),PASS,0,0.0
+Monthly avg_los_days (largest gap),PASS,0.00497695852534541,0.0
+Monthly readmission_pct (largest gap),PASS,0.0004839424141749593,0.0
+Monthly occupancy_pct (largest gap),PASS,0.004838709677429165,0.0
+Department names match,PASS,,"(independent 6, script 6)"
+Admissions sum,PASS,54966,54966.0
+Admissions (largest gap),PASS,0,0.0
+Avg LOS (largest gap),PASS,0.004230852679539154,0.0
+Readmission % (largest gap),PASS,0.003505627800240413,0.0
+Region names match,PASS,,"(independent 5, script 5)"
+Admissions sum,PASS,54966,54966.0
+Admissions (largest gap),PASS,0,0.0
+Avg LOS (largest gap),PASS,0.00355716878402923,0.0
+Readmission % (largest gap),PASS,0.004593522192488694,0.0
+Every department has beds and doctors (names match resources file),PASS,,
+Efficiency scores within 0-100,PASS,,
