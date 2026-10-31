@@ -44,7 +44,8 @@ for col in [
     "demo_equipment_usage_hours",
     "demo_transfer_count"
 ]:
-    df[col] = pd.to_numeric(df[col], errors="coerce")
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
 
 df = df.dropna(subset=["date_of_admission"]).copy()
 df["year"] = df["date_of_admission"].dt.year
@@ -111,6 +112,7 @@ monthly_admissions = (
     .sort_values("month")
 )
 
+
 # Helper function to prevent crowded monthly labels
 def format_month_axis(fig):
     fig.update_xaxes(
@@ -150,7 +152,7 @@ if page == "Hospital Overview":
         "Resource and department demo values are simulated."
     )
 
-    # Monthly admission trend: only months with records
+    # Monthly admission trend
     fig = px.line(
         monthly_admissions,
         x="month",
@@ -170,6 +172,7 @@ if page == "Hospital Overview":
     c1, c2 = st.columns(2)
 
     with c1:
+        # CHANGED: Admissions by Type is now a regular pie chart
         type_data = (
             filtered.groupby("admission_type")
             .size()
@@ -180,12 +183,12 @@ if page == "Hospital Overview":
             type_data,
             names="admission_type",
             values="Admissions",
-            hole=0.45,
             title="Admissions by Type"
         )
         st.plotly_chart(fig, use_container_width=True)
 
     with c2:
+        # Admissions by Medical Condition remains a doughnut chart
         condition_data = (
             filtered.groupby("medical_condition")
             .size()
@@ -243,7 +246,7 @@ elif page == "Patient Flow":
         .rename("Discharges")
     )
 
-    # Combine the two series and keep only months with records
+    # Combine the series and keep only months with records
     flow = pd.concat([admissions, discharges], axis=1)
     flow.index.name = "Month"
     flow = flow.dropna(how="all").fillna(0).reset_index()
@@ -290,21 +293,42 @@ elif page == "Patient Flow":
         st.plotly_chart(fig, use_container_width=True)
 
     with c2:
+        # Daily Admission Pattern - Line Chart
         daily = (
             filtered.groupby(
-                filtered["date_of_admission"].dt.date
+                filtered["date_of_admission"].dt.floor("D")
             )
             .size()
             .reset_index(name="Admissions")
         )
-        daily.columns = ["Admission Date", "Admissions"]
 
-        fig = px.scatter(
+        daily.columns = ["Admission Date", "Admissions"]
+        daily = daily.sort_values("Admission Date")
+
+        fig = px.line(
             daily,
             x="Admission Date",
             y="Admissions",
-            title="Daily Admission Pattern"
+            markers=True,
+            title="Daily Admission Pattern",
+            labels={
+                "Admission Date": "Admission Date",
+                "Admissions": "Number of Admissions"
+            }
         )
+
+        fig.update_layout(
+            xaxis_title="Admission Date",
+            yaxis_title="Number of Admissions",
+            hovermode="x unified"
+        )
+
+        fig.update_xaxes(
+            tickformat="%d %b %Y",
+            nticks=8,
+            tickangle=-45
+        )
+
         st.plotly_chart(fig, use_container_width=True)
 
     # Demonstration transfer data
@@ -363,17 +387,42 @@ elif page == "Department Analytics":
         st.plotly_chart(fig, use_container_width=True)
 
     with c2:
-        fig = px.box(
-            filtered,
+        # Average length of stay by demo department - Bar Chart
+        department_stay = (
+            filtered.groupby("demo_department")
+            .agg(
+                Average_Stay=(
+                    "length_of_stay_days_for_kpi", "mean"
+                )
+            )
+            .reset_index()
+            .sort_values("Average_Stay", ascending=False)
+        )
+
+        fig = px.bar(
+            department_stay,
             x="demo_department",
-            y="length_of_stay_days_for_kpi",
+            y="Average_Stay",
             color="demo_department",
-            title="Length of Stay by Demo Department",
+            title="Average Length of Stay by Demo Department",
             labels={
                 "demo_department": "Demo Department",
-                "length_of_stay_days_for_kpi": "Stay (Days)"
-            }
+                "Average_Stay": "Average Length of Stay (Days)"
+            },
+            text="Average_Stay"
         )
+
+        fig.update_traces(
+            texttemplate="%{text:.1f}",
+            textposition="outside"
+        )
+
+        fig.update_layout(
+            xaxis_title="Demo Department",
+            yaxis_title="Average Length of Stay (Days)",
+            showlegend=False
+        )
+
         st.plotly_chart(fig, use_container_width=True)
 
     fig = px.scatter(
