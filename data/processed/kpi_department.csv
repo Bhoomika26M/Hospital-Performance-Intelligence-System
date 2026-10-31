@@ -1,0 +1,7 @@
+department,admissions,avg_los,readmit_rate,efficiency_score,beds,doctors,admissions_per_bed,admissions_per_doctor
+Endocrinology,9216,15.43,0.04,100.0,80,10,115.2,921.6
+Cardiology,9151,15.44,0.08,73.4,100,14,91.51,653.64
+General Medicine,9146,15.45,0.08,71.1,120,18,76.22,508.11
+Oncology,9140,15.5,0.09,51.8,110,16,83.09,571.25
+Orthopedics,9218,15.5,0.11,35.1,90,12,102.42,768.17
+Pulmonology,9095,15.68,0.1,7.3,100,12,90.95,757.92

@@ -1,0 +1,6 @@
+region,admissions,avg_los,readmit_rate
+South,11080,15.42,0.08
+East,11063,15.54,0.1
+Central,11020,15.61,0.04
+West,10966,15.37,0.13
+North,10837,15.56,0.06
