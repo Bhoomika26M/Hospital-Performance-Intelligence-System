@@ -31,6 +31,75 @@ def load_data():
     return patients, kpis, departments
 
 
+@st.cache_data
+def load_occupancy_metrics():
+    occupancy_file = (
+        BASE_DIR / "milestone3_data" / "daily_occupancy.csv"
+    )
+    occupancy = pd.read_csv(occupancy_file)
+    required_columns = ["occupied_beds", "total_beds", "occupancy_rate"]
+    missing_columns = [
+        column for column in required_columns
+        if column not in occupancy.columns
+    ]
+    if missing_columns:
+        raise ValueError(
+            "daily_occupancy.csv is missing required columns: "
+            + ", ".join(missing_columns)
+        )
+
+    metrics = occupancy[required_columns].apply(
+        pd.to_numeric, errors="coerce"
+    )
+    if metrics.empty or metrics.isna().any().any():
+        raise ValueError(
+            "daily_occupancy.csv contains no records or invalid metric values."
+        )
+    if (
+        (metrics["total_beds"] <= 0).any()
+        or (metrics["occupied_beds"] < 0).any()
+        or (metrics["occupied_beds"] > metrics["total_beds"]).any()
+        or not metrics["occupancy_rate"].between(0, 1).all()
+    ):
+        raise ValueError(
+            "daily_occupancy.csv contains out-of-range occupancy values."
+        )
+
+    weighted_occupancy_rate = (
+        metrics["occupied_beds"].sum() / metrics["total_beds"].sum()
+    )
+    average_daily_occupancy_rate = metrics["occupancy_rate"].mean()
+    return weighted_occupancy_rate, average_daily_occupancy_rate
+
+
+@st.cache_data
+def load_readmission_rate():
+    readmissions_file = (
+        BASE_DIR / "milestone3_data" / "synthetic_patient_readmissions.csv"
+    )
+    readmissions = pd.read_csv(readmissions_file)
+    if "readmission_flag" not in readmissions.columns:
+        raise ValueError(
+            "synthetic_patient_readmissions.csv is missing the "
+            "readmission_flag column."
+        )
+
+    readmission_flags = pd.to_numeric(
+        readmissions["readmission_flag"], errors="coerce"
+    )
+    if (
+        readmission_flags.empty
+        or readmission_flags.isna().any()
+        or not readmission_flags.isin([0, 1]).all()
+    ):
+        raise ValueError(
+            "synthetic_patient_readmissions.csv contains no records or "
+            "invalid readmission flags."
+        )
+
+    return readmission_flags.mean()
+
+
 try:
     patients, kpis, departments = load_data()
 except FileNotFoundError as error:
@@ -40,6 +109,33 @@ except FileNotFoundError as error:
         "and hospital_department_analytics.csv are in the same folder as app.py."
     )
     st.stop()
+
+try:
+    weighted_occupancy_rate, average_daily_occupancy_rate = (
+        load_occupancy_metrics()
+    )
+    occupancy_metrics_error = None
+except (
+    FileNotFoundError,
+    pd.errors.EmptyDataError,
+    pd.errors.ParserError,
+    ValueError
+) as error:
+    weighted_occupancy_rate = None
+    average_daily_occupancy_rate = None
+    occupancy_metrics_error = str(error)
+
+try:
+    synthetic_readmission_rate = load_readmission_rate()
+    readmission_metrics_error = None
+except (
+    FileNotFoundError,
+    pd.errors.EmptyDataError,
+    pd.errors.ParserError,
+    ValueError
+) as error:
+    synthetic_readmission_rate = None
+    readmission_metrics_error = str(error)
 
 # ==========================================
 # 3. Prepare Data
@@ -379,24 +475,35 @@ st.divider()
 
 st.header("Resource Utilization")
 
-st.warning(
-    "Occupancy rate and bed utilization cannot be calculated from the "
-    "current dataset because bed capacity and occupied-bed records "
-    "are not available."
-)
-
 resource_col1, resource_col2 = st.columns(2)
 
-with resource_col1:
-    st.metric("Occupancy Rate", "Unavailable")
+if occupancy_metrics_error is None:
+    st.caption(
+        "Synthetic demonstration metrics; these values are not actual "
+        "hospital operational records."
+    )
+    with resource_col1:
+        st.metric(
+            "Weighted Bed Occupancy Rate",
+            f"{weighted_occupancy_rate:.2%}"
+        )
 
-with resource_col2:
-    st.metric("Bed Utilization Rate", "Unavailable")
+    with resource_col2:
+        st.metric(
+            "Average Daily Occupancy Rate",
+            f"{average_daily_occupancy_rate:.2%}"
+        )
+else:
+    st.warning(
+        "Occupancy rate and bed utilization are unavailable because the "
+        "synthetic occupancy data could not be loaded or calculated."
+    )
+    st.caption(f"Details: {occupancy_metrics_error}")
+    with resource_col1:
+        st.metric("Occupancy Rate", "Unavailable")
 
-st.info(
-    "To calculate these metrics accurately, obtain hospital bed capacity, "
-    "occupied-bed counts, and time-based bed availability records."
-)
+    with resource_col2:
+        st.metric("Bed Utilization Rate", "Unavailable")
 
 st.divider()
 
@@ -406,10 +513,21 @@ st.divider()
 
 st.header("Readmission Analytics")
 
-st.warning(
-    "Readmission rate is unavailable because this dataset does not provide "
-    "reliable patient identifiers and longitudinal visit history."
-)
+if readmission_metrics_error is None:
+    st.caption(
+        "Synthetic demonstration metric; records are not linked to the "
+        "original hospital dataset."
+    )
+    st.metric(
+        "Overall Synthetic Readmission Rate",
+        f"{synthetic_readmission_rate:.2%}"
+    )
+else:
+    st.warning(
+        "Readmission rate is unavailable because the synthetic readmission "
+        "data could not be loaded or calculated."
+    )
+    st.caption(f"Details: {readmission_metrics_error}")
 
 st.divider()
 
