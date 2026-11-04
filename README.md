@@ -725,7 +725,7 @@ The interactive HTML5 companion shell mirrors this exact design hierarchy and en
 
 * **Lead Architect & Developer:** **Ananya Biju**
 * **Role:** Healthcare BI Architect, Data Engineer & Full-Stack Analytics Developer
-* **Contact & Portfolio:** GitHub [@ananyabiju]([(https://github.com/itsananyaaa)])
+* **Contact & Portfolio:** GitHub [@itsananyaaa]([(https://github.com/itsananyaaa)])
 
 ---
 
