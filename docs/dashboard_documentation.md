@@ -2,9 +2,22 @@
 
 ## Scope and implementation status
 
-The repository contains four Streamlit page scripts and an app-level navigation setup. This document describes the visualizations and controls visible in those scripts. It does **not** assert that the Tableau dashboards have been built: the expected packaged workbook, `MedTrack_DV.twbx`, was not found in the project. The supplied [dashboard reference PDF](<DV_Hospital Operations & Patient Analytics Dashboard (1).pdf>) is present, but workbook implementation cannot be checked without the workbook.
+The repository contains four Streamlit page scripts and an app-level navigation setup. Streamlit is the required dashboard implementation. `MedTrack_DV.twbx` is an optional legacy Tableau workbook; it was not modified or runtime-tested as part of this KPI update. The supplied [dashboard reference PDF](<DV_Hospital Operations & Patient Analytics Dashboard (1).pdf>) is a design reference.
 
-The current pages read original/project-prepared CSVs. They do not load `milestone3_data/`; the synthetic occupancy, readmission, and transfer records therefore do not power the current prototype.
+The pages load original/project-prepared patient data and relevant `milestone3_data/` CSVs separately. Synthetic occupancy, readmission, and transfer records are demonstration data and are not joined to original patient records.
+
+## Standard synthetic KPI definitions
+
+The following full-file reference values are from the currently available supplementary CSVs. Dashboard values recalculate for their selected cohorts.
+
+| KPI | Formula and denominator | Full-file reference |
+|---|---|---:|
+| Weighted Bed Occupancy Rate | `SUM(occupied_beds) / SUM(total_beds) * 100`; denominator is total beds summed across observations. | 4,990,126 / 7,141,743 = **69.87%** |
+| Average Daily Occupancy Rate | `AVERAGE(occupancy_rate) * 100`; denominator is non-null daily occupancy-rate observations. | 87,696 observations = **69.88%** |
+| Overall Synthetic Readmission Rate | `SUM(readmission_flag) / total synthetic admission records * 100`. | 548 / 4,522 = **12.12%** |
+| Readmission Percentage Among Records with Previous Admission | Sum of flags for non-null `previous_admission_date` records, divided by that subset's record count, times 100. | 548 / 1,522 = **36.01%** |
+
+The readmission measures have the same flagged-record numerator (548) but distinct denominators. They are not competing calculations. The original patient dataset has no reliable longitudinal ID/history, so these synthetic measures are not original-patient readmission rates. Average Daily Occupancy Rate is a descriptive mean, separate from the primary weighted occupancy KPI.
 
 ## Navigation
 
@@ -20,9 +33,9 @@ This navigation is implemented in Streamlit. No Tableau navigation or cross-dash
 
 ## Hospital Overview
 
-**Data:** `hospital_cleaned.csv`.
+**Data:** `hospital_cleaned.csv`; synthetic occupancy and readmission files are loaded separately.
 
-**KPIs:** total admission records, average patient age, average length of stay, and average billing. In the App page, the cards are total admissions, average stay, average billing, and department count.
+**KPIs:** total admission records, average patient age, average length of stay, and average billing from original patient data; weighted bed occupancy and overall synthetic readmission rate from their respective synthetic datasets. The occupancy and readmission cards identify the measures as synthetic.
 
 **Charts and tables:**
 
@@ -35,13 +48,13 @@ This navigation is implemented in Streamlit. No Tableau navigation or cross-dash
 
 **Filters:** the standalone page provides department and medical-condition multiselects. The App page also provides admission type and admission-date range filters.
 
-**Interactions:** Streamlit multiselect/date widgets filter the page's main dataframe; the overview table and CSV download use the resulting filtered data. The donut chart is built from the unfiltered dataframe in the standalone page, so it does not follow the sidebar selections. Runtime behavior has not been tested.
+**Interactions:** Streamlit multiselect/date widgets filter the page's main dataframe; the overview table and CSV download use the resulting filtered data. The donut chart is built from the unfiltered dataframe in the standalone page, so it does not follow the sidebar selections. AppTest rendered this page without exceptions; browser interactions were not tested.
 
 ## Patient Flow
 
-**Data:** `hospital_cleaned.csv`.
+**Data:** `hospital_cleaned.csv` plus separate synthetic occupancy and transfer datasets.
 
-**KPIs:** admission-record count, average stay, count of valid admission dates, and count of valid discharge dates.
+**KPIs:** admission-record count, average stay, count of valid admission dates, and count of valid discharge dates from the original dataset; peak occupancy is calculated from synthetic occupancy records.
 
 **Charts and tables:**
 
@@ -54,11 +67,11 @@ This navigation is implemented in Streamlit. No Tableau navigation or cross-dash
 
 **Filters:** admission type and medical condition multiselects.
 
-**Interactions:** the primary KPIs, monthly charts, frequency chart, table, and download use the filtered dataframe. The Plotly histogram and box plot use the unfiltered dataframe, so they do not follow the sidebar selections. There is no standalone date-range or hospital filter in this page. Runtime behavior has not been tested.
+**Interactions:** the primary KPIs, monthly charts, frequency chart, table, and download use the filtered dataframe. The Plotly histogram and box plot use the unfiltered dataframe, so they do not follow the sidebar selections. There is no standalone date-range or hospital filter in this page. AppTest rendered this page without exceptions; browser interactions were not tested.
 
 ## Department Analytics
 
-**Data:** `hospital_cleaned.csv` and `hospital_department_analytics.csv`.
+**Data:** `hospital_cleaned.csv`, `hospital_department_analytics.csv`, and separate synthetic occupancy/readmission datasets.
 
 **KPIs:** admission-record count for the selected departments, number of selected departments, average length of stay, and average billing.
 
@@ -74,13 +87,15 @@ This navigation is implemented in Streamlit. No Tableau navigation or cross-dash
 
 **Filters:** department multiselect.
 
-**Interactions:** the page derives displayed admission, stay, billing, workload, detailed-summary, and scatter-plot values from the selected departments. The efficiency scores are loaded from a precomputed summary and are not recalculated from interactive selections. The listed-doctor ratio is not staff allocation or a measured clinical workload. Runtime behavior has not been tested.
+**Interactions:** the page derives displayed admission, stay, billing, workload, detailed-summary, and scatter-plot values from the selected departments. The efficiency scores are loaded from a precomputed summary and are not recalculated from interactive selections. The listed-doctor ratio is not staff allocation or a measured clinical workload. AppTest rendered this page without exceptions; browser interactions were not tested.
+
+Department readmission percentages use flagged synthetic admissions divided by all synthetic admissions in the corresponding selected cohort. Occupancy by department/month is weighted from summed occupied beds divided by summed total beds.
 
 ## Resource Utilization
 
-**Data:** `hospital_cleaned.csv` and `hospital_department_analytics.csv`.
+**Data:** separate synthetic occupancy, staff-allocation, and equipment-utilization datasets, with the original patient dataset used only for its source-patient section.
 
-**KPIs:** admission-record count, unique listed-doctor count, average stay, and average billing.
+**KPIs:** total, occupied, and available bed observations and **Weighted Bed Occupancy Rate** (`SUM(occupied_beds) / SUM(total_beds) * 100`), plus staff and equipment metrics from their respective synthetic datasets. Occupancy, staff, and equipment values are explicitly synthetic demonstrations.
 
 **Charts and tables:**
 
@@ -88,17 +103,19 @@ This navigation is implemented in Streamlit. No Tableau navigation or cross-dash
 - Admissions per listed doctor by department, with a supporting table.
 - Average length of stay by department bar chart.
 - Resource summary table and CSV download.
-- Bed occupancy and bed-utilization cards are explicitly displayed as **Unavailable** in the current page.
+- Bed availability and occupancy comparisons are derived from `daily_occupancy.csv`; summed counts across dates represent repeated observations (bed-days), not unique capacity.
+- Staff allocation and equipment utilization are loaded from their separate synthetic demonstration CSVs.
 
 **Filters:** department multiselect.
 
-**Interactions:** workload summaries, stay summary, and download are based on selected departments. The page does not load `daily_occupancy.csv`, so the synthetic occupancy data does not currently change its unavailable status. The unique listed-doctor count and admissions-per-listed-doctor ratio are descriptive counts, not staff allocation, staffing levels, or time-based workload. No equipment inventory or equipment utilization measurements are available. Runtime behavior has not been tested.
+**Interactions:** date, hospital, and department filters apply to the relevant synthetic resource datasets and original patient data separately. The unique listed-doctor count and admissions-per-listed-doctor ratio are descriptive counts, not staff allocation, staffing levels, or time-based workload. Resource observations do not represent actual hospital operations.
 
 ## Known gaps and interpretation
 
 - The four Streamlit page scripts are not evidence of four completed Tableau dashboards; workbook presence and Tableau interactions remain pending.
-- The supplemental datasets are standalone synthetic demonstration data and are not integrated into the current app.
+- The supplemental datasets are integrated into relevant Streamlit pages as synthetic demonstrations and remain separate from original patient records.
 - The original/project-prepared patient table lacks a stable longitudinal patient ID; readmission rate is unavailable for that source.
-- Bed occupancy and utilization cannot be measured from the original patient table. Synthetic bed data exists separately but is not used by the app.
-- No staff allocation, staffing hours, equipment inventory, equipment use, or time-based equipment utilization measurements are available.
+- Bed occupancy and utilization cannot be measured from the original patient table; synthetic occupancy is available separately in the app.
+- Synthetic staff and equipment data is available for demonstration; no actual staff allocation, equipment inventory, or equipment utilization is established.
+- The legacy Tableau workbook is optional and its calculations/interactions are not certified by this Streamlit documentation. Its older readmission worksheets may use the previous-admission subset denominator (36.01%), distinct from the overall 12.12% rate.
 - Some Plotly charts intentionally use the unfiltered page dataframe, as noted in the relevant dashboard sections.

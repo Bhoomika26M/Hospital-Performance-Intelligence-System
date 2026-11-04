@@ -6,6 +6,19 @@
 
 The original source includes person names and date/billing/demographic fields, but it does not include a stable patient ID suitable for reliable longitudinal linkage. Hospital and doctor values are names/labels in the source, not validated institutional identifiers or staff rosters. The files do not provide measured operational bed capacity/occupancy, staff allocation or hours, equipment inventory/use, or time-based equipment utilization. Derived counts and ratios cannot fill those gaps.
 
+## Standard synthetic KPI definitions
+
+These are full-file reference values, calculated from separate synthetic datasets. They are not original-patient KPIs.
+
+| KPI | Formula and denominator | Verified value |
+|---|---|---:|
+| Weighted Bed Occupancy Rate | `SUM(occupied_beds) / SUM(total_beds) * 100`; denominator: 7,141,743 total-bed observations. | 4,990,126 / 7,141,743 = **69.87%** |
+| Average Daily Occupancy Rate | `AVERAGE(occupancy_rate) * 100`; denominator: 87,696 non-null daily rates. | **69.88%** |
+| Overall Synthetic Readmission Rate | `SUM(readmission_flag) / total synthetic admission records * 100`; denominator: 4,522 records. | 548 / 4,522 = **12.12%** |
+| Readmission Percentage Among Records with Previous Admission | Sum of flags only for non-null `previous_admission_date` rows, divided by those rows, times 100; denominator: 1,522 records. | 548 / 1,522 = **36.01%** |
+
+The two readmission percentages use different denominators and are distinct metrics. Occupancy/readmission data is synthetic, stays separate from original patient data, and is not clinically validated.
+
 ## Original source: `healthcare_dataset.csv`
 
 The CSV has 15 source fields. Values are one record per source admission row; date values are stored as date-like text in the CSV. The table below describes the source fields and their observed representations.
@@ -83,9 +96,9 @@ Purpose: demonstrate daily occupancy charts. Synthetic rows cover 2019-05-08 thr
 | `total_beds` | Demonstration capacity assigned to the hospital/department pair. | Integer | Synthetic |
 | `occupied_beds` | Demonstration occupied-bed count for the snapshot. | Integer | Synthetic |
 | `available_beds` | Total beds minus occupied beds. | Integer | Synthetic, calculated |
-| `occupancy_rate` | Occupied beds divided by total beds; ratio from 0 to 1, rounded to four decimals. | Float | Synthetic, calculated |
+| `occupancy_rate` | Daily occupied beds divided by total beds; ratio from 0 to 1, rounded to four decimals. Used in the separate Average Daily Occupancy Rate; weighted cohort occupancy uses the sums of occupied and total beds. | Float | Synthetic, calculated |
 
-This is a generated snapshot series, not verified or measured bed capacity; it does not establish real occupancy or time-based bed utilization. The Streamlit Resource Utilization page does not currently load it.
+This is a generated snapshot series, not verified or measured bed capacity; it does not establish real occupancy or time-based bed utilization. The Streamlit Hospital Overview, Patient Flow, Department Analytics, and Resource Utilization pages load synthetic occupancy data separately from original patient data.
 
 ### `milestone3_data/synthetic_patient_readmissions.csv`
 
@@ -101,7 +114,7 @@ Purpose: demonstrate repeat-admission analysis. Synthetic IDs use a `DEMO-` pref
 | `department` | Reused department label. | Text | Label reused from source; synthetic row |
 | `previous_admission_date` | Previous synthetic episode's admission date; blank for first episode. | Nullable date text | Synthetic |
 | `days_since_previous_discharge` | Calendar-day gap from prior synthetic discharge to this admission; blank for first episode. | Nullable integer | Synthetic, calculated |
-| `readmission_flag` | 1 if gap is 1-30 calendar days inclusive; otherwise 0, including first episode. | Integer (0/1) | Synthetic, calculated |
+| `readmission_flag` | 1 if gap is 1-30 calendar days inclusive; otherwise 0, including first episode. Overall rate denominator is all 4,522 records; the previous-admission subset denominator is the 1,522 rows with non-null `previous_admission_date`. | Integer (0/1) | Synthetic, calculated |
 
 The rule is a simple all-cause demonstration definition, not an actual or clinically validated readmission measure. The data does not represent original patients.
 

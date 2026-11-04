@@ -14,6 +14,10 @@
 
 | Test | Expected Result | Actual Result | Status |
 |---|---|---|---|
+| Weighted Bed Occupancy Rate | 69.87% = 4,990,126 / 7,141,743 | 69.87% | PASS |
+| Average Daily Occupancy Rate | 69.88% across 87,696 non-null rates | 69.88% | PASS |
+| Overall Synthetic Readmission Rate | 12.12% = 548 / 4,522 records | 12.12% | PASS |
+| Readmission Percentage Among Records with Previous Admission | 36.01% = 548 / 1,522 records with a non-null previous-admission date | 36.01% | PASS |
 | Occupancy missing values | 0 | 0 | PASS |
 | Bed capacity calculation | Correct | Correct | PASS |
 | Occupancy rate calculation | Correct | Correct | PASS |
@@ -27,29 +31,24 @@
 
 ## 3. Dashboard Testing
 
-| Dashboard | Test | Status |
-|---|---|---|
-| Hospital Overview | Dashboard loading | PASS - Visual |
-| Hospital Overview | Department filter | PASS |
-| Hospital Overview | Date filter | PASS |
-| Hospital Overview | Navigation | PASS |
-| Patient Flow | Dashboard loading | PASS - Visual |
-| Patient Flow | Four charts visible | PASS - Visual |
-| Patient Flow | Filters | N/A |
-| Patient Flow | Cross-chart filtering | Not available |
-| Department Analytics | Dashboard loading | PASS - Visual |
-| Department Analytics | Four charts visible | PASS - Visual |
-| Department Analytics | Department filter | PARTIAL - Further testing required |
-| Resource Utilization | Dashboard loading | PASS - Visual |
-| Resource Utilization | Four charts visible | PASS - Visual |
+| Dashboard | AppTest result |
+|---|---|
+| Hospital Overview | PASS — 7 Plotly charts, 5 metrics, 0 exceptions |
+| Patient Flow | PASS — 9 Plotly charts, 5 metrics, 0 exceptions |
+| Department Analytics | PASS — 10 Plotly charts, 9 metrics, 0 exceptions |
+| Resource Utilization | PASS — 19 Plotly charts, 18 metrics, 0 exceptions |
 
-## 4. KPI Accuracy Issue
+These are AppTest render results only; no browser/visual test is claimed here.
 
-Tableau displays a synthetic readmission KPI of 36.01%, whereas Python validation gives 12.12%.
+## 4. Readmission and occupancy interpretation
 
-Status: PENDING INVESTIGATION.
-
-Do not consider this KPI validated until the calculation and denominator are reconciled.
+- **Overall Synthetic Readmission Rate:** flagged records / all synthetic admission records = 548 / 4,522 = 12.12%.
+- **Readmission Percentage Among Records with Previous Admission:** flagged records with a previous admission date / records with a previous admission date = 548 / 1,522 = 36.01%.
+- The 12.12% and 36.01% figures use different denominators and are distinct metrics, not competing calculations.
+- **Weighted Bed Occupancy Rate:** total occupied beds / total beds = 4,990,126 / 7,141,743 = 69.87%.
+- **Average Daily Occupancy Rate:** mean of non-null daily occupancy rates = 69.88%; this differs from weighted occupancy.
+- These values are full-file synthetic references. Filtered dashboard cohorts can have different values. Synthetic records are not joined to source patient records.
+- `MedTrack_DV.twbx` is an optional legacy Tableau workbook and is not part of required Streamlit validation. Its historic denominator discrepancy is not a Streamlit KPI defect.
 
 ## 5. Data Limitations
 
@@ -58,4 +57,3 @@ Do not consider this KPI validated until the calculation and denominator are rec
 - Transfer data is synthetic.
 - Staff and equipment utilization are not directly measured.
 - Synthetic metrics must not be represented as actual hospital performance.
-
