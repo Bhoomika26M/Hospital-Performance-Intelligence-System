@@ -1,0 +1,123 @@
+{
+  "report_id": "DQR-AEGIS-2026-001",
+  "generated_at": "2026-11-04T06:51:20.893509+00:00",
+  "elapsed_execution_seconds": 31.79,
+  "input_records": 101766,
+  "input_columns": 50,
+  "output_records": 101766,
+  "output_columns": 84,
+  "duplicates_removed": 0,
+  "records_dropped": 0,
+  "unique_patients": 71518,
+  "final_overall_completeness_pct": 96.73,
+  "total_admissions": 101766,
+  "total_discharges": 101766,
+  "average_los_days": 4.4,
+  "median_los_days": 4.0,
+  "readmission_rate_30d_pct": 11.34,
+  "unadjusted_readmission_rate_pct": 11.16,
+  "total_departments": 15,
+  "total_patient_days": 447362,
+  "in_hospital_mortality_count": 1652,
+  "readmission_eligible_count": 100114,
+  "outlier_metrics": {
+    "time_in_hospital": {
+      "q1": 2.0,
+      "q3": 6.0,
+      "iqr": 4.0,
+      "lower_threshold": 0.0,
+      "upper_threshold": 12.0,
+      "outlier_count": 2252,
+      "outlier_percentage": 2.21,
+      "action": "Flagged with indicator column; zero rows removed (preserves acute variance)"
+    },
+    "num_lab_procedures": {
+      "q1": 31.0,
+      "q3": 57.0,
+      "iqr": 26.0,
+      "lower_threshold": 0.0,
+      "upper_threshold": 96.0,
+      "outlier_count": 143,
+      "outlier_percentage": 0.14,
+      "action": "Flagged with indicator column; zero rows removed (preserves acute variance)"
+    },
+    "num_procedures": {
+      "q1": 0.0,
+      "q3": 2.0,
+      "iqr": 2.0,
+      "lower_threshold": 0.0,
+      "upper_threshold": 5.0,
+      "outlier_count": 4954,
+      "outlier_percentage": 4.87,
+      "action": "Flagged with indicator column; zero rows removed (preserves acute variance)"
+    },
+    "num_medications": {
+      "q1": 10.0,
+      "q3": 20.0,
+      "iqr": 10.0,
+      "lower_threshold": 0.0,
+      "upper_threshold": 35.0,
+      "outlier_count": 2557,
+      "outlier_percentage": 2.51,
+      "action": "Flagged with indicator column; zero rows removed (preserves acute variance)"
+    },
+    "number_diagnoses": {
+      "q1": 6.0,
+      "q3": 9.0,
+      "iqr": 3.0,
+      "lower_threshold": 1.5,
+      "upper_threshold": 13.5,
+      "outlier_count": 281,
+      "outlier_percentage": 0.28,
+      "action": "Flagged with indicator column; zero rows removed (preserves acute variance)"
+    }
+  },
+  "missing_handling_audit": {
+    "medical_specialty": {
+      "action": "Flagged and mapped to 'General Inpatient / Unspecified'",
+      "count_treated": 49949,
+      "flag_column": "is_specialty_unspecified"
+    },
+    "race": {
+      "action": "Categorized as 'Unknown / Not Reported'",
+      "count_treated": 2273,
+      "flag_column": "is_race_unreported"
+    },
+    "gender": {
+      "action": "Standardized rare ambiguous values to 'Not Specified'",
+      "count_treated": 3,
+      "flag_column": null
+    },
+    "payer_code": {
+      "action": "Categorized as 'Not Disclosed'",
+      "count_treated": 40256,
+      "flag_column": null
+    },
+    "diag_1": {
+      "action": "Imputed to placeholder diagnosis code '000.0' (Uncoded)",
+      "count_treated": 21,
+      "flag_column": null
+    },
+    "diag_2": {
+      "action": "Imputed to placeholder diagnosis code '000.0' (Uncoded)",
+      "count_treated": 358,
+      "flag_column": null
+    },
+    "diag_3": {
+      "action": "Imputed to placeholder diagnosis code '000.0' (Uncoded)",
+      "count_treated": 1423,
+      "flag_column": null
+    },
+    "weight": {
+      "action": "Preserved sparse status with indicator flag 'has_recorded_weight'",
+      "count_treated": 98569,
+      "flag_column": "has_recorded_weight"
+    }
+  },
+  "targets_achieved": {
+    "completeness_above_95_pct": true,
+    "zero_duplicate_encounters": true,
+    "zero_unexplained_dropped_rows": true,
+    "consistent_department_mapping": true
+  }
+}

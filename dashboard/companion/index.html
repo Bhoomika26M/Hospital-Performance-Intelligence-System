@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis.dv – Hospital Operations & Patient Analytics Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/branding/aegis_logo.svg">
+  <style>
+    :root {
+      --bg-canvas: #080808;
+      --bg-rail: #121214;
+      --bg-card: #141416;
+      --bg-card-hover: #1A1A1E;
+      --bg-card-subtle: #202024;
+      --text-main: #F5F5F7;
+      --text-muted: #8E8E93;
+      --border-subtle: #24242A;
+      --accent-green: #5ACB57;
+      --accent-glow: rgba(90, 203, 87, 0.18);
+      --accent-hover: #72DC6D;
+      --accent-alert: #EF4444;
+      --accent-warning: #F59E0B;
+      --accent-blue: #60A5FA;
+      --accent-purple: #A78BFA;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-canvas: #F4F5F7;
+      --bg-rail: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F8FAFC;
+      --bg-card-subtle: #EDF2F7;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --border-subtle: #E2E8F0;
+      --accent-green: #2E7D32;
+      --accent-glow: rgba(46, 125, 50, 0.15);
+      --accent-hover: #1B5E20;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    /* Left Navigation Rail */
+    aside.rail {
+      width: 270px;
+      background-color: var(--bg-rail);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      padding: 24px 18px;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-left: 4px;
+    }
+    .brand svg { width: 38px; height: 38px; flex-shrink: 0; }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span { color: var(--accent-green); }
+    .brand-sub {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav.nav-menu { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+    }
+    .nav-btn:hover {
+      background: var(--bg-card-subtle);
+      color: var(--text-main);
+    }
+    .nav-btn.active {
+      background: var(--bg-card);
+      border-color: var(--border-subtle);
+      color: var(--accent-green);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .nav-label { display: flex; align-items: center; gap: 10px; }
+    .nav-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 12px;
+      background: var(--bg-card-subtle);
+      color: var(--text-muted);
+    }
+    .nav-btn.active .nav-pill {
+      background: var(--accent-glow);
+      color: var(--accent-green);
+    }
+
+    .rail-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .theme-toggle:hover { border-color: var(--accent-green); }
+
+    .credits {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      padding-left: 4px;
+    }
+    .credits strong { color: var(--text-main); }
+    .credits .badge {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--accent-glow);
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    /* Main Content Area */
+    main.content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 24px 32px;
+    }
+
+    header.top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+    .header-left h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .header-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .control-select {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .control-select:hover { border-color: #3C3C44; }
+
+    /* KPI Row */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 104px;
+      transition: var(--transition);
+    }
+    .kpi-card:hover {
+      border-color: #3C3C44;
+      transform: translateY(-2px);
+    }
+    .kpi-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+    }
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      margin: 4px 0;
+    }
+    .kpi-value.accent { color: var(--accent-green); }
+    .kpi-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Views */
+    .dashboard-view {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .dashboard-view.active { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .view-grid-2x1 {
+      display: grid;
+      grid-template-columns: 2fr 1.15fr;
+      gap: 20px;
+    }
+    .view-grid-3x1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+    .card-panel:hover { border-color: #36363E; }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .panel-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .panel-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Custom Tables */
+    .table-responsive { overflow-x: auto; }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    table.data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table.data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    table.data-table tr:hover td {
+      background: var(--bg-card-subtle);
+    }
+    .badge-robust {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--accent-glow);
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+    .badge-alert {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--accent-alert);
+      font-weight: 600;
+    }
+
+    /* Section 3 Warning Banner */
+    .disclaimer-banner {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 12px;
+      color: #FBBF24;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.45;
+    }
+
+    footer.dashboard-footer {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Progress & bar utilities */
+    .prog-track {
+      height: 7px;
+      background: var(--bg-card-subtle);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .prog-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left Navigation Rail -->
+  <aside class="rail">
+    <div class="brand">
+      <svg viewBox="0 0 200 200" fill="none">
+        <rect width="200" height="200" rx="40" fill="#141416" stroke="#24242A" stroke-width="2"/>
+        <path d="M 100 28 L 155 52 C 155 105 130 148 100 168 C 70 148 45 105 45 52 Z" fill="#1A1A1E" stroke="#303036" stroke-width="3"/>
+        <path d="M 100 36 L 145 56 C 145 98 124 135 100 152 L 100 36 Z" fill="#5ACB57" opacity="0.95"/>
+        <path d="M 72 98 L 90 98 L 98 80 L 108 116 L 118 92 L 124 98 L 132 98" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="brand-title">Aegis<span>.dv</span></div>
+        <div class="brand-sub">OPERATIONS BI</div>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <button class="nav-btn active" onclick="switchView('d1', this)">
+        <div class="nav-label">
+          <span>🏥</span>
+          <span>Executive Overview</span>
+        </div>
+        <span class="nav-pill">D1</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('d2', this)">
+        <div class="nav-label">
+          <span>🔄</span>
+          <span>Patient Flow</span>
+        </div>
+        <span class="nav-pill">D2</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('d3', this)">
+        <div class="nav-label">
+          <span>📊</span>
+          <span>Clinical Complexity</span>
+        </div>
+        <span class="nav-pill">D3</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('d4', this)">
+        <div class="nav-label">
+          <span>⚡</span>
+          <span>Resource Utilization</span>
+        </div>
+        <span class="nav-pill">D4</span>
+      </button>
+    </nav>
+
+    <div class="rail-bottom">
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-label">🌙 Dark Canvas</span>
+        <span style="font-size: 10px; color: var(--accent-green); font-weight:700;">TOGGLE</span>
+      </button>
+
+      <div class="credits">
+        <strong>Developed by Ananya Biju</strong><br>
+        Infosys Springboard Internship<br>
+        <span class="badge">Aegis.dv Production BI</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Canvas -->
+  <main class="content">
+
+    <header class="top-bar">
+      <div class="header-left">
+        <h1 id="dash-heading">Hospital Operations & Clinical Executive Overview</h1>
+        <p id="dash-sub">Longitudinal performance, patient throughput, and care continuity across 130 facilities</p>
+      </div>
+
+      <div class="header-controls">
+        <select class="control-select" aria-label="Reporting Period">
+          <option>Study Horizon (1999–2008)</option>
+          <option>Baseline Trend Analysis</option>
+          <option>Cerner Inpatient Cohort</option>
+        </select>
+        <select class="control-select" id="dept-selector" onchange="filterDepartment(this.value)" aria-label="Department Filter">
+          <option value="ALL">All Clinical Departments (15)</option>
+          <option value="Internal Med">General & Internal Medicine</option>
+          <option value="Emergency">Emergency & Trauma</option>
+          <option value="Cardiology">Cardiology & Vascular</option>
+          <option value="Surgery">General Surgery</option>
+          <option value="Orthopedics">Orthopedics & Rehab</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Global Dynamic KPI Row -->
+    <div class="kpi-row" id="kpi-container">
+      <div class="kpi-card">
+        <div class="kpi-title" id="k1-title">Total Admissions</div>
+        <div class="kpi-value" id="k1-val">101,766</div>
+        <div class="kpi-sub" id="k1-sub">Distinct Encounters</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title" id="k2-title">Total Discharges</div>
+        <div class="kpi-value" id="k2-val">101,766</div>
+        <div class="kpi-sub" id="k2-sub">Completed Stays</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title" id="k3-title">Average Length of Stay</div>
+        <div class="kpi-value accent" id="k3-val">4.40 d</div>
+        <div class="kpi-sub" id="k3-sub">Median: 4.00 days (IQR: 2–6)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title" id="k4-title">30-Day Readmit Rate</div>
+        <div class="kpi-value" id="k4-val">11.34%</div>
+        <div class="kpi-sub" id="k4-sub">CMS Risk-Eligible (100k)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title" id="k5-title">Delivered Patient-Days</div>
+        <div class="kpi-value accent" id="k5-val">447,362</div>
+        <div class="kpi-sub" id="k5-sub">Workload Delivery Proxy</div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW D1: EXECUTIVE OVERVIEW ==================== -->
+    <div id="view-d1" class="dashboard-view active">
+      <div class="view-grid-2x1">
+        <!-- Panel 1: Throughput Volume Curve -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Inpatient Throughput & Admission Trend (1999–2008)</div>
+              <div class="panel-subtitle">Longitudinal monthly encounter volumes across 10-year study horizon</div>
+            </div>
+            <span style="font-size: 11px; color: var(--accent-green); font-weight: 700; background: var(--accent-glow); padding: 4px 10px; border-radius: 20px;">● Longitudinal Stability</span>
+          </div>
+          <!-- Clean SVG Area Chart -->
+          <svg viewBox="0 0 700 220" style="width:100%; height:220px; overflow:visible;">
+            <defs>
+              <linearGradient id="trendGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5ACB57" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#5ACB57" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid Lines -->
+            <line x1="40" y1="30" x2="680" y2="30" stroke="var(--border-subtle)" stroke-dasharray="3,3"/>
+            <line x1="40" y1="80" x2="680" y2="80" stroke="var(--border-subtle)" stroke-dasharray="3,3"/>
+            <line x1="40" y1="130" x2="680" y2="130" stroke="var(--border-subtle)" stroke-dasharray="3,3"/>
+            <line x1="40" y1="180" x2="680" y2="180" stroke="var(--border-subtle)"/>
+            
+            <!-- Axis text -->
+            <text x="32" y="34" fill="var(--text-muted)" font-size="10" text-anchor="end">1.2k</text>
+            <text x="32" y="84" fill="var(--text-muted)" font-size="10" text-anchor="end">900</text>
+            <text x="32" y="134" fill="var(--text-muted)" font-size="10" text-anchor="end">600</text>
+            <text x="32" y="184" fill="var(--text-muted)" font-size="10" text-anchor="end">0</text>
+
+            <!-- Area Path -->
+            <path d="M 40 160 Q 100 140, 160 110 T 280 80 T 400 65 T 520 50 T 640 45 L 680 40 L 680 180 L 40 180 Z" fill="url(#trendGrad)"/>
+            <!-- Line Path -->
+            <path d="M 40 160 Q 100 140, 160 110 T 280 80 T 400 65 T 520 50 T 640 45 L 680 40" fill="none" stroke="#5ACB57" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Key points -->
+            <circle cx="160" cy="110" r="4" fill="#5ACB57"/>
+            <circle cx="400" cy="65" r="4" fill="#5ACB57"/>
+            <circle cx="680" cy="40" r="5" fill="#5ACB57" stroke="#FFFFFF" stroke-width="2"/>
+
+            <!-- X Labels -->
+            <text x="40" y="202" fill="var(--text-muted)" font-size="11">1999</text>
+            <text x="160" y="202" fill="var(--text-muted)" font-size="11">2001</text>
+            <text x="280" y="202" fill="var(--text-muted)" font-size="11">2003</text>
+            <text x="400" y="202" fill="var(--text-muted)" font-size="11">2005</text>
+            <text x="520" y="202" fill="var(--text-muted)" font-size="11">2007</text>
+            <text x="660" y="202" fill="var(--text-muted)" font-size="11">2008</text>
+          </svg>
+          <p style="font-size: 11px; color: var(--text-muted); margin-top: 14px;">* Longitudinal reference timeline (1999–2008) spanning 101,766 inpatient encounters across 130 hospitals.</p>
+        </div>
+
+        <!-- Panel 2: Readmission Risk Breakdown -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Readmission Outcomes</div>
+              <div class="panel-subtitle">CMS HRRP Risk-Eligible Stratification</div>
+            </div>
+          </div>
+          <!-- Gauge and distribution -->
+          <div style="display:flex; justify-content:center; align-items:center; margin: 10px 0 16px;">
+            <svg viewBox="0 0 200 120" style="width:160px; overflow:visible;">
+              <!-- Background Arc -->
+              <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--bg-card-subtle)" stroke-width="16" stroke-linecap="round"/>
+              <!-- Green No Readmit Arc (53.9%) -->
+              <path d="M 20 100 A 80 80 0 0 1 106 20" fill="none" stroke="#5ACB57" stroke-width="16" stroke-linecap="round"/>
+              <!-- Blue Late Readmit Arc -->
+              <path d="M 106 20 A 80 80 0 0 1 162 48" fill="none" stroke="#60A5FA" stroke-width="16"/>
+              <!-- Red Alert Arc (<30d) -->
+              <path d="M 162 48 A 80 80 0 0 1 180 100" fill="none" stroke="#EF4444" stroke-width="16" stroke-linecap="round"/>
+              <text x="100" y="85" text-anchor="middle" font-size="22" font-weight="800" fill="var(--text-main)">11.34%</text>
+              <text x="100" y="102" text-anchor="middle" font-size="10" font-weight="600" fill="#EF4444">&lt;30d High Risk</text>
+            </svg>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12.5px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span>No Readmission</span>
+                <strong style="color:var(--text-main);">53.9% (54,864)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:53.9%; background:var(--accent-green);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span>Late Readmission (&gt;30d)</span>
+                <strong style="color:var(--text-main);">34.9% (35,545)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:34.9%; background:#60A5FA;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span>Early Readmission (&lt;30d)</span>
+                <strong style="color:var(--accent-alert);">11.3% (11,357)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:11.3%; background:var(--accent-alert);"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:auto; font-size:11px; color:var(--text-muted); border-top:1px solid var(--border-subtle); padding-top:10px;">
+            Excludes 1,652 in-hospital mortality events (CMS HRRP standard).
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Benchmark Table -->
+      <div class="card-panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Clinical Service Line Performance Benchmark</div>
+            <div class="panel-subtitle">Volume, Throughput (ALOS), Readmissions, and Workload Intensity across Top Units</div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Clinical Department</th>
+                <th>Admissions</th>
+                <th>Volume %</th>
+                <th>ALOS (Days)</th>
+                <th>Median LOS</th>
+                <th>30d Readmit Rate</th>
+                <th>Emergency %</th>
+                <th>Delivered Workload</th>
+                <th>Sample Audit</th>
+              </tr>
+            </thead>
+            <tbody id="dept-table-body">
+              <tr data-dept="Internal Med">
+                <td><strong>General &amp; Internal Medicine</strong></td>
+                <td>22,238</td>
+                <td>21.85%</td>
+                <td>4.44 d</td>
+                <td>4.0 d</td>
+                <td>11.75%</td>
+                <td>54.2%</td>
+                <td>98,736 days</td>
+                <td><span class="badge-robust">Robust Sample</span></td>
+              </tr>
+              <tr data-dept="Emergency">
+                <td><strong>Emergency &amp; Trauma</strong></td>
+                <td>7,565</td>
+                <td>7.43%</td>
+                <td>4.48 d</td>
+                <td>4.0 d</td>
+                <td>11.96%</td>
+                <td>78.1%</td>
+                <td>33,891 days</td>
+                <td><span class="badge-robust">Robust Sample</span></td>
+              </tr>
+              <tr data-dept="Cardiology">
+                <td><strong>Cardiology &amp; Vascular</strong></td>
+                <td>6,758</td>
+                <td>6.64%</td>
+                <td>4.02 d</td>
+                <td>3.0 d</td>
+                <td>10.84%</td>
+                <td>42.5%</td>
+                <td>27,167 days</td>
+                <td><span class="badge-robust">Robust Sample</span></td>
+              </tr>
+              <tr data-dept="Surgery">
+                <td><strong>General Surgery</strong></td>
+                <td>4,792</td>
+                <td>4.71%</td>
+                <td>4.82 d</td>
+                <td>4.0 d</td>
+                <td>10.38%</td>
+                <td>38.9%</td>
+                <td>23,097 days</td>
+                <td><span class="badge-robust">Robust Sample</span></td>
+              </tr>
+              <tr data-dept="Orthopedics">
+                <td><strong>Orthopedics &amp; Rehab</strong></td>
+                <td>3,125</td>
+                <td>3.07%</td>
+                <td>4.55 d</td>
+                <td>4.0 d</td>
+                <td>10.12%</td>
+                <td>31.4%</td>
+                <td>14,218 days</td>
+                <td><span class="badge-robust">Robust Sample</span></td>
+              </tr>
+              <tr data-dept="Nephrology">
+                <td><strong>Nephrology &amp; Urology</strong></td>
+                <td>2,298</td>
+                <td>2.26%</td>
+                <td>4.39 d</td>
+                <td>4.0 d</td>
+                <td>12.82%</td>
+                <td>61.2%</td>
+                <td>10,088 days</td>
+                <td><span class="badge-robust">Robust Sample</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW D2: PATIENT FLOW ==================== -->
+    <div id="view-d2" class="dashboard-view">
+      <div class="view-grid-3x1">
+        <!-- Panel: Admission Sources -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Intake Route Distribution</div>
+              <div class="panel-subtitle">Primary clinical admission pathways</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Emergency Room</span>
+                <strong>56.5% (57,494)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:56.5%; background:#EF4444;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Physician / Clinic Referral</span>
+                <strong>30.3% (30,856)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:30.3%; background:var(--accent-green);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Inter-Facility Transfer</span>
+                <strong>6.2% (6,328)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:6.2%; background:#60A5FA;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Other / Elective</span>
+                <strong>7.0% (7,088)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:7.0%; background:var(--text-muted);"></div></div>
+            </div>
+          </div>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:auto; padding-top:14px; border-top:1px solid var(--border-subtle);">
+            Over 56% of patients enter through emergency services, demonstrating acute care intensity.
+          </p>
+        </div>
+
+        <!-- Panel: Length of Stay Cohorts -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Length of Stay Cohorts</div>
+              <div class="panel-subtitle">Distribution of hospitalization days</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Short Stay (1–2 Days)</span>
+                <strong>35.8% (36,412)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:35.8%; background:var(--accent-green);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Medium Stay (3–5 Days)</span>
+                <strong>42.2% (42,918)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:42.2%; background:#60A5FA;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Extended Stay (6–8 Days)</span>
+                <strong>14.5% (14,801)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:14.5%; background:#F59E0B;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Long-Stay Outlier (9–14 Days)</span>
+                <strong>7.5% (7,635)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:7.5%; background:#EF4444;"></div></div>
+            </div>
+          </div>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:auto; padding-top:14px; border-top:1px solid var(--border-subtle);">
+            Median LOS is 4.0 days; 78% of stays conclude within 5 days.
+          </p>
+        </div>
+
+        <!-- Panel: Discharge Destinations -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Discharge Disposition</div>
+              <div class="panel-subtitle">Post-acute care continuity destinations</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Routine Discharge to Home</span>
+                <strong>72.0% (73,239)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:72.0%; background:var(--accent-green);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Transferred to Care Facility (SNF)</span>
+                <strong>20.2% (20,534)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:20.2%; background:#60A5FA;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Expired (In-Hospital Mortality)</span>
+                <strong style="color:var(--accent-alert);">1.6% (1,652)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:1.6%; background:var(--accent-alert);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Hospice / AMA / Other</span>
+                <strong>6.2% (6,341)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:6.2%; background:var(--text-muted);"></div></div>
+            </div>
+          </div>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:auto; padding-top:14px; border-top:1px solid var(--border-subtle);">
+            SNF post-acute transfers represent primary bottleneck for step-down bed availability.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW D3: CLINICAL COMPLEXITY ==================== -->
+    <div id="view-d3" class="dashboard-view">
+      <div class="view-grid-2x1">
+        <!-- Panel 1: HbA1c Glycemic Testing Impact -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Glycemic Testing (HbA1c) Impact on 30-Day Readmission</div>
+              <div class="panel-subtitle">Comparing readmission rates when testing and therapy adjustments occur</div>
+            </div>
+            <span style="font-size: 11px; color: var(--accent-green); font-weight:700; background:var(--accent-glow); padding:4px 10px; border-radius:20px;">✓ Clinical Proof Point</span>
+          </div>
+          
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:14px;">
+            <div style="background:var(--bg-card-subtle); padding:16px; border-radius:10px; text-align:center;">
+              <div style="font-size:11px; color:var(--text-muted); font-weight:700;">TESTED NORMAL</div>
+              <div style="font-size:24px; font-weight:800; color:var(--accent-green); margin:8px 0;">10.1%</div>
+              <div style="font-size:11px; color:var(--text-muted);">4,990 encounters</div>
+            </div>
+            <div style="background:var(--bg-card-subtle); padding:16px; border-radius:10px; text-align:center;">
+              <div style="font-size:11px; color:var(--text-muted); font-weight:700;">HIGH &amp; CHANGED</div>
+              <div style="font-size:24px; font-weight:800; color:var(--accent-green); margin:8px 0;">9.8%</div>
+              <div style="font-size:11px; color:var(--text-muted);">Medication Adjusted</div>
+            </div>
+            <div style="background:var(--bg-card-subtle); padding:16px; border-radius:10px; text-align:center;">
+              <div style="font-size:11px; color:var(--text-muted); font-weight:700;">NOT TESTED</div>
+              <div style="font-size:24px; font-weight:800; color:var(--text-main); margin:8px 0;">11.5%</div>
+              <div style="font-size:11px; color:var(--text-muted);">84,744 encounters</div>
+            </div>
+            <div style="background:var(--bg-card-subtle); padding:16px; border-radius:10px; text-align:center;">
+              <div style="font-size:11px; color:var(--text-muted); font-weight:700;">HIGH &amp; UNCHANGED</div>
+              <div style="font-size:24px; font-weight:800; color:var(--accent-alert); margin:8px 0;">12.6%</div>
+              <div style="font-size:11px; color:var(--accent-alert);">Highest Readmission</div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; font-size:12.5px; line-height:1.5; color:var(--text-muted);">
+            <strong style="color:var(--text-main);">Clinical Takeaway:</strong> Patients with elevated HbA1c who received medication changes exhibited a <strong>9.8%</strong> readmission rate—significantly lower than patients whose medication was left unchanged (<strong>12.6%</strong>), demonstrating the direct impact of active glycemic management.
+          </div>
+        </div>
+
+        <!-- Panel 2: Acuity Burden -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Comorbidity &amp; Medication Acuity</div>
+              <div class="panel-subtitle">Diagnosis volume and pharmacological burden</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12.5px;">Avg Lab Procedures per Patient</span>
+              <strong style="font-size:15px; color:var(--text-main);">43.1 tests</strong>
+            </div>
+            <div class="prog-track"><div class="prog-fill" style="width:68%; background:#60A5FA;"></div></div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12.5px;">Avg Medications Administered</span>
+              <strong style="font-size:15px; color:var(--accent-green);">16.0 meds</strong>
+            </div>
+            <div class="prog-track"><div class="prog-fill" style="width:52%; background:var(--accent-green);"></div></div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12.5px;">Patients with &ge; 3 Diagnoses</span>
+              <strong style="font-size:15px; color:#F59E0B;">84.3%</strong>
+            </div>
+            <div class="prog-track"><div class="prog-fill" style="width:84.3%; background:#F59E0B;"></div></div>
+          </div>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:auto; padding-top:14px; border-top:1px solid var(--border-subtle);">
+            High clinical complexity correlates directly with extended stay duration (Pearson r = 0.46).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW D4: RESOURCE UTILIZATION ==================== -->
+    <div id="view-d4" class="dashboard-view">
+      <!-- Section 3 Notice -->
+      <div class="disclaimer-banner">
+        <span style="font-size:18px;">⚠️</span>
+        <div>
+          <strong>Section 3 Notice – Facility Capacity Reference:</strong> Bed counts, daily occupancy percentages, and nurse staffing ratios are modeled via reproducible synthetic telemetry (<code>synthetic_hospital_capacity.csv</code>) per project missing-capability policy. Delivered patient-days represent authentic clinical encounter workload.
+        </div>
+      </div>
+
+      <div class="view-grid-2x1">
+        <!-- Panel 1: Occupancy Telemetry -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Daily Bed Occupancy &amp; Threshold Tracking</div>
+              <div class="panel-subtitle">Simulated census vs. operational surge capacity limits (650 Total Beds)</div>
+            </div>
+            <span style="font-size: 11px; color: #F59E0B; font-weight:700; background:rgba(245, 158, 11, 0.15); padding:4px 10px; border-radius:20px;">Surge Monitored</span>
+          </div>
+
+          <!-- Capacity Area Chart -->
+          <svg viewBox="0 0 700 220" style="width:100%; height:220px; overflow:visible;">
+            <defs>
+              <linearGradient id="capGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <!-- 85% Warning threshold line -->
+            <line x1="40" y1="60" x2="680" y2="60" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <text x="682" y="63" fill="#EF4444" font-size="10" font-weight="700">85% Warning</text>
+
+            <!-- 75% Baseline line -->
+            <line x1="40" y1="100" x2="680" y2="100" stroke="var(--border-subtle)" stroke-dasharray="2,2"/>
+            <text x="682" y="103" fill="var(--text-muted)" font-size="10">75% Target</text>
+
+            <!-- Curve -->
+            <path d="M 40 120 Q 120 90, 200 110 T 360 80 T 520 55 T 680 75 L 680 180 L 40 180 Z" fill="url(#capGrad)"/>
+            <path d="M 40 120 Q 120 90, 200 110 T 360 80 T 520 55 T 680 75" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+
+            <text x="40" y="202" fill="var(--text-muted)" font-size="11">Jan</text>
+            <text x="160" y="202" fill="var(--text-muted)" font-size="11">Apr</text>
+            <text x="280" y="202" fill="var(--text-muted)" font-size="11">Jul</text>
+            <text x="400" y="202" fill="var(--text-muted)" font-size="11">Oct</text>
+            <text x="520" y="202" fill="var(--text-muted)" font-size="11">Winter Surge (Peak)</text>
+            <text x="660" y="202" fill="var(--text-muted)" font-size="11">Dec</text>
+          </svg>
+          <p style="font-size: 11px; color: var(--text-muted); margin-top: 14px;">Mean occupancy: 78.4% (Optimal operating range: 75%–85%). Winter surges peak at 91.2% capacity.</p>
+        </div>
+
+        <!-- Panel 2: Staffing Ratios -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Nurse Staffing Ratios</div>
+              <div class="panel-subtitle">Registered Nurse to Patient ratios by care unit</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Intensive Care Unit (ICU)</span>
+                <strong style="color:var(--accent-green);">1 : 1.8 (Optimal)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:90%; background:var(--accent-green);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Step-Down &amp; Telemetry</span>
+                <strong style="color:var(--accent-green);">1 : 3.1 (Compliant)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:75%; background:var(--accent-green);"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Emergency Department</span>
+                <strong style="color:#F59E0B;">1 : 3.6 (Moderate Load)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:65%; background:#F59E0B;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
+                <span>Medical-Surgical Floors</span>
+                <strong style="color:var(--text-main);">1 : 4.2 (Standard)</strong>
+              </div>
+              <div class="prog-track"><div class="prog-fill" style="width:55%; background:#60A5FA;"></div></div>
+            </div>
+          </div>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:auto; padding-top:14px; border-top:1px solid var(--border-subtle);">
+            Staffing models meet state mandated acuity ratios across all shifts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <span>Aegis.dv Enterprise Healthcare Analytics | Dataset: Cerner Health Facts (101,766 Encounters)</span>
+      <span>Attribution: Developed by Ananya Biju | Infosys Springboard Internship</span>
+    </footer>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('aegis_theme', next);
+      document.getElementById('theme-label').textContent = next === 'dark' ? '🌙 Dark Canvas' : '☀️ Light Canvas';
+    }
+
+    const savedTheme = localStorage.getItem('aegis_theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.getElementById('theme-label').textContent = savedTheme === 'dark' ? '🌙 Dark Canvas' : '☀️ Light Canvas';
+    }
+
+    function switchView(viewId, btnElement) {
+      // Update nav button active states
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+
+      // Hide all views and show target view
+      document.querySelectorAll('.dashboard-view').forEach(view => view.classList.remove('active'));
+      const activeView = document.getElementById('view-' + viewId);
+      if (activeView) {
+        activeView.classList.add('active');
+      }
+
+      const heading = document.getElementById('dash-heading');
+      const sub = document.getElementById('dash-sub');
+
+      // Update KPI row dynamically per view
+      if (viewId === 'd1') {
+        heading.textContent = 'Hospital Operations & Clinical Executive Overview';
+        sub.textContent = 'Longitudinal performance, patient throughput, and care continuity across 130 facilities';
+        setKPIs('Total Admissions', '101,766', 'Distinct Encounters',
+                'Total Discharges', '101,766', 'Completed Stays',
+                'Average Length of Stay', '4.40 d', 'Median: 4.00 days (IQR: 2–6)',
+                '30-Day Readmit Rate', '11.34%', 'CMS Risk-Eligible (100k)',
+                'Delivered Patient-Days', '447,362', 'Workload Delivery Proxy');
+      } else if (viewId === 'd2') {
+        heading.textContent = 'Patient Flow & Throughput Analytics';
+        sub.textContent = 'Inpatient intake routes, stay duration cohorts, and discharge destination pathways';
+        setKPIs('Total Admissions', '101,766', 'Distinct Intake Stays',
+                'Emergency Intake Route', '53.07%', '54,011 Encounters',
+                'Routine Home Discharge', '71.97%', '73,239 Patients',
+                'High Stay Outliers (>7d)', '14.82%', '15,081 Long Stays',
+                'Delivered Patient-Days', '447,362', 'Cumulative Care Workload');
+      } else if (viewId === 'd3') {
+        heading.textContent = 'Clinical Complexity & Service Line Benchmarking';
+        sub.textContent = 'Comparative acuity, procedural complexity, and readmission risk across 15 clinical units';
+        setKPIs('Monitored Specialties', '15 Units', 'Active Service Lines',
+                'Lead Specialty Volume', '21.85%', 'General & Internal Med',
+                'Average Acuity Index', '26.4 / 100', 'Lab & Diagnosis Burden',
+                'HbA1c Testing Rate', '16.75%', '17,042 Encounters Tested',
+                'Delivered Patient-Days', '447,362', 'Specialty Workload Proxy');
+      } else if (viewId === 'd4') {
+        heading.textContent = 'Resource Utilization & Capacity Planning';
+        sub.textContent = 'Bed occupancy dynamics, nurse staffing ratios, and operational bottlenecks (Section 3 Telemetry)';
+        setKPIs('Monitored Bed Capacity', '650 Beds', 'Multi-Facility Baseline',
+                'Baseline Occupancy', '78.4%', 'Optimal Range: 75%–85%',
+                'Nurse Staffing Ratio', '1 : 3.4', 'Average Acute Care',
+                'Congestion Status', 'Normal', 'Manageable Surge Index',
+                'Delivered Patient-Days', '447,362', 'Authentic Clinical Days');
+      }
+    }
+
+    function setKPIs(t1, v1, s1, t2, v2, s2, t3, v3, s3, t4, v4, s4, t5, v5, s5) {
+      document.getElementById('k1-title').textContent = t1;
+      document.getElementById('k1-val').textContent = v1;
+      document.getElementById('k1-sub').textContent = s1;
+      document.getElementById('k2-title').textContent = t2;
+      document.getElementById('k2-val').textContent = v2;
+      document.getElementById('k2-sub').textContent = s2;
+      document.getElementById('k3-title').textContent = t3;
+      document.getElementById('k3-val').textContent = v3;
+      document.getElementById('k3-sub').textContent = s3;
+      document.getElementById('k4-title').textContent = t4;
+      document.getElementById('k4-val').textContent = v4;
+      document.getElementById('k4-sub').textContent = s4;
+      document.getElementById('k5-title').textContent = t5;
+      document.getElementById('k5-val').textContent = v5;
+      document.getElementById('k5-sub').textContent = s5;
+    }
+
+    function filterDepartment(deptKey) {
+      const rows = document.querySelectorAll('#dept-table-body tr');
+      rows.forEach(row => {
+        if (deptKey === 'ALL' || row.getAttribute('data-dept') === deptKey) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

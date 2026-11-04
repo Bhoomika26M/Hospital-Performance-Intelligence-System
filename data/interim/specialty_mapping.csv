@@ -1,0 +1,74 @@
+raw_medical_specialty,standardized_department
+?,General Inpatient / Unspecified
+InternalMedicine,General & Internal Medicine
+Family/GeneralPractice,General & Internal Medicine
+Hospitalist,General & Internal Medicine
+PhysicianNotFound,General & Internal Medicine
+OutreachServices,General & Internal Medicine
+Resident,General & Internal Medicine
+Osteopath,General & Internal Medicine
+DCPTEAM,General & Internal Medicine
+Emergency/Trauma,Emergency & Trauma
+Cardiology,Cardiology & Vascular
+Surgery-Cardiovascular/Thoracic,Cardiology & Vascular
+Surgery-Cardiovascular,Cardiology & Vascular
+Surgery-Thoracic,Cardiology & Vascular
+Cardiology-Pediatric,Cardiology & Vascular
+Surgery-General,General Surgery
+Surgery-Vascular,General Surgery
+Surgery-Neuro,General Surgery
+Surgery-Plastic,General Surgery
+SurgicalSpecialty,General Surgery
+Surgery-Colon&Rectal,General Surgery
+Surgery-Maxillofacial,General Surgery
+Surgery-Pediatric,General Surgery
+Surgery-PlasticwithinHeadandNeck,General Surgery
+Surgeon,General Surgery
+Proctology,General Surgery
+Dentistry,General Surgery
+Orthopedics,Orthopedics & Rehab
+Orthopedics-Reconstructive,Orthopedics & Rehab
+PhysicalMedicineandRehabilitation,Orthopedics & Rehab
+Podiatry,Orthopedics & Rehab
+SportsMedicine,Orthopedics & Rehab
+Nephrology,Nephrology & Urology
+Urology,Nephrology & Urology
+Oncology,Oncology & Hematology
+Hematology/Oncology,Oncology & Hematology
+Hematology,Oncology & Hematology
+Obsterics&Gynecology-GynecologicOnco,Oncology & Hematology
+Pediatrics-Hematology-Oncology,Oncology & Hematology
+Psychiatry,Neurology & Psychiatry
+Psychology,Neurology & Psychiatry
+Neurology,Neurology & Psychiatry
+Psychiatry-Child/Adolescent,Neurology & Psychiatry
+Psychiatry-Addictive,Neurology & Psychiatry
+Neurophysiology,Neurology & Psychiatry
+Pulmonology,Pulmonology
+Pediatrics-Pulmonology,Pulmonology
+Pediatrics,Pediatrics
+Pediatrics-Endocrinology,Pediatrics
+Pediatrics-CriticalCare,Pediatrics
+Anesthesiology-Pediatric,Pediatrics
+Pediatrics-Neurology,Pediatrics
+Pediatrics-EmergencyMedicine,Pediatrics
+Pediatrics-AllergyandImmunology,Pediatrics
+Pediatrics-InfectiousDiseases,Pediatrics
+ObstetricsandGynecology,Obstetrics & Gynecology
+Gynecology,Obstetrics & Gynecology
+Obstetrics,Obstetrics & Gynecology
+Perinatology,Obstetrics & Gynecology
+Endocrinology,Endocrinology & Metabolism
+Endocrinology-Metabolism,Endocrinology & Metabolism
+Gastroenterology,Gastroenterology
+Radiologist,Diagnostic & Specialist
+Radiology,Diagnostic & Specialist
+Otolaryngology,Diagnostic & Specialist
+Ophthalmology,Diagnostic & Specialist
+InfectiousDiseases,Diagnostic & Specialist
+Rheumatology,Diagnostic & Specialist
+Pathology,Diagnostic & Specialist
+Anesthesiology,Diagnostic & Specialist
+AllergyandImmunology,Diagnostic & Specialist
+Dermatology,Diagnostic & Specialist
+Speech,Diagnostic & Specialist

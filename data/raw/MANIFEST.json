@@ -1,0 +1,44 @@
+{
+  "manifest_version": "1.0",
+  "project": "Aegis.dv",
+  "developer": "Ananya Biju (Infosys Springboard Internship)",
+  "generated_at": "2026-11-04T06:50:48.536039+00:00",
+  "files": [
+    {
+      "filename": "diabetes_130_us_hospitals.zip",
+      "relative_path": "data/raw/diabetes_130_us_hospitals.zip",
+      "size_bytes": 3170254,
+      "sha256": "f82ac129da2ddd2299391ff6fbae3a6a58b3edcf59ac9d7bd480c00fe453112a",
+      "source_url": "https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip",
+      "date_accessed": "2026-11-04",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0) / Public Research Dataset"
+    },
+    {
+      "filename": "diabetic_data.csv",
+      "relative_path": "data/raw/diabetic_data.csv",
+      "size_bytes": 19159383,
+      "sha256": "0689e7ec031237dc63031b938805c48377748761a3b26acab621567afa24df97",
+      "source_url": "https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip#diabetic_data.csv",
+      "date_accessed": "2026-11-04",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0) / Public Research Dataset"
+    },
+    {
+      "filename": "IDs_mapping.csv",
+      "relative_path": "data/raw/IDs_mapping.csv",
+      "size_bytes": 2547,
+      "sha256": "f1bb82b471cb34649352597572c9b1fb00bd27f77b9f5a22a03dc3eb1039749e",
+      "source_url": "https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip#IDs_mapping.csv",
+      "date_accessed": "2026-11-04",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0) / Public Research Dataset"
+    },
+    {
+      "filename": "hospital_raw_data.csv",
+      "relative_path": "data/raw/hospital_raw_data.csv",
+      "size_bytes": 19159383,
+      "sha256": "0689e7ec031237dc63031b938805c48377748761a3b26acab621567afa24df97",
+      "source_url": "https://archive.ics.uci.edu/static/public/296/diabetes+130-us+hospitals+for+years+1999-2008.zip#hospital_raw_data.csv",
+      "date_accessed": "2026-11-04",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0) / Public Research Dataset"
+    }
+  ]
+}

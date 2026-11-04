@@ -1,0 +1,994 @@
+#!/usr/bin/env python3
+"""Tableau Packaged Workbook (.twbx) Generator for Aegis.dv.
+
+Constructs a valid Tableau Packaged Workbook (Aegis.dv.twbx) containing:
+1. Aegis.dv.twb (XML workbook adhering strictly to Tableau 2026.3 / 18.1 DTD schema)
+   - Parameters: [p_Min_Sample_Size], [p_Occupancy_Threshold_Pct], [p_Reporting_Period], [p_Theme_Mode]
+   - Embedded Excel connection to hospital_final_dataset.xlsx
+   - Calculated fields: Total Admissions, ALOS, Readmission Rate, Intensity, etc.
+   - Worksheets with valid DTD structure (layout-options, table, simple-id)
+   - Dashboards with valid DTD structure (layout-options, style, size, datasources, zones, devicelayouts, simple-id)
+   - Dark enterprise palette (#080808 canvas, #141414 cards, #5ACB57 green accents)
+2. Data/Aegis_Hospital/hospital_final_dataset.xlsx
+3. Data/Aegis_Hospital/synthetic_hospital_capacity.csv
+"""
+
+import os
+import shutil
+import zipfile
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+TWB_TEMPLATE = """<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build='2026.3.0 (20263.26.1023.0805)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Minimum Sample Size' datatype='integer' default-format='#' name='[p_Min_Sample_Size]' param-domain-type='range' role='measure' type='quantitative' value='30'>
+        <calculation class='tableau' formula='30' />
+        <range granularity='5' max='100' min='10' />
+      </column>
+      <column caption='Occupancy Threshold Pct' datatype='real' default-format='p0%' name='[p_Occupancy_Threshold_Pct]' param-domain-type='range' role='measure' type='quantitative' value='0.85'>
+        <calculation class='tableau' formula='0.85' />
+        <range granularity='0.01' max='0.95' min='0.70' />
+      </column>
+      <column caption='Reporting Period' datatype='string' name='[p_Reporting_Period]' param-domain-type='list' role='measure' type='nominal' value='&quot;All Available (1999–2008)&quot;'>
+        <calculation class='tableau' formula='&quot;All Available (1999–2008)&quot;' />
+        <members>
+          <member value='&quot;All Available (1999–2008)&quot;' />
+          <member value='&quot;Recent 3-Year Baseline&quot;' />
+          <member value='&quot;Single Reporting Year&quot;' />
+        </members>
+      </column>
+      <column caption='Theme Mode' datatype='string' name='[p_Theme_Mode]' param-domain-type='list' role='measure' type='nominal' value='&quot;Dark Mode (Default)&quot;'>
+        <calculation class='tableau' formula='&quot;Dark Mode (Default)&quot;' />
+        <members>
+          <member value='&quot;Dark Mode (Default)&quot;' />
+          <member value='&quot;Light Clinical Mode&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Hospital_Encounters' inline='true' name='federated.hospital_encounters' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='hospital_final_dataset' name='excel-direct.hospital_encounters'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='Data/Aegis_Hospital/hospital_final_dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.hospital_encounters' name='Inpatient_Encounters' table='[Inpatient_Encounters$]' type='table' />
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Encounter ID' datatype='integer' name='[encounter_id]' role='dimension' type='ordinal' />
+      <column caption='Patient ID' datatype='integer' name='[patient_nbr]' role='dimension' type='ordinal' />
+      <column caption='Department' datatype='string' name='[department]' role='dimension' type='nominal' />
+      <column caption='Medical Specialty' datatype='string' name='[medical_specialty]' role='dimension' type='nominal' />
+      <column caption='Admission Type' datatype='string' name='[admission_type_group]' role='dimension' type='nominal' />
+      <column caption='Discharge Placement' datatype='string' name='[discharge_disposition_group]' role='dimension' type='nominal' />
+      <column caption='Length of Stay (Days)' datatype='integer' name='[time_in_hospital]' role='measure' type='quantitative' />
+      <column caption='Patient-Days' datatype='integer' name='[patient_days]' role='measure' type='quantitative' />
+      <column caption='Admission Date' datatype='date' name='[admission_date]' role='dimension' type='ordinal' />
+      <column caption='Discharge Date' datatype='date' name='[discharge_date]' role='dimension' type='ordinal' />
+      <column caption='Admission Year' datatype='integer' name='[admission_year]' role='dimension' type='ordinal' />
+      <column caption='Admission Month' datatype='integer' name='[admission_month]' role='dimension' type='ordinal' />
+      <column caption='Age Bracket' datatype='string' name='[age_bracket]' role='dimension' type='nominal' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Race' datatype='string' name='[race]' role='dimension' type='nominal' />
+      <column caption='Readmitted Status' datatype='string' name='[readmitted]' role='dimension' type='nominal' />
+      <column caption='Readmitted 30d Flag' datatype='integer' name='[readmitted_30d_flag]' role='measure' type='quantitative' />
+      <column caption='Readmission Eligible' datatype='integer' name='[is_readmission_eligible]' role='measure' type='quantitative' />
+      <column caption='In-Hospital Death' datatype='integer' name='[is_in_hospital_death]' role='measure' type='quantitative' />
+      <column caption='Emergency Flag' datatype='integer' name='[is_emergency_admission]' role='measure' type='quantitative' />
+      <column caption='Clinical Intensity' datatype='real' name='[clinical_intensity_index]' role='measure' type='quantitative' />
+      <column caption='Total Admissions' datatype='integer' name='[Total Admissions]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([encounter_id])' />
+      </column>
+      <column caption='Total Discharges' datatype='integer' name='[Total Discharges]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([encounter_id])' />
+      </column>
+      <column caption='Average Length of Stay' datatype='real' default-format='n0.00&quot; days&quot;' name='[Average Length of Stay]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([time_in_hospital])' />
+      </column>
+      <column caption='Median Length of Stay' datatype='real' default-format='n0.00&quot; days&quot;' name='[Median Length of Stay]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MEDIAN([time_in_hospital])' />
+      </column>
+      <column caption='Total Patient-Days Workload' datatype='integer' default-format='#,##0' name='[Total Patient-Days]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([time_in_hospital])' />
+      </column>
+      <column caption='CMS 30-Day Readmission Rate' datatype='real' default-format='p0.00%' name='[Readmission Rate 30d (CMS)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(SUM([readmitted_30d_flag]) / NULLIF(SUM([is_readmission_eligible]), 0))' />
+      </column>
+      <column caption='Emergency Intake Rate' datatype='real' default-format='p0.0%' name='[Emergency Admission Rate]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(SUM([is_emergency_admission]) / NULLIF(COUNTD([encounter_id]), 0))' />
+      </column>
+      <column caption='Department Sample Audit' datatype='string' name='[Department Sample Flag]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF COUNTD([encounter_id]) &gt;= [Parameters].[p_Min_Sample_Size] THEN &quot;Robust Sample&quot; ELSE &quot;Low Sample (&lt;&quot; + STR([Parameters].[p_Min_Sample_Size]) + &quot;)&quot; END' />
+      </column>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+    </datasource>
+    <datasource caption='Synthetic_Capacity_D4' inline='true' name='federated.synthetic_capacity' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='synthetic_hospital_capacity' name='textscan.synthetic_capacity'>
+            <connection class='textscan' directory='Data/Aegis_Hospital' filename='synthetic_hospital_capacity.csv' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.synthetic_capacity' name='synthetic_hospital_capacity.csv' table='[synthetic_hospital_capacity#csv]' type='table' />
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Clinical Unit' datatype='string' name='[clinical_unit]' role='dimension' type='nominal' />
+      <column caption='Capacity Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Bed Occupancy Rate Pct' datatype='real' default-format='p0.0%' name='[bed_occupancy_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Occupied Beds' datatype='integer' name='[occupied_beds]' role='measure' type='quantitative' />
+      <column caption='Total Staffed Beds' datatype='integer' name='[total_staffed_beds]' role='measure' type='quantitative' />
+      <column caption='Nurse-to-Patient Ratio' datatype='real' name='[patient_to_nurse_ratio]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='D1_KPI_Admissions'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#929292' fontsize='10'>TOTAL INPATIENT ADMISSIONS</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column-instance column='[Total Admissions]' derivation='User' name='[usr:Total Admissions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.hospital_encounters].[usr:Total Admissions:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='text-format' value='#,##0' />
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0001}' />
+    </worksheet>
+    <worksheet name='D1_KPI_ALOS'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#929292' fontsize='10'>AVERAGE LENGTH OF STAY</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column-instance column='[Average Length of Stay]' derivation='User' name='[usr:Average Length of Stay:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.hospital_encounters].[usr:Average Length of Stay:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='text-format' value='0.00 &quot;days&quot;' />
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0002}' />
+    </worksheet>
+    <worksheet name='D1_KPI_Readmission'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#929292' fontsize='10'>CMS 30-DAY READMISSION RATE</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column-instance column='[Readmission Rate 30d (CMS)]' derivation='User' name='[usr:Readmission Rate 30d (CMS):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.hospital_encounters].[usr:Readmission Rate 30d (CMS):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='text-format' value='0.00%' />
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0003}' />
+    </worksheet>
+    <worksheet name='D1_KPI_PatientDays'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#929292' fontsize='10'>DELIVERED PATIENT-DAYS (WORKLOAD)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column-instance column='[Total Patient-Days]' derivation='User' name='[usr:Total Patient-Days:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.hospital_encounters].[usr:Total Patient-Days:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='text-format' value='#,##0' />
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0004}' />
+    </worksheet>
+    <worksheet name='D1_Trend_Adm_vs_Disch'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='12'>Monthly Inpatient Admissions Throughput (Reference Timeline: 1999–2008)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column-instance column='[admission_date]' derivation='Month' name='[mn:admission_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total Admissions]' derivation='User' name='[usr:Total Admissions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.hospital_encounters].[usr:Total Admissions:qk]</rows>
+        <cols>[federated.hospital_encounters].[mn:admission_date:qk]</cols>
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0005}' />
+    </worksheet>
+    <worksheet name='D1_Bar_Dept_Volume'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='12'>Patient Admissions by Clinical Department</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column datatype='string' name='[department]' role='dimension' type='nominal' />
+            <column-instance column='[department]' derivation='None' name='[none:department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total Admissions]' derivation='User' name='[usr:Total Admissions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.hospital_encounters].[none:department:nk]</rows>
+        <cols>[federated.hospital_encounters].[usr:Total Admissions:qk]</cols>
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0006}' />
+    </worksheet>
+    <worksheet name='D2_Hist_LOS_Distribution'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='12'>Length of Stay (LOS) Distribution (Days 1–14)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column datatype='integer' name='[time_in_hospital]' role='dimension' type='ordinal' />
+            <column-instance column='[time_in_hospital]' derivation='None' name='[none:time_in_hospital:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Total Admissions]' derivation='User' name='[usr:Total Admissions:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.hospital_encounters].[usr:Total Admissions:qk]</rows>
+        <cols>[federated.hospital_encounters].[none:time_in_hospital:ok]</cols>
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0007}' />
+    </worksheet>
+    <worksheet name='D3_Bar_Dept_ALOS_Rank'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='12'>Ranked Department Length of Stay (ALOS Days)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hospital_encounters'>
+            <column datatype='string' name='[department]' role='dimension' type='nominal' />
+            <column-instance column='[department]' derivation='None' name='[none:department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Average Length of Stay]' derivation='User' name='[usr:Average Length of Stay:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.hospital_encounters].[none:department:nk]</rows>
+        <cols>[federated.hospital_encounters].[usr:Average Length of Stay:qk]</cols>
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0008}' />
+    </worksheet>
+    <worksheet name='D4_Trend_Bed_Occupancy'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='12'>Daily Inpatient Bed Occupancy Rate vs 75%–90% Target Band</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Synthetic_Capacity_D4' name='federated.synthetic_capacity' />
+          </datasources>
+          <datasource-dependencies datasource='federated.synthetic_capacity'>
+            <column-instance column='[date]' derivation='Day' name='[dy:date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[bed_occupancy_rate_pct]' derivation='Avg' name='[avg:bed_occupancy_rate_pct:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#141414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#5ACB57' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.synthetic_capacity].[avg:bed_occupancy_rate_pct:qk]</rows>
+        <cols>[federated.synthetic_capacity].[dy:date:qk]</cols>
+      </table>
+      <simple-id uuid='{C52B9114-1C04-4E64-8B8D-91E2300D0009}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='1. Hospital Overview'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='16'>Aegis.dv – Hospital Operations Executive Overview</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dashboard'>
+          <format attr='background-color' value='#080808' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' />
+      <datasources>
+        <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+      </datasources>
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='2' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone h='8000' id='3' type-v2='title' w='98000' x='1000' y='1000' />
+            <zone h='16000' id='4' param='horz' type-v2='layout-flow' w='98000' x='1000' y='10000'>
+              <zone h='16000' id='5' name='D1_KPI_Admissions' w='24000' x='1000' y='10000' />
+              <zone h='16000' id='6' name='D1_KPI_ALOS' w='24000' x='26000' y='10000' />
+              <zone h='16000' id='7' name='D1_KPI_Readmission' w='24000' x='51000' y='10000' />
+              <zone h='16000' id='8' name='D1_KPI_PatientDays' w='24000' x='76000' y='10000' />
+            </zone>
+            <zone h='40000' id='9' name='D1_Trend_Adm_vs_Disch' w='98000' x='1000' y='28000' />
+            <zone h='32000' id='10' name='D1_Bar_Dept_Volume' w='98000' x='1000' y='70000' />
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Tablet'>
+          <size sizing-mode='automatic' />
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D1000000-0000-0000-0000-000000000001}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='2. Patient Flow'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='16'>Aegis.dv – Patient Flow &amp; Acute Stay Analytics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dashboard'>
+          <format attr='background-color' value='#080808' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' />
+      <datasources>
+        <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+      </datasources>
+      <zones>
+        <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='21' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone h='8000' id='22' type-v2='title' w='98000' x='1000' y='1000' />
+            <zone h='42000' id='23' name='D2_Hist_LOS_Distribution' w='98000' x='1000' y='10000' />
+            <zone h='46000' id='24' name='D1_Bar_Dept_Volume' w='98000' x='1000' y='54000' />
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Tablet'>
+          <size sizing-mode='automatic' />
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D2000000-0000-0000-0000-000000000002}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='3. Department Analytics'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='16'>Aegis.dv – Department Service Line Benchmarking</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dashboard'>
+          <format attr='background-color' value='#080808' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' />
+      <datasources>
+        <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+      </datasources>
+      <zones>
+        <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='31' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone h='8000' id='32' type-v2='title' w='98000' x='1000' y='1000' />
+            <zone h='42000' id='33' name='D3_Bar_Dept_ALOS_Rank' w='98000' x='1000' y='10000' />
+            <zone h='46000' id='34' name='D1_Bar_Dept_Volume' w='98000' x='1000' y='54000' />
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Tablet'>
+          <size sizing-mode='automatic' />
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D3000000-0000-0000-0000-000000000003}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='4. Resource Utilization'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#F5F5F5' fontsize='16'>Aegis.dv – Facility Resource Utilization &amp; Bed Capacity</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dashboard'>
+          <format attr='background-color' value='#080808' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' />
+      <datasources>
+        <datasource caption='Synthetic_Capacity_D4' name='federated.synthetic_capacity' />
+        <datasource caption='Hospital_Encounters' name='federated.hospital_encounters' />
+      </datasources>
+      <zones>
+        <zone h='100000' id='40' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='41' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+            <zone h='8000' id='42' type-v2='title' w='98000' x='1000' y='1000' />
+            <zone h='45000' id='43' name='D4_Trend_Bed_Occupancy' w='98000' x='1000' y='10000' />
+            <zone h='43000' id='44' name='D1_Trend_Adm_vs_Disch' w='98000' x='1000' y='57000' />
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Tablet'>
+          <size sizing-mode='automatic' />
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D4000000-0000-0000-0000-000000000004}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='32'>
+    <window class='dashboard' maximized='true' name='1. Hospital Overview'>
+      <viewpoints>
+        <viewpoint name='D1_KPI_Admissions'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_KPI_ALOS'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_KPI_Readmission'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_KPI_PatientDays'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_Trend_Adm_vs_Disch'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_Bar_Dept_Volume'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E1000000-0000-0000-0000-000000000001}' />
+    </window>
+    <window class='dashboard' name='2. Patient Flow'>
+      <viewpoints>
+        <viewpoint name='D2_Hist_LOS_Distribution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_Bar_Dept_Volume'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E1000000-0000-0000-0000-000000000002}' />
+    </window>
+    <window class='dashboard' name='3. Department Analytics'>
+      <viewpoints>
+        <viewpoint name='D3_Bar_Dept_ALOS_Rank'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_Bar_Dept_Volume'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E1000000-0000-0000-0000-000000000003}' />
+    </window>
+    <window class='dashboard' name='4. Resource Utilization'>
+      <viewpoints>
+        <viewpoint name='D4_Trend_Bed_Occupancy'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='D1_Trend_Adm_vs_Disch'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E1000000-0000-0000-0000-000000000004}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D1_KPI_Admissions'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000001}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D1_KPI_ALOS'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000002}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D1_KPI_Readmission'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000003}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D1_KPI_PatientDays'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000004}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D1_Trend_Adm_vs_Disch'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000005}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D1_Bar_Dept_Volume'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000006}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D2_Hist_LOS_Distribution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000007}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D3_Bar_Dept_ALOS_Rank'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000008}' />
+    </window>
+    <window class='worksheet' hidden='true' name='D4_Trend_Bed_Occupancy'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F1000000-0000-0000-0000-000000000009}' />
+    </window>
+  </windows>
+</workbook>
+"""
+
+
+def build_packaged_workbook():
+    """Build Aegis.dv.twb and package into Aegis.dv.twbx."""
+    twb_path = PROJECT_ROOT / "Aegis.dv.twb"
+    twbx_path = PROJECT_ROOT / "Aegis.dv.twbx"
+    tableau_dir = PROJECT_ROOT / "dashboard" / "tableau"
+    tableau_dir.mkdir(parents=True, exist_ok=True)
+
+    # 1. Write Aegis.dv.twb
+    print(f"Writing Tableau workbook XML to {twb_path}...")
+    with open(twb_path, "w", encoding="utf-8") as f:
+        f.write(TWB_TEMPLATE)
+
+    # Copy to dashboard/tableau/
+    shutil.copy(twb_path, tableau_dir / "Aegis.dv.twb")
+
+    # 2. Package into Aegis.dv.twbx ZIP archive
+    print(f"Packaging into Tableau Packaged Workbook at {twbx_path}...")
+    data_excel = PROJECT_ROOT / "data" / "processed" / "hospital_final_dataset.xlsx"
+    data_synth = PROJECT_ROOT / "data" / "processed" / "synthetic_hospital_capacity.csv"
+
+    if not data_excel.exists() or not data_synth.exists():
+        raise FileNotFoundError("Processed datasets must exist prior to packaging.")
+
+    with zipfile.ZipFile(twbx_path, "w", compression=zipfile.ZIP_DEFLATED) as z:
+        # Add Aegis.dv.twb at root
+        z.write(twb_path, arcname="Aegis.dv.twb")
+        # Add Data/Aegis_Hospital/hospital_final_dataset.xlsx
+        z.write(data_excel, arcname="Data/Aegis_Hospital/hospital_final_dataset.xlsx")
+        # Add Data/Aegis_Hospital/synthetic_hospital_capacity.csv
+        z.write(data_synth, arcname="Data/Aegis_Hospital/synthetic_hospital_capacity.csv")
+
+    # Copy to dashboard/tableau/Aegis.dv.twbx
+    shutil.copy(twbx_path, tableau_dir / "Aegis.dv.twbx")
+    print(f"Successfully generated {twbx_path} ({twbx_path.stat().st_size:,} bytes).")
+
+
+if __name__ == "__main__":
+    build_packaged_workbook()
