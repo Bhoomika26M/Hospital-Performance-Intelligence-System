@@ -1,41 +1,92 @@
-# Milestone 2: KPI Engineering and Dashboard Planning
+# Milestone 3 – Dashboard Development
 
-## Objective
-To calculate important hospital performance indicators using the cleaned healthcare datasets.
+## 1. Project Overview
 
-## Key Performance Indicators
+MedTrack is a Hospital Operations and Patient Analytics Dashboard developed using Python and Streamlit.
 
-The following six KPIs were developed:
+The dashboard provides interactive visualizations and insights into hospital admissions, patient flow, clinical analytics and resource utilization.
 
-1. Total Admissions
-2. Average Length of Stay
-3. Median Length of Stay
-4. Average ICU Stay
-5. Unique Patients
-6. Repeat-Record Patient Percentage
+## 2. Dashboard Modules
 
-## Implementation
-- Processed cleaned healthcare datasets using Python.
-- Used Pandas for data analysis and calculations.
-- Generated KPI output CSV files.
-- Prepared analytical summaries for dashboard visualization.
+The dashboard consists of four main sections:
 
-## Dashboard Planning
-Four dashboard sections were planned:
-- Hospital Overview
-- Patient Flow
-- Department Analytics
-- Resource Utilization
+### 1. Hospital Overview
+- Total hospital admissions
+- Average length of stay
+- Medical condition analysis
+- Admission type distribution
 
-## Technologies Used
+### 2. Patient Flow Analysis
+- Monthly admission trends
+- Patient outcome analysis
+- Emergency vs OPD admissions
+- Patient stay analysis
+
+### 3. Department and Clinical Analytics
+- Admissions by medical condition
+- Top 10 doctors by patient admissions
+- Average patient stay by medical condition
+- Clinical workload analysis
+
+### 4. Resource Utilization
+- Room assignment frequency
+- ICU stay distribution
+- Hospital stay distribution
+- Resource utilization analysis
+
+## 3. Technologies Used
+
 - Python
+- Streamlit
 - Pandas
+- Plotly
 
-## Data Limitations
-Occupancy rate, bed utilization and department efficiency require additional source data and cannot currently be calculated reliably.
+## 4. Dataset
 
-## Outcome
-Successfully generated key hospital performance indicators for integration into the MedTrack dashboard.
+The project uses hospital healthcare datasets.
 
-## Status
-**Completed**
+Data processing includes:
+- Data cleaning
+- Handling missing values
+- Removing duplicate records
+- Generating cleaned datasets
+- KPI generation
+
+## 5. Project Structure
+
+```text
+Milestone_3/
+│
+├── dashboard/
+│   ├── app.py
+│   └── cleaned_data/
+│
+├── screenshots/
+│
+├── documentation/
+│
+└── README.md
+```
+
+## 6. How to Run the Dashboard
+
+1. Install the required Python packages.
+2. Open the project directory in VS Code.
+3. Open the terminal.
+4. Run:
+
+```bash
+streamlit run app.py
+```
+
+5. Open the local URL displayed in the terminal.
+
+## 7. Results
+
+The dashboard successfully displays hospital performance indicators through interactive charts, visualizations and KPI summaries.
+
+It helps users understand hospital admission patterns, patient outcomes, clinical workload and resource utilization.
+
+## 8. Limitations
+
+Some measurements, such as actual bed occupancy and department-wise efficiency, cannot be reliably
