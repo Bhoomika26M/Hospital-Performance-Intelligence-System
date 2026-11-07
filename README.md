@@ -1,97 +1,38 @@
-# MedTrack_DV – Testing and Documentation
+# MedTrack_DV – Tableau Dashboards
 
-## 1. Project Overview
+## Project Overview
+MedTrack_DV is a Hospital Operations and Patient Analytics Dashboard project developed using Tableau.
 
-MedTrack_DV is a Hospital Operations and Patient Analytics Dashboard project developed to analyze hospital admissions, patient flow, clinical trends and resource utilization.
+The project focuses on analyzing hospital admissions, patient flow, clinical trends and hospital resource utilization.
 
-## 2. Testing and Validation
+## Tableau Public Workbook
 
-The following checks are included in the project testing process:
+**Project Name:** MEDTRACK_DV – Hospital Analytics
 
-- Verified the hospital dataset was loaded successfully.
-- Checked and removed duplicate records.
-- Validated admission and discharge date fields.
-- Calculated patient length of stay.
-- Checked the cleaned dataset for remaining duplicate records.
-- Reviewed KPI calculations.
-- Tested dashboard filters and interactions.
+**Published Dashboard Link:**
 
-## 3. Dataset Validation
+https://public.tableau.com/views/MEDTRACK_DV_Hospital_Analytics/HospitalOverview?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-| Validation                | Result |
-| ------------------------- | ------ |
-| Original records          | 55,500 |
-| Duplicate records removed | 534    |
-| Final cleaned records     | 54,966 |
-| Remaining duplicate rows  | 0      |
-| Cleaned dataset columns   | 16     |
-
-## 4. KPI Validation
-
-The following KPIs are supported by the available dataset:
-
-- Total Admissions
-- Average Length of Stay
-- Total Hospitals
-- Total Billing
-
-The following KPIs require additional operational data:
-
-- Occupancy Rate
-- Readmission Rate
-- Bed Utilization Rate
-- Department Efficiency Score
-- Staff Utilization
-
-These unsupported KPIs should not be presented as measured results without the required data.
-
-## 5. Dashboard Testing Checklist
-
-The project contains four dashboard sections:
+## Dashboards Included
 
 1. Hospital Overview
 2. Patient Flow
 3. Clinical Analytics
 4. Resource Utilization
 
-Testing checklist:
+## Dataset
 
-- [ ] Dashboard titles are displayed correctly.
-- [ ] Charts and visualizations load correctly.
-- [ ] Filters work correctly.
-- [ ] Dashboard navigation works.
-- [ ] Chart interactions work.
-- [ ] Data values are displayed correctly.
-- [ ] Tableau Public workbook is accessible.
+**File:** hospital_tableau_public.csv
 
-## 6. Data Limitations
+The dataset is used for creating interactive hospital analytics visualizations.
 
-The available dataset does not contain:
+## Tools Used
 
-- Department information
-- Unique patient identifiers
-- Bed capacity information
-- Staff allocation information
-- Equipment inventory and usage information
-
-Additional trusted operational datasets are required to calculate these metrics accurately.
-
-## 7. Tools and Technologies
-
+- Tableau Public
+- Microsoft Excel
 - Python
 - Pandas
-- Microsoft Excel
-- Tableau Public
-- CSV datasets
 
-## 8. Final Deliverables
+## Project Deliverable
 
-- Raw hospital dataset
-- Cleaned hospital dataset
-- KPI engineering workbook
-- Tableau Public dashboard workbook
-- Testing and validation documentation
-
-## 9. Conclusion
-
-The MedTrack_DV project transforms hospital admission data into interactive visual insights. The dashboard suite supports analysis of hospital performance, patient flow, clinical trends and resource utilization, while documenting the limitations of the available operational data.
+An interactive Tableau Public workbook containing four hospital analytics dashboards.
