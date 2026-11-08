@@ -1,0 +1,6 @@
+department,licensed_beds,doctors,target_los_days,equipment_name,equipment_units
+Cardiology,90,14,14,ECG / Echo units,12
+Endocrinology,180,24,15,Lab analyzers,10
+Oncology,90,16,16,Infusion pumps,20
+Pulmonology,90,12,14,Ventilators,15
+Rheumatology,90,10,14,Imaging units,8
