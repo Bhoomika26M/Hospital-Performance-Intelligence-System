@@ -1,0 +1,738 @@
+City Name,Zone Name,Ward Name,Zone No.,Ward No.,Facility Name,Type  (Hospital / Nursing Home / Lab), Class : (Public / Private),Pharmacy Available : Yes/No,Number of Beds in Emergency Wards ,Number of Beds in facility type,Number of Doctors / Physicians,Number of Nurses,Number of Midwives Professional ,Average Monthly Patient Footfall,Ambulance Service Available,Count of Ambulance
+Pune,kasba - vishrambagwada WO,Ambil Odha,5.0,,"Late Matoshri Ramabai Ambedkar Maternity Home, AmbilOdha",Hospital (Maternity Home),Public,Yes,0,10,2,4,1,4500,Yes,1
+Pune,Aundh - Baner WO,Aundh,2.0,,"Aundh Kuti Maternity Home, Aundh",Hospital (Maternity Home),Public,Yes,0,14,2,5,2,2500,Yes,1
+Pune,Aundh - Baner WO,Bopodi,2.0,,"Late Draupadabai Murlidhar Khedekar Maternity Home, Bopodi",Hospital (Maternity Home),Public,Yes,0,16,2,4,9,1900,Yes,1
+Pune,Ghole Road - Shivaji Nagar WO,Shivaji Nagar Station,2.0,,"Dr. Dalvi, PMC Joint Project",Hospital (Maternity Home),Public,Yes,0,30,4,7,9,2400,Yes,2
+Pune,Hadapsar - Mundhwa WO,Hadapsar,4.0,,"Late Anna Saheb Magar Maternity Home, Hadapsar",Hospital (Maternity Home),Public,Yes,0,20,2,3,6,4500,Yes,1
+Pune,Ghole Road - Shivaji Nagar WO,Health Camp,2.0,,"Dr. Homi J. Bhabha Maternity Home, Health Camp",Hospital (Maternity Home),Public,Yes,0,16,2,6,6,4000,Yes,2
+Pune,Kothrud - Bavdhan WO,"Gujrath Colony, Kothrud",2.0,,"Late Jayabai Sutar Maternity Home, Kothrud",Hospital (Maternity Home),Public,Yes,0,10,4,7,6,5000,Yes,4
+Pune,Hadapsar - Mundhwa WO,Mundhwa,4.0,,"Late Sakharam Kundalik Kodre Maternity Home, Mundhwa",Hospital (Maternity Home),Public,Yes,0,8,2,6,5,3500,Yes,1
+Pune,Aundh - Baner WO,Pashan Gaon,2.0,,"Late Sahadev Eknath Nimhan Maternity Home, Pashan",Hospital (Maternity Home),Public,Yes,0,16,2,3,5,1800,Yes,1
+Pune,Bhawani Peth WO,Bhawani Peth,5.0,,Late Chandu Mama Sonawane Maternity Home,Hospital (Maternity Home),Public,Yes,0,86,5,12,9,5500,Yes,2
+Pune,Wanowrie - Ramtekdi WO,Wanowrie,4.0,,"Late Namedevrao Shivarkar Maternity Home, Wanorie",Hospital (Maternity Home),Public,Yes,0,10,1,4,4,1900,Yes,1
+Pune,Sangamwadi WO,Yerawada,1.0,,"Bharatratna Rajiv Gandhi Hospital, Yerawada",Hospital (Maternity Home),Public,Yes,0,180,4,18,10,8000,Yes,2
+Pune,Bhawani Peth WO,Guruwar Peth,5.0,,"Late Savitribai Phule Maternity Home, Guruwarpeth",Hospital (Maternity Home),Public,Yes,0,10,2,2,4,3500,Yes,1
+Pune,Kondhwa - Yewlewadi WO,Kondhwa,4.0,,"Late Minatai Thakare Maternity Home, Kondhwa",Hospital (Maternity Home),Public,Yes,0,10,2,6,0,2600,Yes,1
+Pune,kasba - vishrambagwada WO,"Gadikhana, Shukruwar Peth",5.0,,"Late Malti Kachi Maternity Home, Gadikhana",Hospital (Maternity Home),Public,Yes,0,20,2,1,5,2500,Yes,2
+Pune,kasba - vishrambagwada WO,Mitramandal,5.0,,Rajmata Jijau Mitra Mandal (only IPD),Hospital (Maternity Home),Public,Yes,0,20,2,3,3,50,Yes,1
+Pune,Kondhwa - Yewlewadi WO,Balaji Nagar,4.0,,"Late Kashinath Aa. Dhankavde, Balajinagar",Hospital (Maternity Home),Public,Yes,0,20,2,2,3,1200,Yes,1
+Pune,Sangamwadi WO,"Maharashtra Housing Board, Yerawada",1.0,,"Chatrpati Shivray Disp, Yerwada, Nagpur Chawl",Hospital (Maternity Home),Public,Yes,0,10,1,2,4,2000,No,0
+Pune,Bhawani Peth WO,Somwar Peth,5.0,,Kamla Nehru Hospital,Hospital (General),Public,Yes,0,450,10,64,23,18000,Yes,3
+Pune,Dhole Patil Road WO,Pune Station,1.0,,Dr. Naidu Infectious Disease Hospital,Hospital (Infectious Disease),Public,Yes,0,200,4,7,13,4000,Yes,3
+Pune,Warje - Karve Nagar WO,Erandwane,3.0,,"Late. Tharkude Dispensary, Erandwane",Dispensary (OPD),Public,Yes,0,0,1,0,1,1400,No,0
+Pune,Bhawani Peth WO,Bhawani Peth,5.0,,"Bai Bhikaji Pastonji Bammanji Dispensary, Bhawanipeth",Dispensary (OPD),Public,Yes,0,0,1,0,1,1100,No,0
+Pune,Sinhagad Road WO,Dattawadi,,,"Late Anandibai Narhar Gadgil Dispensary, Dattawadi",Dispensary (OPD),Public,Yes,0,0,1,0,1,2100,No,0
+Pune,Bhawani Peth WO,Ganjpeth,5.0,,"Late Balaji Rakhmaji Gaikwad Dispensary, Ganjpeth",Dispensary (OPD),Public,Yes,0,0,1,0,1,2500,No,0
+Pune,Warje - Karve Nagar WO,Hingne,3.0,,"Late Vijayabai Shirke Health Centre, Hingne",Dispensary (OPD),Public,Yes,0,0,1,0,1,1100,No,0
+Pune,kasba - vishrambagwada WO,Mitramandal,5.0,,"Hindu Samrat SS Pramukh Balasaheb Thakare Disp, Parvati Darshan / old Lions Club Dispensary, Mitra Mandal",Dispensary (OPD),Public,Yes,0,0,1,0,1,5000,No,0
+Pune,Bhawani Peth WO,Mangalwar Peth,5.0,,"Late Dada Saheb Gaikwad Dispensary, Mangalwarpeth, Barne Road",Dispensary (OPD),Public,Yes,0,0,1,0,1,1200,No,0
+Pune,,Narayan Peth,,,"Late Kalawati Mawale Dispensary, Narayanpeth",Dispensary (OPD),Public,Yes,0,0,1,0,1,2200,No,0
+Pune,Bhawani Peth WO,Nana Peth,,,"Late Mama Saheb Badade Dispensary, Nanapeth",Dispensary (OPD),Public,Yes,0,0,1,0,1,1300,No,0
+Pune,,Ravivar Peth,,,"Hutatama Babu Genu Dispensary, Raviwarpeth",Dispensary (OPD),Public,Yes,0,0,1,0,1,1200,No,0
+Pune,,Vishrantwadi,,,"Siddharth Dispensary, Vishrantwadi",Dispensary (OPD),Public,Yes,0,0,1,0,2,2900,No,0
+Pune,Sahakar Nagar - Dhankawadi WO,Sahakar Nagar,,,"Late Shivshankar Pote Dispensary, Sahakarnagar",Dispensary (OPD),Public,Yes,0,0,2,2,1,10000,No,1
+Pune,,Shaniwar Peth,,,"Late Mukundrao Lele Dispensary, Shaniwarpeth",Dispensary (OPD),Public,Yes,0,0,1,0,2,1800,No,0
+Pune,,"PMC Bhavan, Shivaji Nagar",,,"Late Jangalrao Kondiba Amrale Dispensary, Shivaji Nagar",Dispensary (OPD),Public,Yes,0,0,1,0,1,2800,No,0
+Pune,,Aundh Road,,,"Late Baburao Genba Shewale Hospital, Chikhalwadi",Dispensary (OPD),Public,Yes,0,0,1,0,1,2200,No,0
+Pune,,Ganesh Peth,,,"Late Rohidas Kirad Dispensary, Ganeshpeth",Dispensary (OPD),Public,Yes,0,0,1,0,1,1100,No,0
+Pune,,Kalyani Nagar,,,"Late Damodarraoji Galande Patil Dispensary, Kalyani Nagar",Dispensary (OPD),Public,Yes,0,0,1,0,2,2100,No,1
+Pune,,Lohagaon,,,"Christ Rock Edward Paul Dispensary, Lohagaon",Dispensary (OPD),Public,Yes,0,0,1,0,1,1100,No,0
+Pune,,"Maharshi Nagar, Gultekdi",,,"Ga.Bha. Indumati Manilal Khanna Dispensary, Maharshi Nagar",Dispensary (OPD),Public,Yes,0,0,1,0,1,2400,No,0
+Pune,,Bhim nagar,,,"Rajashree Shahu Maharaj Dispensary, Bhim Nagar - Shirke Wasti",Dispensary (OPD),Public,Yes,0,0,1,0,1,1100,No,0
+Pune,,Kelewadi,,,"Late Sundarabai Ganpat Raut Dispensary, Kelewadi",Dispensary (OPD),Public,Yes,0,0,1,1,1,900,No,0
+Pune,,Gandhi Nagar,,,"Late Lokshahir Annabhau Sathe Dispensary, Gandhi Nagar",Dispensary (OPD),Public,Yes,0,0,1,0,2,1300,No,0
+Pune,,"Gadikhana, Shukruwar Peth",,,"Dr. Kotnis Health Centre, Gadikhana",Dispensary (OPD),Public,Yes,0,0,4,1,1,2500,No,0
+Pune,,Koregaon Park,,,"Late Bapu Saheb Genuji Kawade Patil Dispensary,  Kawade Wasti, Koregaon Park",Dispensary (OPD),Public,Yes,0,0,1,0,1,1400,No,0
+Pune,,Kalas,,,"Kalas Dispensary, Jadhav Wasti - Kalas",Dispensary (OPD),Public,Yes,0,0,1,0,3,3000,No,1
+Pune,,Dias Plot,,,"Bharatratna Dr. Babasaheb Ambedkar Dispensary, Dias Plot",Dispensary (OPD),Public,Yes,0,0,1,0,1,1800,No,0
+Pune,,Mohammad Wadi,,,"Late Dashrath Baliram Bhangire Disp., Mohammad Wadi",Dispensary (OPD),Public,Yes,0,0,1,0,1,1400,No,0
+Pune,Wanowrie - Ramtekdi WO,"Kedari Nagar, Wanowrie",,,"Chatrapati Shahu Maharaj Disp., Kedari Nagar, Wanawadi",Dispensary (OPD),Public,Yes,0,0,1,0,1,700,No,1
+Pune,,Atul Nagar,,,"Late Bartakke Disp., Atul Nagar",Dispensary (OPD),Public,Yes,0,0,1,0,1,3000,No,1
+Pune,,Janta vasahat,,,"Janta Vasahat Dispensary, Janta Vasahat",Dispensary (OPD),Public,Yes,0,0,1,0,1,800,No,0
+Pune,,Upper Bibwewadi,,,"Yug Purush Raja Shiv Chatrapati, Bibwewadi (Upper) Disp.",Dispensary (OPD),Public,Yes,0,0,1,0,1,2500,No,0
+Pune,Kothrud - Bavdhan WO,"Gosavi Wasti, Kothrud",,,Late Bindu Madhav Thakare Disp. Gosavi Wasti,Dispensary (OPD),Public,Yes,0,0,1,0,1,900,No,0
+Pune,Sinhagad Road WO,Vadgaon,,,"PMC Vadagaon Disp., Dhayari",Dispensary (OPD),Public,Yes,0,0,1,0,1,2200,No,0
+Pune,Sahakar Nagar - Dhankawadi WO,Dhankawadi,,,Late Vilasrao Tambe Disp Dhankawadi,Dispensary (OPD),Public,Yes,0,0,2,1,1,6800,No,0
+Pune,Warje - Karve Nagar WO,"Ramnagar, Warje",,,"Late Pruthak Barate Disp, Ramnagar ",Dispensary (OPD),Public,Yes,0,0,1,0,2,2100,No,0
+Pune,,Somwar Peth,,,"Late Kalawatibai Todkar Disp., Somaver Peth",Dispensary (OPD),Public,Yes,0,0,1,0,1,1100,No,0
+Pune,Sahakar Nagar - Dhankawadi WO,Sukh Sagar Nagar,,,"Ward No.76, Katraj Davakhana",Dispensary (OPD),Public,Yes,0,0,1,0,1,2800,No,0
+Pune,,Bibwewadi,,,"Shri. Sadguru Shankar Maharaj Disp., Bibwewadi",Dispensary (OPD),Public,Yes,0,0,1,0,2,2100,No,0
+Pune,,Guruwar Peth,,,"Swatantrya Senani Gotiram Bhaiyya Kachi, Guruvar Peth Poly Clinic",Dispensary (OPD),Public,Yes,0,0,1,0,1,90,No,0
+Pune,Sinhagad Road WO,Dhayari,,,"Late Murlidhar Pandurang Laygude Disp., Dhayari",Dispensary (OPD),Public,Yes,0,0,1,0,1,600,No,0
+Pune,Sangamwadi WO,Yerawada,,,Swargiya Se Gangaram Karne Disp Shastrinagar Yerwada,Dispensary (OPD),Public,Yes,0,0,1,0,1,700,No,0
+Pune,Kondhwa - Yewlewadi WO,Kondhwa,,,"PMC Dispensary, No. 62 Kondhwa Bk.",Dispensary (OPD),Public,Yes,0,0,1,0,1,1800,No,0
+Pune,,Upper Indira Nagar,,,Late Premchand Oswal Disp. Upper Indirnagar,Dispensary (OPD),Public,Yes,0,0,1,0,1,1200,No,0
+Pune,,Sai nagar,,,"PMC Dispensary Sainagar, Kondhwa",Dispensary (OPD),Public,Yes,0,0,1,0,1,300,No,0
+Pune,,Wadgaonsheri,,,"Late Meena Tai Thakare Polyclinic, Wadgaon Sheri Disp. ",Dispensary (OPD),Public,Yes,0,0,1,0,1,3600,No,1
+Pune,,Kharadi,,,"PMC Dispensary, Kharadi",Dispensary (OPD),Public,Yes,0,0,1,0,2,1500,No,0
+Pune,,Mitha Nagar,,,"Hazrat Khwaja Moinuddin Khisti Rahe, Khwaja Garib Nawaz Disp., Mithanagar",Dispensary (OPD),Public,Yes,0,0,1,0,1,3900,No,0
+Pune,Kothrud - Bavdhan WO,"Laxmi Nagar, Kothrud",,,"E - Health Centre, Laxmi Nagar, Kothrud",Dispensary (OPD),Public,Yes,0,0,1,0,1,,No,0
+Pune,Wanowrie - Ramtekdi WO,Ramtekdi,4.0,,"E - Health Centre, Ramtekdi, Hadapsar",Dispensary (OPD),Public,Yes,0,0,1,0,1,,No,0
+Pune,Aundh - Baner WO,Baner,2.0,,"Smart Clinic, Baner",Dispensary (OPD),Public,Yes,0,0,1,0,1,,No,0
+Pune,,Narayan Peth,,,"Immunization Centre, Narayan Peth",Dispensary (OPD + Immunization Centre),Public,Yes,0,0,1,0,3,2200,No,0
+Pune,,,,,Old Firta Dispensary,Dispensary (OPD - Mobile Clinic),Public,Yes,0,0,1,0,1,900,Yes,1
+Pune,,,,,Navin Firta Dispensary,Dispensary (OPD - Mobile Clinic),Public,Yes,0,0,1,0,1,400,Yes,1
+Pune,Kondhwa - Yewlewadi WO,Katraj,4.0,,"PMC Firta Dispensary, Ward No.40 Katraj, Vasant More Firta Dispensary",Dispensary (OPD - Mobile Clinic),Public,Yes,0,0,1,0,1,1200,Yes,1
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Mahrashtra Medical Foundation Joshi Hosptial,speciality,private,YES,N.A.,98,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sathe Hospital,MAT+GEN,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Tarabai Limye Hospital,MATERNITY,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Paranjpe Gynac Hospital,MATERNITY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Nanal Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Deshmukh Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Hrishikesh Healthcare pvt. Ltd.,GENERAL,private,YES,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Colony Nursing Home,MATERNITY,private,N.A.,N.A.,100,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Purandare Maternity Home,MATERNITY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Lokmanya Hospital,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,"Dr. Karve""s Hospital",pediatric,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Yashshree Maternity & Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sushrut  Hospital ,ortho.,private,YES,N.A.,120,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Harjeevan Hospital,MAT+GEN,private,YES,N.A.,19,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Manoj Clinic,GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sanjeevan Surgery/ Atharva Netralaya & Reserch Centre ,GENERAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Nerlikars Hospital,GENERAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Katariya Hospital,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Dr. Todkar Hospital,MAT+GEN,private,N.A.,N.A.,29,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Marathe Hospital,ortho.,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Dr. Purohit Maternity Hospital,MAT+GEN,private,N.A.,N.A.,18,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Dwidal Nursing Home,MAT+GEN,private,N.A.,N.A.,18,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Gultekdi Nursing Home & Maternity Home,MAT+GEN,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Sushrusha Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Poona Advantist Hospital,MAT+GEN,private,N.A.,N.A.,90,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Aliance Munot Hospital,MAT+GEN,private,N.A.,N.A.,33,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Sharada Clinic,ortho.,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Anand Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Sharada Clinic           Shaishav Clinic,pediatric,private,N.A.,N.A.,100,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,ENT Hospital,ENT,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Surgical Nursing Home,GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Sutika Seva Mandir,MATERNITY,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Naik Orthopadic Hospital,ortho.,private,N.A.,N.A.,40,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Ratnadeep  Hospital,GENERAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Kering Hospital,ortho.,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Mahatma Gandhi Hospital,GENERAL,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr.Patankar Medical Foundetion & Patankar Hospital Pvt. Ltd.,MAT+GEN,private,YES,N.A.,40,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Deshmukh Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Jijamata Hospital,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Mulanche Navjeevan Hospital,pediatric,private,N.A.,N.A.,13,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Shreeyash Hospital,GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Yashraj Nursing Home,GENERAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Wagdarikar Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Vartak Health Services pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Madhavrao Rande Memorial Hospital (Sanjivan Hospital),speciality,private,YES,N.A.,50,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Anand Maternity & Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Gokhale Hospital,ortho.,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Suyash Hospityal,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Pooja Nursing Home,GENERAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Ranade Hospital ,MATERNITY,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Asha Nursing Home,GENERAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Lathi Hospital & Surgical Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Kalekar Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Godbole Hospital ,GENERAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Matruseva Hospital Maternity & Surgical Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,Shanta Clinic,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Nachiket Hospital,GENERAL,private,N.A.,N.A.,14,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Surya Hospital pvt.ltd. Surya sahaydri hospital,speciality,private,YES,N.A.,71,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Kelkar Pediatric Hospital     ( Children ),pediatric,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Dhodu Mama Sathe Hospital Vaidykiya Mahavidyalaya,speciality,private,YES,N.A.,100,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sancheti Institute for Orthopedic & Rehabilitaion,ortho.,private,YES,N.A.,100,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Bapat Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Shintre Hospital,MATERNITY,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Nursing Home,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Dhanwantari Hospital,MAT+ GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Vinayak Hospital Maternity Nursing Home & Vinayak Homopatic Clinic,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Amey Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Poona Hospital & Reasarch Center,speciality,private,YES,N.A.,300,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Deodhar Eyes Hospital,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Devyani Hospital Surguri Maternity & General Nursing Home,speciality,private,N.A.,N.A.,14,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Niramay Nursing Home,GENERAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Khurd Maternity Home,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Sanjeevani Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Mamata Maternity Nursing Home,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Maher CLINIC,MAT+ GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Jehangir Hospital,speciality,private,YES,N.A.,335,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Phadnis Hospital Maternity & General Nursing Home,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Deendayal Memorial Hospital,speciality,private,YES,N.A.,48,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Sahwas Hospital Nursing Home,GENERAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Komal  Nursing Home & Shetiya Hospital,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Asha Kiran Hospital,MAT+GEN,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,SAHAKARNAGAR-DHANKWADI,5.0,,Kothari Hospital,ortho.,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Bora Nursing Home,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Suraj Hospital,GENERAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Suman Polyclinic & Nursing Home Pediatric & Medical,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Tupe Hospital,GENERAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Sadhu Vaswani Mission Medical Complex  (inlax & Budhrani Hospital),speciality,private,YES,N.A.,369,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,N.M.Wadiya Institute of Cardiology Charitable Trust,CARDIOLOGY,private,YES,N.A.,57,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sardesai Hospital & ENT Hospital,ENT,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Dr. Vaidya Hospital Surgical & General Nursing Home,GENERAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Dabake Maternity & General Nursing Home,MAT+ GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Krishna Hospital,speciality,private,YES,N.A.,40,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Nursing Home,GENERAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Ghaisas ENT Hospital,ENT,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Sarswati Vilas Hospital,OPTHALMOLOGY,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Rukhmini Hospital,MAT+GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Khanade Hospital,MATERNITY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Swanand Maternity Hospital & Laboretary,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Childrens Hospital,pediatric,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Om Hospital,GENERAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Mahajan Nursing Home,MAT+   GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sant Clinic Gaynic & Maternity Home. (Strirog & prasuti Shashtra Hospital),MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Rode Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Potdar Maternity Home Obstetric & Gayncology & Pediyatric Speacility,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Zanwar Eye Hospital,OPTHALMOLOGY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Chinmay Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Shreyas Maternity Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Marathe Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Gupte hospital of acurate daigonestic pvt.ltd.,MATERNITY,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Sadhana Hospital & General Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Kamal Nursing Home,MAT+GEN,private,N.A.,N.A.,19,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Joshi Hospital Maternity & Gaynic Hospital,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Akshay Nursing Home,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,Chaitanya Nursing Home,GENERAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Maharashtra Medical Foundetion Ratna Memorial Hospital,speciality,private,YES,N.A.,102,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Kamal Netra Rugnalya,OPTHALMOLOGY,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Deodhar Nursing Home,GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Deodhar Nursing Home,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Sushrut Narsing Home,MAT+GEN,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Anand Hospital,GENERAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Bhide Hospital Balrog Vibhag,pediatric,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Krushna Hospital & Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Agarwal Nursing Home & General Hospital,GENERAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Ashwini Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Manu Eye Hospital,OPTHALMOLOGY,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Shri. P.P.Loknath TirthSwami Maharaj Smarak Shri. Tuljabhavani Aarogya Dham,GENERAL,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Shraddha Hospital ,GENERAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Kotbagi  Hospital Pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Dr. Gaikwad Hospital,MAT+GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Kushte Nursing Home Maternity & General Surgical Nursing Home,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Shri Hospital Nursing,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Suman Sargical Home,GENERAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Kale Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Dhanwantari Hospital,GENERAL,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Shaikh  Hospital,MATERNITY,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Purohit Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Dr. Nenes Hospital,GENERAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Vastalya Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Deep  Eye Clinic ,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Yogesh Hospital,ortho.,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Shreyash Maternity & Eye Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Omkar Nursing Home,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Walvekar Hospital,MATERNITY,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Kelkar Hospital,OPTHALMOLOGY,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Latkar Hospital,GENERAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Siddharth Hospital,MAT+GEN,private,N.A.,N.A.,23,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Shri J. Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,Orthopedic Nursing Home,ortho.,private,N.A.,N.A.,14,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Dr. Wachasunder ENT Clinic,ENT,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,PETELS HOSPITAL,GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Indira Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Dr. Sabane Prasuti & Shushrusha Gruh,MATERNITY,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Anup Hospital,GENERAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Kelkar Nursing Home,OPTHALMOLOGY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Nirmal  Memorial Hospital,GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Umarji Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Bhave Nursing Hospital,GENERAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Mathura Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Date Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Phadke Hospital,MAT+GEN,private,N.A.,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Remedy Hospital,GENERAL,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Purunanda Sargical Clinic,GENERAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Navjeevan Hospital,GENERAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Parasnis Hospital,MATERNITY,private,N.A.,N.A.,24,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Aarogya Seva Medical Academy  of India Charitable Trust & ACE Hospital ( Multi Speciality Care ),UROLOGY,private,N.A.,N.A.,35,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Gandhi Accident & General Hospital,GENERAL+ ORTHO,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Gaikwad Hospital,GENRAL,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Shushrut Hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sakhi Clinic,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Sarpotdar Eye Hospital,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Akshay Hospital,GENRAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Kulkarni Endo Surgery  Institute & Reconstructive  Urology  Center,GENRAL,private,N.A.,N.A.,21,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Srujan Maternity & Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Joglekar Hospital,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Karne Hospital Pvt. Ltd. Orthopedic Nursing Home,ortho.,private,N.A.,N.A.,23,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Dr. Pai Hospital,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Pramodini Urology Foundiation & Stree Clinic,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Siddhant Maternity Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Tekwade Eye Hospital,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Date Hospital,MAT+GEN,private,N.A.,N.A.,14,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Swyam Clinic & Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Kulkarni Hospital & Child Hospital & Prasutigruh,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Suryaprabha Nursing Home & ENT Hospital,MAT+GEN,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Chandak Hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Dr. Patwardhan Hospital & Prasutigruha,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Dr. Talesara  Hospital,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Anand Medical Foundetion & Subuodh Hospital & Resarch Center,MAT+GEN,private,N.A.,N.A.,40,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Satyanand  Hospital ,MAT+GEN,private,N.A.,N.A.,36,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Aashtang Ayurved Rugnalaya,GENRAL,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Vaibhav General Hospital,GENRAL,private,N.A.,N.A.,13,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Dr. Telang Hospital,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Mother Home  Fartility Clinic,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Vivekanand Medical Foundetion Under Dr. Khenat Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Bhagli Clinic,ortho.,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Bhagli Nursing Home,GENRAL,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Shatau Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Niramay Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Sneha ENT Hospital,ENT,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Sayali Nursing Home,MATERNITY,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Kamla Devi Memorial Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Vimal Nursing Home,MAT+GEN,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Pawar Multispeciality Hospital & dignostic Centre Pvt.Ltd.,speciality,private,YES,N.A.,53,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Madhukar General Hospital,MAT+GEN,private,N.A.,N.A.,24,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Mulye Hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Todkar Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Parvati Netra Chikitsalya,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Yashwant Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Suyash Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Kamat Clinic,GENERAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Jagtap Hospital,MAT+GEN,private,YES,N.A.,38,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,BHAVANI PETH,5.0,,Manohar Prasuti Gruha,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Modern ENT Hospital,ENT,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Gadkari Eye Center,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Dhadfale Nursing Home,GENRAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dhruvis  Clinic,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Joshi Maternity Hospital,MATERNITY,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Bhandari Maternity & Nursing Home,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Adate General Hospital,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Sathe Maternity Home,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Deshmukh Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,Kamal Nursing Home & Maternity Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Prakash Eyes Hospital,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Sanjeevani Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,ENT & Eyes Hospital ( Sant Hospital ),OPTHALMOLOGY+ENT,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Aawari Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Kidny & Dialysis  Center ( Ambike Hospital ),UROLOGY,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Sham Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Dharmadhikari Hospital,MAT+GEN,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Eye Hospital ( Dr. Bhats Eye Care Center ),OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,K.E.M. Hospital,speciality,private,YES,N.A.,568,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,vatsal Hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Samarth Hospital,GENERAL,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Shri Sai Sneh Diagnostic  Center Pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,31,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Maher Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,N.M.Wadia Hospital,speciality,private,N.A.,N.A.,70,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Chaitanya Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Belsare ENT Hospital,ENT,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Bhalerao Prasuti Gruha,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. S.D.Patil Eye Clinic & Hospital,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Suvidha Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Kumbhare Hospital,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Kurtkoti Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Kashyap Nursing Home,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Purohit Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Panchsheel Hospital,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Paras Nursing Home,MAT+GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Dr. Parkhi Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Vyanketesh  General Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Modern Hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,G.M.Babubhai Memorial Hospital,MAT+GEN,private,N.A.,N.A.,14,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,"Ranka Medical Foundetion, Ranka Hospital",speciality,private,YES,N.A.,101,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Salunke Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Sanjeev Maternity & Surgical Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kedarnath Nursing Home,MAT+GEN,private,N.A.,N.A.,24,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Kirad Hospital,GENRAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Jeevan Deep Medicare  Center,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Shri Samrath Hospital,MATERNITY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,PBMAS H.V.Desai Hospital,OPTHLM,private,N.A.,N.A.,95,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Prabhudesai Eye Clinic,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Bhagirathi Child Hospital,pediatric,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Inam Hospital Charitable Trust,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Gujrathi Clinic,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Usha Kiran Hospital,MAT+GEN,private,N.A.,N.A.,28,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Sadguru Nursing Home,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Patil Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,"Family Planning Association of India, Pune",GENERAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,M/s. Prachiti Hospital & Resarch Center,GENRAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Deenannath Mangeshkar Hospital,speciality,private,YES,N.A.,812,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Girija Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,Anusaya Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Yashwant Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Chinmay Nursing Home ,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Bakshi Hospital,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Gayatri Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Ashwini Nursing Home & Maternity Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Dr. Konkar Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Nande Hospital,GENRAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Ajinkya Nursing Home,MAT+GEN,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Pandit Clinic,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Alatkar Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Wankhede Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Shah  Accident  Hospital,ortho.,private,N.A.,N.A.,40,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Life Line Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Sangam Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Children Hospital,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Bidkar Nursing Home,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Patil Hospital,GENERAL,private,N.A.,N.A.,45,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Padalkar Pediatric & Nionetal Nursing Home,pediatric,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Todmal Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Yashoda Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Harsh Hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Polyclinic & Hospital,GENRAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Medipoint Hospital,speciality,private,YES,N.A.,102,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Kasturba Speciality Hospital,speciality,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,BIBEWADI,4.0,,Mother Care Clinic Nursing Home,GENRAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Dharma Orthopedic Center,ortho.,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Badve Maternity & Nursing Home,MATERNITY,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Niranjan Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Kulkarni Hospital & Daigonostic Center,GENRAL,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Bumb Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Mantri Hospital,GENRAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Nayan Jyot Eye Clinic & Lesar Center,GENRAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Amit Hospital,GENRAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Pramila Care Center,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Shahade Hospital,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Trimurti Hospital,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Aadarsh Nursing Home,MATERNITY,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,KOTHRUD-BAVDHAN,3.0,,Senses ENT Hospital & Clinic,ENT,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Agarwal Maternity & General Hospital,MAT+GEN,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Nobal Hospital,MAT+GEN,private,YES,N.A.,8,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Rakshak Hospital,GENRAL,private,YES,N.A.,60,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Chaitanya Hospital & Nursing Home,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Surya Netralaya,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Vimal Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Chaitanya Hospital General Medicin Hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Dr. Sarode Nursing Home,GENRAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Birajdar Nursing Home,MATERNITY,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Sandip Wagh Eye Center,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,C.D.C. & Center for Laproscopy Surgery,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Shri Sainath Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WA,3.0,,Eye Care Center,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Sanjeevani Nursing Home,MAT+GEN,private,N.A.,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Sirin  Hospital Pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,26,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Sunita Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Day Care  Orthopedic Hospital,ortho.,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Prakash Nursing Home,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Disha Nursing Home,GENRAL,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Chaitanya Hospital,MAT+GEN,private,N.A.,N.A.,18,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Capital Polyclinic Health Hospital,GENRAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Kaluskar Hospital & Laboretory,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Shri Samrath Hospital,GENRAL,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Borse Nursing Home,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Vaibhavi Hospital,MAT+GEN,private,N.A.,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Unity Ortho & Eyes Hospital,ortho.,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,High-Line Hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Machve Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Mehta Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Ganga Nursing Home,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,"Konkan Mitra Mandal Trust""s Sahyadri  super Speciality Hospital",speciality,private,YES,N.A.,202,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Paranjpe Eye Clinic & Surgery Center,GENRAL,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Sindhu Nursing Home,GENRAL,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Sai nursing Home,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Ashirwad Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Accurate Diagnostic Pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,40,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Suyash Nursing Home & General Nursing Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Shri Datta Hospital & Nursing Home,GENRAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Divya Clinic,MAT+GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Gurukrupa Maternity Home,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dugad Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Bharti Hospital,speciality,private,YES,N.A.,831,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Nikhil polyclinic,MAT+GEN,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Anand eye care,OPTHLM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,SAHAKARNAGAR-DHANKWADI,1.0,,Shri Sainath Ho spital,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Aadarsh Hospital,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Parmar Hospital,MAT+GEN,private,N.A.,N.A.,22,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Shrisai Prasad Hospital,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Londhe Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Chintamani Hospital,GENRAL,private,YES,N.A.,44,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Rutu Anand Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Yashraj Nursing Home,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Bidaye Hospital pvt.ltd.,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Mankar children & eye hospital,pediatric,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Deccan Center,GENRAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,anand hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Dr. Gogate  eye clinic,OPTHLM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,vinayak netralaya,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,City hospital & daigonestic center,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Dr. jadhav eye foundetion resarch & devolapment center,OPTHLM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,khare eye institute,OPTHLM,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,"sahyadri hospital , Kothrud",speciality,private,YES,N.A.,30,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. bande hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,prashant hospital maternity & general hospital,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,sunny  nursing home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,saideep eye hospital,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Trimal Hospital,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,dr. pabalkar nursing home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,vatsalya  children hospital,pediatric,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Healthplus nursing home,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Shraddha Hospital ,MATERNITY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,pratibha nursing home,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Mantri Hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Nobel  Hospital,speciality,private,YES,N.A.,250,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,chavan nursing home,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,punrvasu chikitsalaya,AURVEDIC,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,suraj hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,shashwat health pvt.ltd shashwat Hospital.,MAT+GEN,private,YES,N.A.,56,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Anand hospital,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,k.k. hospital,GENRAL,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,amrut hospital,GENRAL,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,sane guruji aarogya kendra,MAT+GEN,private,YES,N.A.,250,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,shushurt multi -speciality  hospital,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,kumbhare hospital,GENRAL,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,yashwant eye clinic & hospital,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,sapna clinic,GENRAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,chandralok hospital,MAT+GEN,private,N.A.,N.A.,18,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KONDHWA-YEVALEWADI,5.0,,The eye foundetion,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Oyster  & pearl hospital pvt.ltd.,MATERNITY,private,YES,N.A.,107,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,"Ayodhya chaitrtable trust, ayodhya general hospital",GENRAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,indian red cross soc. Nursing home,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Ramkrishna  hospital,GENRAL,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,center for joint repleacment surgary,ortho.,private,YES,N.A.,54,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Rakhi nursing home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Samarth Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Mohan ent clinic,ENT,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,medileser - vision correction center,OPTHLM,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Rahi health care,GENRAL,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,"sahydri hospital ltd. Sahyadri Hospital, Bibvewadi",speciality,private,YES,N.A.,37,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,AUNDH-BANER,2.0,,Manswardhan diduction rehabliation mental health,GENRAL,private,N.A.,N.A.,40,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,varadvinayak hospital,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,shri balaji eye hospital,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Dhanwantari hospital,GENRAL,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,yashashree  hospital,MATERNITY,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Meera hospital,GENRAL,private,N.A.,N.A.,50,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Vinayak Hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,inamdar hospital ( c.i.m.e.t.),speciality,private,YES,N.A.,46,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Bliz fertility center & pune center for womens health,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,aabane hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,aakankasha eye clinic day care center,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Dr. Sada multi specality hospital,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,"Lata Mangeshkar Medical Foundation""s Mai Mangeshkar Hospital",speciality,private,YES,N.A.,45,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Apurva panchkarma center,AURVEDIC,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,shotri nursing home,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,prathmesh Accident & orthopedic Hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,s.p.deshpande eye clinic,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,om hopital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. chitale ent hospital,ENT,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,omkar hospital,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,ganga maternity & general hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Renu hospital,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Oyster  & pearl Tulip  hospital ,GENRAL,private,YES,N.A.,104,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Gujar children hospital,pediatric,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,vibhute hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,skin citi hospital,GENRAL,private,N.A.,N.A.,18,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Medipoint hospital,MAT+GEN,private,N.A.,N.A.,37,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,ayris eye care,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,prakash netralaya,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,shri maternity & nursing home,GENRAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,kohkade hospital,MAT+GEN,private,N.A.,N.A.,51,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,parvati general hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,vinod memorial multispeciality hospital,MAT+GEN,private,YES,N.A.,51,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,chinchnikar orthopedic & maternity center,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Lifeline multispecaity Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Bhide hospital orthopedic divission,ortho.,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Rakshak multi specility hospital,GENRAL,private,N.A.,N.A.,27,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,universal hospital,MAT+GEN,private,N.A.,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,vardhman eye care ,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,LOC HEALTHCARE LLP,CANSER,private,N.A.,N.A.,50,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,netra seva kendra ( jan kalyan eye bank ),OPTHLM,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,rao nursing home,speciality,private,YES,N.A.,123,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,SINGHARD ROAD,3.0,,shendkar health care  hospitality services pvt. Ltd. Global Hospital & Reserch Institute,speciality,private,YES,N.A.,108,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,AUNDH-BANER,2.0,,adkar hospital & resarch institute pvt.ltd.( sai shree hospital )/ Orthopedic Centre,ortho.,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,shri eye & dental clinic,OPTHLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Naik nimbalkar hospital ( day - care eye hospital ),OPTHLM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,kumbhare clinic & nursing home,MAT+GEN,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,emrald endoscopy center,GENRAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Grant medical foundetion Ruby Holl Clinic,speciality,private,YES,N.A.,553,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,galaxcy care laproscopy institute pvt. Ltd.,speciality,private,YES,N.A.,100,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,KONDHWA-YEVALEWADI,3.0,,shivneri hospital,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,dr. manohar joshi memorial hospital (M.J.M. Hospital),MAT+GEN,private,YES,N.A.,50,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Ishwar krupa nursing home,GENRAL,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,sidhhi hospital laproscopy center,MAT+GEN,private,YES,N.A.,49,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,SINGHARD ROAD,3.0,,wadekar nursing home ( maternity  &  ENT home  ),MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Aims hospital & resarch center,speciality,private,YES,N.A.,101,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,kala clinic & nursing home,MATERNITY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,shaswat hospital ( aundh ),MAT+GEN,private,YES,N.A.,61,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Dyandeep general hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Devshri Hospital ,MAT+GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Suyog Narsing Home Pra. Ltd. ,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Parivartan Ayurved Hospital,AURVEDIC,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,WANADI-RAMTEKDI,4.0,,Grant medical foundetion Ruby Holl Clinic- wanovari,speciality,private,YES,N.A.,120,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Ashswin Hospital,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Ashirvad ENT And Maternity Hospital,MAT+ENT,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Chandan Nagar Nursing Home,GENRAL,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Saikrupa Narsing Home,MATERNITY,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Yashda Hospital,GENRAL,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,SAHAKARNAGAR-DHANKWADI,5.0,,Parvati Ganral Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,"Famili Planing Asociation Of India, Pune",GENRAL,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,KOTHRUD-BAVDHAN,3.0,,Contacare Eye Hospital,OPTHLM,private,N.A.,N.A.,14,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,shivam hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Life Care Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kolambia Ashia Hospital Pr. Ltd.,speciality,private,YES,N.A.,100,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Devyani Multy Speciality Hospital,speciality,private,YES,N.A.,120,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Dhanwantari Clinic,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Sahyadri Hospitals Ltd.-Sahyadri Super Speciality Hospital (Nagar Road),speciality,private,YES,N.A.,161,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Kalyani Hospital ,GENRAL,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Chandrama Clinic,MAT+GEN,private,YES,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Lodha Hospital And Maternity Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,nayantara eye clinic,OPTHALM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,pharande eye hospital & phaco center,OPTHALM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,sheth tarachand ramanath charitable aurvedic hospital,AURVEDIC,private,N.A.,N.A.,236,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,bharti ayurved hospital,AURVEDIC,private,N.A.,N.A.,100,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Datar Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Vision next,OPTHOLM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Vision Eye Center,OPTHALM,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Janani Nursing Home ,MATERNITY,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Chhaya Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Gurdeo Nursing Home,MAT+GEN,private,N.A.,N.A.,12,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Matruchaya Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Aadhar Hospital,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Contacare Eye Hospital,OPTHALM,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Bharti Homeopathic Hospital,HOMEOPATHIC,private,N.A.,N.A.,100,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Alatkar Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Dhanwantari Hospital,MAT+GEN,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Lokmanya hospital Pvt. Ltd.,ortho.,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Shatayu Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Meera Matrnity & General Hospital,MAT+GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Atharv Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Sarwat Hospital,MATERNITY,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Navjeevan Nursing Home,MATERNITY,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Tanmay Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Shantalaxmi Clinic,GENRAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Dr. Bhange's Eye Day Care Center,OPTHALM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Gold Rush Hospital,MAT+GEN,private,N.A.,N.A.,23,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Modi Clinic,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Mrunmayee Health Cear pvt. Ltd. ( sangamnerkar Hospital ),MAT+GEN,private,N.A.,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Sharad Hospital,MAT+ORTHOPEDICS,private,N.A.,N.A.,27,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Pearl womens hospital & yash IVF`,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Samarth Nursing Home,GENRAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Vinayak Hospital,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Samarth Nursing Home,MAT+GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Anup Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,KOTHRUD-BAVDHAN,3.0,,Prabhudesai Eye Clinic,OPTHAL,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Adnya Clinic & Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Lotus Hospital,GENRAL,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,KOTHRUD-BAVDHAN,3.0,,Gems Hospital & Enodoscopy Center,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Shree Nursnig Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Zed Plus Accident Hospital & Nursing Home,MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Shree Gurudatta Specaility Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Siddiqua Hospital & Nursing Home,MATERNITY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Pioneer Medilesar Pvt. Ltd.,OPTHALM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Pune Netraylaya,OPTHALM,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Vastalya Hospital,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Om Hospital,GENRAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,CT Nursing Home,GENRAL,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kalyani Nursing Home,GEN,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Nova Pluse IVF Clinic Pvt. Ltd.,GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Ameya Nursing Home,GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,SUMITRA PARALYSIS CARE CENTRE,GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Poona Leasar Center,OPTAHL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Neo Hospital,GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Noble Hospital-,speciality,private,N.A.,N.A.,80,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Shraddha Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Om Nursing Home,MAT+GEN,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Sai Netralay & specality Clinic,OPTHALM,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,kids clinic (I) pvt. Ltd.cloud Cline  nine Hospital,MATERNITY,private,YES,N.A.,49,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Hope Nursing Home,GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Speciality Day care Centre,GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Zenith Medicare Pvt. Ltd.,GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kirad Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Kamalnayan Nursing Home/Hospital,GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,shree Hospital Criticare & Trauma Centre Pvt.Ltd.,speciality,private,YES,N.A.,72,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Chaitanya Eye Clinic & phaco centre,OPTHALM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Apolo Speciality Hospitals Pvt. Ltd.,speciality,private,N.A.,N.A.,34,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,"Welfare Medical Foundation""s Willoo Poonawala Memorial Hopstial",MAT+GEN,private,YES,N.A.,59,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Indira IVF Hospital pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Ashwini Hospital,MATERNITY,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Bansal Medical Foundation,GEN,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Healing Hands Clinic Pvt. Ltd.,GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Ashtang Ayurved Rugnalaya,MATERNITY,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Asthetic Medispa Pvt. Ltd. (Day-care),GEN,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Umarji mother & child care,MAT+GEN,private,N.A.,N.A.,35,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Sanjivan Hospital,MATERNITY,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Vighnaharta Hospital,MAT+GEN,private,N.A.,N.A.,22,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Bavdhan medicare center,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,ELPIS IVF & Maternity Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Unity Hospital,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,National Institute of Ophalmology (Neo Aundh),OPTHALM,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Sagar Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Vimal Nursing Home,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Eva Nursing Home,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Moraya Nursing Home LLP,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Healing Hands Clinic Pvt. Ltd.,GEN,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Balaji Hospital,GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Prerana Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kids clinic (I) pvt. Ltd. cloud nine Hospital,GEN,private,YES,N.A.,37,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kurkute Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Dr. Tepan Memorial Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Siddharth Nursing Home,MAT+GEN,private,YES,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Sai nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Chandra Nursing Home,MAT+GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Siddhivinayak Hopital,MAT+GEN,private,N.A.,N.A.,27,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Aisan Eye Hospital & laser Institute,OPTAHLM,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Maheshwari Multispeciality Healthcare & Reserch centre LLP,speciality,private,N.A.,N.A.,50,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,CT Nursing Home          (Unit-2),MAT+GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Dhanwantari Hospital,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Usha Maternity Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Patil Multispeciality Hospital & Laproscopy Center,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Akash Eye Clinic & laser Centre,OPTHALM,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Dr. Damale skin Clinic,GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Dr. Nakhare Clinic,GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,"Adakar Hospital & Reserch Institutes, Saishree Hospital",ortho.,private,N.A.,N.A.,30,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Kamat hospital,GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Dr. Jadhav kids Hospital/ Dr. Jadhav Lahan Mulanche Hospital,pediatric,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,APS Nursing Home,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Prakash Hospital,MAT+GEN,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,shashwat Hospital (Medical Wing),GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,"""18.52 North"" Centre For Hand & wrist surgery",GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Nucare Hospital,MAT+GEN,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,OM Eye Care,OPTHAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Axix Eye Clinic,OPTHAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Jupiter Lifeline Hospitals Ltd.,speciality,private,YES,N.A.,178,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Rising Medicare Hospital,speciality,private,YES,N.A.,104,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,New Pune Hospital & Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Dhande Hospital,MAT+GEN,private,N.A.,N.A.,7,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Vaibhav Nursing Home,MAT+GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Ingale womens Hospital,MATERNITY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Walimbe Eye Clinic,opthalm,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Chintamani Hospital,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Shri Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Gandhi Hospital,GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Sanjivani Nurinsg Home,MATERNITY,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Poona Eye Care & Pvt. Ltd.,OPTHALM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Namtra Nursing Home,GEN,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,chordiya nursing home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Royal Hospital,GEN,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Zanwar Felicity Pvt. Ltd. (Healing Hands Clinic),GEN,private,N.A.,N.A.,17,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Blossoms Women Care,MATERNITY,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,Laxmi Clinic,MAT+GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Glam-x Aesthetic Centre,GEN,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,New Sofiya Hospital,GEN,private,N.A.,N.A.,11,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Hi-Tech Eye Surgery & Leser Centre,OPTHALM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,National Hospital,MAT+GEN,private,N.A.,N.A.,27,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Krishna Prabhu Hospital,GEN,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Ashwini Nursing Home,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Pune Fertility Centre,GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Pawar Surgical Hospital,sergical,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,KASBA-VISHRAM,5.0,,"Om Eye Clinic & laser Centre, Day-care",opth.,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Dr. Mhaske Hospital & reserch Centre Pvt. Ltd.,Gen,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Shinde Hospital & Nursing Home,MAT+GEN,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Khade Chinldren Hospital,pediatric,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Shreeram Eye & Dental Care Centre,OPTHALM,private,N.A.,N.A.,1,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Samarth Eye Clinic & Day-Care Centre,OPTHALM,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Jehangir Speciality Hospital (Unit Of Principal HealthCare & Wellness Pvt. Ltd.,Specility Both,private,YES,N.A.,31,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Yash Eye Clinic,opth.,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Navjeevan Nursing Home,Both,private,N.A.,N.A.,25,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Anuja Hospital,Gen,private,N.A.,N.A.,6,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,WARJE-KARVENAGAR,3.0,,Borikar Hospital,Gen,private,N.A.,N.A.,24,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Divya Jyot Hospital,opth.,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,sahyadri Hospitals Ltd.-Sahyadri Super Speciality Hospital (Hadpasar),speciality,private,YES,N.A.,138,N.A.,N.A.,N.A.,N.A.,YES,N.A.
+Pune,1,YERAWADA-KALAS-DHANORI,1.0,,Bhimrao Tidke Patil MultiSpeciality Hospital Pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,35,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SAHAKARNAGAR-DHANKWADI,3.0,,Poona Preventive Cardiology Centre,cardiologist,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,Embrio IVF Centre,IVF,private,N.A.,N.A.,4,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Dr. Dudhbhate Netralaya & Retina Centre,opth.,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Shatayu Hospital,MAT+GEN,private,N.A.,N.A.,16,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,SHIVAJINAGAR- GHOLE ROAD,2.0,,Dr. Ketkar Nursing Home,GEN,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,KOTHRUD-BAVDHAN,2.0,,Deshpande Eye Hospital & Laser Centre,opth.,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Aadhar Hospital,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Shree Ayurved & Panchkarma Hospital,ayurved & panchkarma,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Healing Hands Clinic Pvt. Ltd.,GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Motherhood Hospital ( Rhea Healthcare Pvt. Ltd.,maternity,private,N.A.,N.A.,32,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,KONDHWA-YEVALEWADI,4.0,,Jivandhara Multispeciality Hospital,GEN,private,N.A.,N.A.,9,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BIBEWADI,5.0,,Jeevan sparsh Eye Hospital,OPTHALM,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,5,BHAVANI PETH,5.0,,Shinde Nursing Home & Polyclinic,MAT+GEN,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Vatsalya  hospital,MAT+GEN,private,N.A.,N.A.,18,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,2,AUNDH-BANER,2.0,,"Dr. Agarwal""s Healthcare Ltd.",GENERAL,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Horizon Hospital,GENERAL,private,N.A.,N.A.,5,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Siver Birch MultiSpeciality Hospital pvt. Ltd.,MAT+GEN,private,N.A.,N.A.,48,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,City Care Hospital,MAT+GEN,private,N.A.,N.A.,15,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Nityashraddha  Life Care Hospital,GENERAL,private,N.A.,N.A.,20,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,NAGAR ROAD- VADGOANSHERI,1.0,,Jeevnjyot Nursing Home,GENERAL,private,N.A.,N.A.,10,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,3,SINGHARD ROAD,3.0,,Dr. Pathak Eye Clinic,OPTHALMOLOGY,private,N.A.,N.A.,2,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,1,DHOLE-PATIL ROAD,1.0,,Bliz fertility center ,GENERAL,private,N.A.,N.A.,3,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
+Pune,4,HADAPSAR-MUNDHWA,4.0,,Shree Samarth Hospital,MAT+GEN,private,N.A.,N.A.,8,N.A.,N.A.,N.A.,N.A.,N.A.,N.A.
