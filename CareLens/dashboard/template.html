@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CareLens – Hospital Operations & Patient Analytics</title>
+<style>
+:root{--bg:#f7f5f1;--card:#fff;--ink:#1f2933;--mute:#6b7782;--line:#e6e2da;--acc:#2a6f5b;--acc2:#d9694f;--soft:#eaf2ef}
+@media(prefers-color-scheme:dark){:root{--bg:#14181b;--card:#1d2226;--ink:#e8ecef;--mute:#9aa7b1;--line:#2b3238;--acc:#5bb89f;--acc2:#ef8a70;--soft:#22302c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:20px 24px 0;max-width:1180px;margin:auto}
+h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.2px}h1 span{color:var(--acc)}
+.sub{color:var(--mute);font-size:13px;margin-top:2px}
+nav{display:flex;gap:6px;margin:16px 0 0;flex-wrap:wrap}
+nav button{border:0;background:none;color:var(--mute);font:inherit;padding:8px 14px;border-radius:20px;cursor:pointer}
+nav button.on{background:var(--acc);color:#fff}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:14px 0 4px}
+.filters label{font-size:12px;color:var(--mute);display:flex;flex-direction:column;gap:3px}
+select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.reset{border:1px solid var(--line);background:none;color:var(--mute);padding:6px 12px;border-radius:8px;cursor:pointer;font:inherit}
+main{max-width:1180px;margin:auto;padding:8px 24px 40px}
+.take{background:var(--soft);border-radius:12px;padding:12px 16px;margin:14px 0;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kpi,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font-size:26px;font-weight:650;letter-spacing:-.5px}
+.kpi small{color:var(--mute);font-size:12px}.kpi span{font-size:13px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px;margin-top:12px}
+.card h3{margin:0 0 2px;font-size:14px;font-weight:600}.card p{margin:0 0 10px;color:var(--mute);font-size:12px}
+svg{width:100%;height:auto;display:block}.grid-l{stroke:var(--line)}.ax{fill:var(--mute);font-size:10px}
+.row{display:grid;grid-template-columns:110px 1fr 56px;gap:8px;align-items:center;margin:7px 0;font-size:13px}
+.track{background:var(--soft);height:10px;border-radius:6px;position:relative}.fill{height:100%;border-radius:6px;background:var(--acc)}
+.tick{position:absolute;top:-3px;width:2px;height:16px;background:var(--acc2)}
+.row i{font-style:normal;text-align:right;color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px 8px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}th{color:var(--mute);font-weight:500;font-size:12px}
+tr.pick td{background:var(--soft)}tbody tr{cursor:pointer}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--mute);margin-top:6px}.legend em{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+footer{max-width:1180px;margin:auto;padding:0 24px 30px;color:var(--mute);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Care<span>Lens</span></h1>
+  <div class="sub">Hospital operations & patient analytics · Jul 2019 – Apr 2024</div>
+  <nav id="nav"></nav>
+  <div class="filters" id="filters"></div>
+</header>
+<main id="app"></main>
+<footer>Admissions come from the Kaggle “Healthcare Dataset”. Beds, staff, equipment and patient feedback are simulated supporting data (see docs/Dataset_Sources.md). When an admission type is selected, occupancy shows the share of beds used by that type.</footer>
+<script>
+const DATA=__DATA__;
+const D=DATA,NM=D.months.length,ND=D.depts.length,ND_DAYS=D.ndays;
+const COL=['#2a6f5b','#d9694f','#4f7cac','#e0a93b','#8a6fb0'];
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const lab=m=>{const[y,mo]=m.split('-');return MON[+mo-1]+' '+y};
+const labels=D.months.map(lab);
+const S={page:'Overview',from:0,to:NM-1,dep:-1,at:-1};
+const PAGES=['Overview','Patient flow','Departments','Resources'];
+
+// --- day -> month lookup, weekday lookup
+const dm=new Int16Array(ND_DAYS+1).fill(-1),WD=new Uint8Array(ND_DAYS+1),dim=new Array(NM).fill(0);
+(()=>{const mk={};D.months.forEach((m,i)=>mk[m]=i);
+for(let i=0;i<=ND_DAYS;i++){const t=new Date(Date.UTC(2019,4,8+i));WD[i]=(t.getUTCDay()+6)%7;
+const k=t.getUTCFullYear()+'-'+String(t.getUTCMonth()+1).padStart(2,'0');const j=mk[k];if(j!==undefined){dm[i]=j;dim[j]++}}})();
+
+// --- one pass over the records, split by department
+let C=null;
+function compute(){
+  const z=n=>Array.from({length:ND},()=>new Array(n).fill(0));
+  const A=z(NM),DIS=z(NM),LS=z(NM),RA=z(NM),W=z(7),G=z(5),B=z(4),T=z(3),TR=z(3),PD=z(NM);
+  const cs=Array.from({length:ND},()=>new Int32Array(ND_DAYS+2));
+  for(let i=0;i<D.d.length;i++){
+    const p=D.p[i],a=D.d[i],l=D.l[i],t=D.t[i],m=dm[a];
+    if(m>=S.from&&m<=S.to&&m>=0)T[p][t]++;
+    if(S.at>=0&&t!==S.at)continue;
+    cs[p][a]++;cs[p][a+l]--;
+    const e=dm[a+l];if(e>=0)DIS[p][e]++;
+    if(m<0)continue;
+    A[p][m]++;LS[p][m]+=l;RA[p][m]+=D.x[i];
+    if(m>=S.from&&m<=S.to){W[p][WD[a]]++;G[p][D.g[i]]++;B[p][l<=7?0:l<=14?1:l<=21?2:3]++;TR[p][D.r[i]]++}
+  }
+  const census=[];
+  for(let p=0;p<ND;p++){let c=0;const arr=new Int32Array(ND_DAYS+1);
+    for(let i=0;i<=ND_DAYS;i++){c+=cs[p][i];arr[i]=c;const m=dm[i];if(m>=0)PD[p][m]+=c}
+    census.push(arr)}
+  C={A,DIS,LS,RA,W,G,B,T,TR,PD,census};
+}
+const deps=()=>S.dep<0?[...Array(ND).keys()]:[S.dep];
+const rng=()=>{const r=[];for(let m=S.from;m<=S.to;m++)r.push(m);return r};
+const tot=(arr,ps,ms)=>{let s=0;for(const p of ps)for(const m of ms)s+=arr[p][m];return s};
+const vec=(arr,ps,ms)=>ms.map(m=>ps.reduce((s,p)=>s+arr[p][m],0));
+const R=(p,m,k)=>D.R[p][m][k]; // 0 staffed,1 nurses,2 docs,3 eqUnits,4 eqHrsAvail,5 eqHrsUsed,6 sat,7 resp,8 wait
+const lic=p=>D.master[p].lic;
+function stats(ps,ms){
+  const adm=tot(C.A,ps,ms),pd=tot(C.PD,ps,ms);
+  let licDays=0,stfDays=0,eqA=0,eqU=0,sat=0,resp=0,wait=0,nur=0,doc=0,n=0;
+  for(const p of ps)for(const m of ms){licDays+=lic(p)*dim[m];stfDays+=R(p,m,0)*dim[m];eqA+=R(p,m,4);eqU+=R(p,m,5);
+    sat+=R(p,m,6)*R(p,m,7);resp+=R(p,m,7);wait+=R(p,m,8)*R(p,m,7);nur+=R(p,m,1);doc+=R(p,m,2);n++}
+  const alos=adm?tot(C.LS,ps,ms)/adm:null;
+  const o={adm,dis:tot(C.DIS,ps,ms),alos,ra:adm?tot(C.RA,ps,ms)/adm:null,occ:pd/licDays,util:pd/stfDays,
+    eq:eqU/eqA,sat:sat/resp,wait:wait/resp,pd,licDays,stfDays,nur:nur/n,doc:doc/n,census:pd/ms.reduce((s,m)=>s+dim[m],0)};
+  const tg=ps.reduce((s,p)=>s+D.master[p].target,0)/ps.length;
+  const los=alos?Math.min(100,tg/alos*100):0,us=Math.max(0,100-Math.abs(o.util-.85)*400);
+  o.eff=.4*los+.3*us+.3*o.sat/5*100;return o}
+
+// --- formatting
+const n0=v=>Math.round(v).toLocaleString('en-US'),pc=v=>v==null||isNaN(v)?'–':(v*100).toFixed(1)+'%',
+ d1=v=>v==null?'–':v.toFixed(1);
+
+// --- charts
+function line(series,o={}){
+  const ms=rng(),W=600,H=190,pl=40,pr=10,pt=10,pb=24;
+  const all=series.flatMap(s=>s.v).filter(v=>isFinite(v));let lo=o.min!=null?o.min:Math.min(...all),hi=o.max!=null?o.max:Math.max(...all);
+  if(o.min==null){const pad=(hi-lo)*.15||1;lo-=pad;hi+=pad}
+  if(o.target!=null){lo=Math.min(lo,o.target);hi=Math.max(hi,o.target)}
+  const n=ms.length,x=i=>pl+(n<2?0:i*(W-pl-pr)/(n-1)),y=v=>pt+(H-pt-pb)*(1-(v-lo)/((hi-lo)||1)),f=o.fmt||n0;
+  let g='';for(let k=0;k<4;k++){const v=lo+(hi-lo)*k/3;g+=`<line class="grid-l" x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}"/><text class="ax" x="${pl-5}" y="${y(v)+3}" text-anchor="end">${f(v)}</text>`}
+  const step=Math.max(1,Math.ceil(n/7));ms.forEach((m,i)=>{if(i%step===0)g+=`<text class="ax" x="${x(i)}" y="${H-6}" text-anchor="middle">${labels[m]}</text>`});
+  if(o.target!=null)g+=`<line x1="${pl}" x2="${W-pr}" y1="${y(o.target)}" y2="${y(o.target)}" stroke="var(--acc2)" stroke-dasharray="4 4"/><text class="ax" x="${W-pr}" y="${y(o.target)-4}" text-anchor="end" fill="var(--acc2)">target</text>`;
+  series.forEach((s,k)=>{const c=s.c||COL[k];
+    g+=`<path d="${s.v.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join('')}" fill="none" stroke="${c}" stroke-width="2"/>`;
+    g+=s.v.map((v,i)=>`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="5" fill="${c}" fill-opacity="0"><title>${s.name?s.name+' · ':''}${labels[ms[i]]}: ${f(v)}</title></circle>`).join('')});
+  const lg=series.length>1?`<div class="legend">${series.map((s,k)=>`<span><em style="background:${s.c||COL[k]}"></em>${s.name}</span>`).join('')}</div>`:'';
+  return `<svg viewBox="0 0 ${W} ${H}">${g}</svg>${lg}`}
+function col(items,o={}){
+  const W=600,H=180,pl=40,pb=26,pt=14,mx=Math.max(...items.map(i=>i.v),1),bw=(W-pl-10)/items.length,f=o.fmt||n0;
+  let g=`<line class="grid-l" x1="${pl}" x2="${W-10}" y1="${H-pb}" y2="${H-pb}"/>`;
+  items.forEach((it,i)=>{const h=(H-pb-pt)*it.v/mx,x=pl+i*bw+bw*.18;
+    g+=`<rect x="${x}" y="${H-pb-h}" width="${bw*.64}" height="${h}" rx="4" fill="${COL[0]}"><title>${it.l}: ${f(it.v)}</title></rect><text class="ax" x="${x+bw*.32}" y="${H-pb-h-4}" text-anchor="middle">${f(it.v)}</text><text class="ax" x="${x+bw*.32}" y="${H-8}" text-anchor="middle">${it.l}</text>`});
+  return `<svg viewBox="0 0 ${W} ${H}">${g}</svg>`}
+function bars(items,o={}){
+  const mx=o.max||Math.max(...items.map(i=>i.v),1e-9),f=o.fmt||n0;
+  return items.map(it=>`<div class="row"><span>${it.l}</span><div class="track"><div class="fill" style="width:${Math.min(100,it.v/mx*100)}%;background:${it.c||'var(--acc)'}"></div>${o.target!=null?`<div class="tick" style="left:${o.target/mx*100}%"></div>`:''}</div><i>${f(it.v)}</i></div>`).join('')}
+const card=(t,s,b)=>`<div class="card"><h3>${t}</h3><p>${s}</p>${b}</div>`;
+const kpi=(l,v,s)=>`<div class="kpi"><span>${l}</span><b>${v}</b><small>${s}</small></div>`;
+const rangeText=()=>`${labels[S.from]} to ${labels[S.to]}`;
+const depName=()=>S.dep<0?'all departments':D.depts[S.dep];
+
+// --- pages
+const pages={
+Overview(){
+  const ps=deps(),ms=rng(),s=stats(ps,ms),all=[...Array(ND).keys()];
+  const top=D.depts.map((d,p)=>({l:d,v:tot(C.A,[p],ms)})).sort((a,b)=>b.v-a.v);
+  const T=[0,1,2].map(t=>all.reduce((a,p)=>a+C.T[p][t],0)),tt=T.reduce((a,b)=>a+b,0)||1;
+  return `<div class="take">${n0(s.adm)} admissions in ${depName()} from ${rangeText()}. Beds were ${pc(s.occ)} full on average and a typical stay lasted ${d1(s.alos)} days.</div>
+  <div class="kpis">${kpi('Total admissions',n0(s.adm),n0(s.adm/ms.length)+' per month')}${kpi('Occupancy rate',pc(s.occ),'target 85%')}
+  ${kpi('Average length of stay',d1(s.alos)+' d','days per stay')}${kpi('30-day readmission',pc(s.ra),'see note below')}
+  ${kpi('Bed utilization',pc(s.util),'of staffed beds')}${kpi('Discharges',n0(s.dis),'patients sent home')}</div>
+  <div class="grid">
+  ${card('Admissions per month','How busy the hospital was',line([{v:vec(C.A,ps,ms)}]))}
+  ${card('Occupancy per month','Share of licensed beds in use',line([{v:ms.map(m=>tot(C.PD,ps,[m])/ps.reduce((a,p)=>a+lic(p)*dim[m],0))}],{fmt:pc,target:.85}))}
+  ${card('Admissions by department','Selected months',bars(top))}
+  ${card('How patients arrive','Elective, emergency, urgent (ignores the admission-type filter)',bars(D.atypes.map((a,i)=>({l:a,v:T[i]/tt,c:COL[i]})),{fmt:pc,max:1}))}
+  ${card('Average stay by department','Days',bars(D.depts.map((d,p)=>({l:d,v:tot(C.LS,[p],ms)/(tot(C.A,[p],ms)||1)})),{fmt:d1}))}</div>
+  <div class="take" style="margin-top:12px">Note: the dataset has no patient ID, so a “readmission” is a new admission within 30 days for someone with the same name, gender and blood type. That is why the rate is so low.</div>`},
+'Patient flow'(){
+  const ps=deps(),ms=rng(),sum=a=>ps.reduce((s,p)=>s+a[p].reduce((x,y)=>x+y,0),0),
+   sumA=a=>a[0].map((_,j)=>ps.reduce((s,p)=>s+a[p][j],0));
+  const peak=ms.map(m=>{let mx=0;for(let i=0;i<=ND_DAYS;i++)if(dm[i]===m){let c=0;for(const p of ps)c+=C.census[p][i];if(c>mx)mx=c}return mx});
+  const wd=sumA(C.W),bd=sumA(C.B),ag=sumA(C.G),tr=sumA(C.TR),tt=tr.reduce((a,b)=>a+b,0)||1;
+  const busiest=D.wd[wd.indexOf(Math.max(...wd))],pk=Math.max(...peak);
+  return `<div class="take">The busiest admission day is ${busiest}. At its peak, ${n0(pk)} patients were in beds on one day (${pc(pk/ps.reduce((a,p)=>a+lic(p),0))} of licensed beds).</div>
+  <div class="grid">
+  ${card('Admissions vs discharges','Per month',line([{name:'Admissions',v:vec(C.A,ps,ms)},{name:'Discharges',v:vec(C.DIS,ps,ms),c:COL[1]}]))}
+  ${card('Peak patient load','Highest number of patients in beds on any day of the month',line([{v:peak}]))}
+  ${card('Admissions by weekday','Selected months',col(D.wd.map((l,i)=>({l,v:wd[i]}))))}
+  ${card('Length of stay','Patients by stay length (days)',bars(['1–7','8–14','15–21','22–30'].map((l,i)=>({l,v:bd[i]})),{fmt:n0}))}
+  ${card('Age groups','Patients admitted',col(D.ages.map((l,i)=>({l,v:ag[i]}))))}
+  ${card('Test results','Share of patients',bars(D.results.map((l,i)=>({l,v:tr[i]/tt,c:COL[i]})),{fmt:pc,max:1}))}</div>`},
+Departments(){
+  const ms=rng(),all=[...Array(ND).keys()],st=all.map(p=>({p,...stats([p],ms)})),best=[...st].sort((a,b)=>b.eff-a.eff)[0];
+  return `<div class="take">${D.depts[best.p]} scores highest on efficiency (${d1(best.eff)} out of 100) for ${rangeText()}. Click a row to focus the other pages on one department.</div>
+  <div class="card"><table><thead><tr><th>Department</th><th>Admissions</th><th>Avg stay</th><th>Readmit</th><th>Occupancy</th><th>Bed use</th><th>Satisfaction</th><th>Efficiency</th></tr></thead><tbody>
+  ${st.map(s=>`<tr class="${S.dep===s.p?'pick':''}" onclick="S.dep=${S.dep===s.p?-1:s.p};go()"><td>${D.depts[s.p]}</td><td>${n0(s.adm)}</td><td>${d1(s.alos)}</td><td>${pc(s.ra)}</td><td>${pc(s.occ)}</td><td>${pc(s.util)}</td><td>${d1(s.sat)}</td><td><b>${d1(s.eff)}</b></td></tr>`).join('')}</tbody></table></div>
+  <div class="grid">
+  ${card('Efficiency score','0–100 · 40% stay length vs target, 30% bed use near 85%, 30% satisfaction',bars(st.map(s=>({l:D.depts[s.p],v:s.eff})),{max:100,fmt:d1}))}
+  ${card('Patient volume','Admissions in the selected months',bars(st.map(s=>({l:D.depts[s.p],v:s.adm}))))}
+  ${card('Readmission by department','30-day readmission rate',bars(st.map(s=>({l:D.depts[s.p],v:s.ra})),{fmt:pc}))}
+  ${card('Treatment capacity','Licensed beds per department',bars(all.map(p=>({l:D.depts[p],v:lic(p)}))))}</div>`},
+Resources(){
+  const ms=rng(),ps=deps(),s=stats(ps,ms),all=[...Array(ND).keys()],st=all.map(p=>({p,...stats([p],ms)}));
+  const hot=st.sort((a,b)=>b.util-a.util)[0];
+  const over=D.depts.map((d,p)=>({l:d,v:ms.filter(m=>tot(C.PD,[p],[m])/(lic(p)*dim[m])>.9).length}));
+  return `<div class="take">${D.depts[hot.p]} runs the tightest, using ${pc(hot.util)} of its staffed beds. Beds, staff and equipment figures on this page are simulated.</div>
+  <div class="kpis">${kpi('Bed utilization',pc(s.util),'of staffed beds')}${kpi('Nurses per 10 patients',d1(s.nur*ps.length/s.census*10),'nurses on the roster')}
+  ${kpi('Equipment utilization',pc(s.eq),'hours used / available')}${kpi('Avg wait to be seen',n0(s.wait)+' min','from feedback data')}</div>
+  <div class="grid">
+  ${card('Bed utilization by department','Orange mark = 85% target',bars(st.map(x=>({l:D.depts[x.p],v:x.util})),{fmt:pc,max:1,target:.85}))}
+  ${card('Equipment utilization','Hours used / hours available',bars(st.map(x=>({l:D.depts[x.p],v:x.eq})),{fmt:pc,max:1}))}
+  ${card('Staffed vs licensed beds','Beds that actually have staff',bars(st.map(x=>({l:D.depts[x.p],v:x.stfDays/x.licDays})),{fmt:pc,max:1}))}
+  ${card('Months above 90% occupancy','Capacity planning: where to add beds first',bars(over,{fmt:v=>v+' mo',c:'var(--acc2)'}))}
+  ${card('Patient satisfaction','Average score out of 5',bars(st.map(x=>({l:D.depts[x.p],v:x.sat})),{fmt:d1,max:5}))}
+  ${card('Occupancy by month','Selected departments combined',line([{v:ms.map(m=>tot(C.PD,ps,[m])/ps.reduce((a,p)=>a+lic(p)*dim[m],0))}],{fmt:pc,target:.85}))}</div>`}
+};
+
+// --- controls
+function monthSel(id,val){return `<select id="${id}">${D.months.map((m,i)=>`<option value="${i}" ${i===val?'selected':''}>${labels[i]}</option>`).join('')}</select>`}
+function go(){
+  document.getElementById('nav').innerHTML=PAGES.map(p=>`<button class="${p===S.page?'on':''}" onclick="S.page='${p}';go()">${p}</button>`).join('');
+  document.getElementById('filters').innerHTML=
+   `<label>From${monthSel('f',S.from)}</label><label>To${monthSel('t',S.to)}</label>
+    <label>Department<select id="d"><option value="-1">All</option>${D.depts.map((d,i)=>`<option value="${i}" ${S.dep===i?'selected':''}>${d}</option>`).join('')}</select></label>
+    <label>Admission type<select id="a"><option value="-1">All</option>${D.atypes.map((d,i)=>`<option value="${i}" ${S.at===i?'selected':''}>${d}</option>`).join('')}</select></label>
+    <button class="reset" onclick="S.from=0;S.to=NM-1;S.dep=-1;S.at=-1;go()">Reset</button>`;
+  for(const [id,k] of [['f','from'],['t','to'],['d','dep'],['a','at']])document.getElementById(id).onchange=e=>{S[k]=+e.target.value;if(S.from>S.to){if(k==='from')S.to=S.from;else S.from=S.to}go()};
+  compute();document.getElementById('app').innerHTML=pages[S.page]();
+}
+D.wd=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+go();
+</script>
+</body>
+</html>
