@@ -1,0 +1,8 @@
+pandas
+numpy
+openpyxl
+# only needed for the optional browser test in validate_kpis.py and the notebook:
+playwright
+nbformat
+nbconvert
+ipykernel

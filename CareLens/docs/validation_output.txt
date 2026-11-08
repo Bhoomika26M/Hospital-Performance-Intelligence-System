@@ -1,0 +1,15 @@
+[PASS] Patient-days (basis of occupancy) match independent calculation  20/20 cells match
+[PASS] Occupancy and bed utilization formulas  
+[PASS] Total admissions match  53,178 vs 53,178
+[PASS] Average length of stay per department (within 0.01 day)  
+[PASS] Every 30-day readmission has a matching earlier stay  45/45
+[PASS] Missing values below 2%  0.000%
+[PASS] Raw completeness above 95%  100.00%
+[PASS] No negative billing or length of stay  
+[PASS] Department names standardised  ['Cardiology', 'Endocrinology', 'Oncology', 'Pulmonology', 'Rheumatology']
+[PASS] No duplicate admissions left  
+[PASS] Dashboard contains every cleaned record  54,966
+[PASS] Browser: Total Admissions card equals pandas count  53178
+[PASS] Browser: all four pages open without errors  
+
+Checks passed: 13/13  ->  KPI accuracy 100.0%
