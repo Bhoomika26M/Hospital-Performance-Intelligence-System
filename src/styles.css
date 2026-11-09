@@ -1,0 +1,179 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * - Keep every @import in this top block, above @theme and the rest of the file. Install an
+ *   npm package before @importing its CSS. Never @import a remote URL (web fonts, CDN CSS): the
+ *   build resolves @import from the filesystem. Load those with a <link> in the head() of
+ *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MedTrack_DV design system — purple & white, clinical and calm.
+ * Display: Sora. Body: Manrope.
+ */
+
+@theme inline {
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.99 0.004 300);
+  --foreground: oklch(0.22 0.06 290);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.06 290);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.06 290);
+  --primary: oklch(0.49 0.22 292);
+  --primary-foreground: oklch(0.99 0.005 300);
+  --primary-glow: oklch(0.67 0.19 302);
+  --primary-soft: oklch(0.95 0.035 300);
+  --secondary: oklch(0.965 0.018 300);
+  --secondary-foreground: oklch(0.32 0.12 292);
+  --muted: oklch(0.97 0.01 300);
+  --muted-foreground: oklch(0.5 0.045 290);
+  --accent: oklch(0.94 0.045 300);
+  --accent-foreground: oklch(0.38 0.17 292);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --success: oklch(0.62 0.14 160);
+  --warning: oklch(0.72 0.15 70);
+  --border: oklch(0.92 0.02 300);
+  --input: oklch(0.92 0.02 300);
+  --ring: oklch(0.6 0.18 292);
+  --chart-1: oklch(0.49 0.22 292);
+  --chart-2: oklch(0.67 0.19 302);
+  --chart-3: oklch(0.6 0.12 270);
+  --chart-4: oklch(0.78 0.1 310);
+  --chart-5: oklch(0.38 0.15 285);
+
+  --sidebar: oklch(0.25 0.1 290);
+  --sidebar-foreground: oklch(0.96 0.02 300);
+  --sidebar-muted: oklch(0.75 0.06 295);
+  --sidebar-primary: oklch(0.99 0.005 300);
+  --sidebar-primary-foreground: oklch(0.3 0.13 290);
+  --sidebar-accent: oklch(0.34 0.13 290);
+  --sidebar-accent-foreground: oklch(0.99 0.005 300);
+  --sidebar-border: oklch(0.34 0.09 290);
+  --sidebar-ring: oklch(0.67 0.19 302);
+
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
+  --gradient-sidebar: linear-gradient(180deg, oklch(0.27 0.11 290), oklch(0.21 0.09 285));
+  --gradient-soft: linear-gradient(180deg, var(--primary-soft), var(--background));
+  --shadow-card: 0 1px 2px oklch(0.3 0.1 290 / 0.05), 0 8px 24px -12px oklch(0.3 0.12 290 / 0.18);
+  --shadow-elegant: 0 20px 50px -20px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+@utility bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+
+@utility bg-gradient-sidebar {
+  background-image: var(--gradient-sidebar);
+}
+
+@utility bg-gradient-soft {
+  background-image: var(--gradient-soft);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}

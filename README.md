@@ -1,38 +1,29 @@
-# MedTrack_DV – Tableau Dashboards
+# Welcome to your Lovable project
 
-## Project Overview
-MedTrack_DV is a Hospital Operations and Patient Analytics Dashboard project developed using Tableau.
+This project was built with [Lovable](https://lovable.dev).
 
-The project focuses on analyzing hospital admissions, patient flow, clinical trends and hospital resource utilization.
+## Build with Lovable
 
-## Tableau Public Workbook
+Open your project in the [Lovable editor](https://lovable.dev) and keep building.
 
-**Project Name:** MEDTRACK_DV – Hospital Analytics
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
+- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
 
-**Published Dashboard Link:**
+## Development
 
-https://public.tableau.com/views/MEDTRACK_DV_Hospital_Analytics/HospitalOverview?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-## Dashboards Included
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
+npm run dev
+```
 
-1. Hospital Overview
-2. Patient Flow
-3. Clinical Analytics
-4. Resource Utilization
+## Built with
 
-## Dataset
-
-**File:** hospital_tableau_public.csv
-
-The dataset is used for creating interactive hospital analytics visualizations.
-
-## Tools Used
-
-- Tableau Public
-- Microsoft Excel
-- Python
-- Pandas
-
-## Project Deliverable
-
-An interactive Tableau Public workbook containing four hospital analytics dashboards.
+- TanStack Start
+- TypeScript
+- React
+- Tailwind CSS
