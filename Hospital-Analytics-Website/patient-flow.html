@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hospital Operations & Patient Analytics project website.">
+<title>Patient Flow | Hospital Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><script src="js/script.js" defer></script></head>
+<body data-page="patient-flow"><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">+</span><span>Hospital<span class="brand-sub">ANALYTICS</span></span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" data-nav="home">Home</a><a href="overview.html" data-nav="overview">Overview</a>
+    <a href="patient-flow.html" data-nav="patient-flow">Patient Flow</a><a href="conditions.html" data-nav="conditions">Conditions</a>
+    <a href="resources.html" data-nav="resources">Resources</a><a href="about.html" data-nav="about">About</a>
+  </nav>
+  <a class="header-cta" href="about.html">Project details <span>↗</span></a>
+</header>
+<main>
+
+<section class="page-hero section-shell"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Patient Flow</span></div>
+ <div class="page-hero-row"><div><div class="eyebrow"><i></i> DASHBOARD 02</div><h1>Patient <span class='gradient-text'>Flow</span></h1><p class="hero-lede">Explore how admissions change over time and how long patients stay.</p></div><div class="page-index">02 <i></i> 04</div></div></section>
+<section class="section-shell dashboard-layout">
+ <div class="dashboard-intro"><div><span class="kicker">WHAT THIS VIEW COVERS</span><h2>Movement through the system.</h2></div><p>The Patient Flow dashboard focuses on the timing and type of admissions, alongside the distribution of length of stay.</p></div>
+ <div class="metric-grid"><article class='metric-card'><span>ADMISSIONS OVER TIME</span><h3>Monthly admissions trend</h3><p>Shows how the count of admission records varies by month.</p></article><article class='metric-card'><span>LENGTH OF STAY</span><h3>LOS distribution</h3><p>Shows how recorded patient stays are distributed across duration ranges.</p></article><article class='metric-card'><span>ADMISSION CATEGORY</span><h3>Admissions by type</h3><p>Compares the admission records by the type recorded in the source.</p></article></div>
+
+ <div class="dashboard-viewer" data-dashboard-viewer>
+  <div class="dashboard-toolbar">
+   <span class="dashboard-toolbar-label">INTERACTIVE DASHBOARD</span>
+   <button class="fullscreen-toggle" type="button" data-fullscreen-toggle aria-label="View dashboard full screen">
+    <span aria-hidden="true">⛶</span> Full screen
+   </button>
+  </div>
+ <div class="dashboard-frame" data-tableau-embed data-tableau-title="Patient Flow" data-tableau-url="https://public.tableau.com/views/HospitaloperationspatientAnalytics/PatientFlow?:showVizHome=no&amp;:embed=true"><div class="embed-placeholder"><span class="embed-icon">▤</span><span class="kicker">TABLEAU DASHBOARD SPACE</span><h3>Your Patient Flow dashboard goes here.</h3><p>The published Tableau Public dashboard should appear here. If it does not load, check your internet connection and the published view link.</p><span class="placeholder-chip">Dashboard loading unavailable</span></div></div>
+ </div>
+
+ <p class="dashboard-footnote">ⓘ No patient-level records are displayed in this website template.</p>
+</section>
+<section class="section-shell next-panel"><div><span class="kicker">PROJECT NOTES</span><h2>Explore the methodology and limitations.</h2></div><a class="button primary" href="about.html">About the project →</a></section>
+</main>
+
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">+</span><span>Hospital<span class="brand-sub">ANALYTICS</span></span></a><p>Hospital Operations &amp; Patient Analytics</p><span>© <span data-year></span> • Project portfolio</span></footer>
+
+</body></html>

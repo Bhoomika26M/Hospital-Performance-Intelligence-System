@@ -1,0 +1,1 @@
+Place approved project images or dashboard screenshots here. Do not add patient-identifiable or confidential screenshots.

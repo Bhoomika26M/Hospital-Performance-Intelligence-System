@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hospital Operations & Patient Analytics project website.">
+<title>About the Project | Hospital Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><script src="js/script.js" defer></script></head>
+<body data-page="about"><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">+</span><span>Hospital<span class="brand-sub">ANALYTICS</span></span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" data-nav="home">Home</a><a href="overview.html" data-nav="overview">Overview</a>
+    <a href="patient-flow.html" data-nav="patient-flow">Patient Flow</a><a href="conditions.html" data-nav="conditions">Conditions</a>
+    <a href="resources.html" data-nav="resources">Resources</a><a href="about.html" data-nav="about">About</a>
+  </nav>
+  <a class="header-cta" href="about.html">Project details <span>↗</span></a>
+</header>
+<main>
+
+<section class="page-hero section-shell"><div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About the Project</span></div><div class="page-hero-row"><div><div class="eyebrow"><i></i> PROJECT NOTES</div><h1>Behind the <span class="gradient-text">analytics.</span></h1><p class="hero-lede">A transparent look at the project scope, data sources, tools, and important limitations.</p></div><div class="page-index">INFO <i></i> 06</div></div></section>
+<section class="section-shell about-layout">
+ <div class="about-lead reveal"><span class="kicker">PROJECT OVERVIEW</span><h2>Hospital Operations &amp; Patient Analytics</h2><p>This project explores hospital admissions and infrastructure information through data preparation, KPI definition, Tableau dashboards, and a supporting website.</p></div>
+ <div class="tool-row"><span>Python</span><span>Jupyter Notebook</span><span>Tableau</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub</span></div>
+ <div class="section-divider" id="data-sources"></div><div class="section-heading"><span class="kicker">01 / DATA SOURCES</span><h2>Two sources, analysed separately.</h2><p>No common hospital identifier was verified, so the sources have not been joined.</p></div>
+ <div class="data-grid">
+  <article class="data-card"><small>SOURCE 01</small><div class="data-symbol">⌁</div><h3>Patient Admissions</h3><p>Used for analysis of admission records, medical conditions, admission types, length of stay, age, and billing amounts.</p><ul><li>Admission volume and monthly trends</li><li>Average length of stay</li><li>Condition and admission-type analysis</li><li>Billing amount comparisons</li></ul><label>Analysed in admissions dashboards</label></article>
+  <article class="data-card"><small>SOURCE 02</small><div class="data-symbol">▦</div><h3>PMC Hospital Infrastructure</h3><p>Used for analysis of reported hospital infrastructure measures by facility type.</p><ul><li>Reported number of beds</li><li>Facility-type comparisons</li><li>Monthly patient footfall measure</li></ul><label>Analysed separately in resource dashboard</label></article>
+ </div>
+ <div class="section-divider"></div><div class="section-heading"><span class="kicker">02 / KPI DEFINITIONS</span><h2>What the measures mean.</h2></div>
+ <div class="definition-list">
+  <div><b>Total Admissions</b><p>Count of admission-date records, not unique patients.</p></div><div><b>Average Length of Stay</b><p>Average of recorded length-of-stay values, in days.</p></div><div><b>Total Billing Amount</b><p>Sum of the billing amount field. The source currency has not been confirmed.</p></div><div><b>Emergency Admissions</b><p>Count of records where admission type is recorded as Emergency.</p></div><div><b>Total Hospital Beds</b><p>Sum of reported beds in the infrastructure dataset, not available or occupied beds.</p></div><div><b>Average Monthly Patient Footfall</b><p>A footfall measure from the infrastructure dataset. It should not be interpreted as occupancy.</p></div>
+ </div>
+ <div class="section-divider"></div><div class="section-heading"><span class="kicker">03 / LIMITATIONS</span><h2>What this project cannot claim.</h2><p>These boundaries are part of the analysis, not footnotes to hide.</p></div>
+ <div class="limitation-grid">
+  <article><b>01 · No verified common hospital identifier</b><p>The datasets cannot be reliably joined with the available matching information.</p></article>
+  <article><b>02 · No patient identifier for readmission analysis</b><p>Readmission rates and unique-patient counts cannot be calculated from the available fields.</p></article>
+  <article><b>03 · Medical condition is not a department</b><p>Condition-level analysis should not be presented as department performance.</p></article>
+  <article><b>04 · Billing currency is unconfirmed</b><p>Billing values should not be assigned a currency symbol without source confirmation.</p></article>
+  <article><b>05 · Capacity is not utilization</b><p>Reported bed counts and footfall do not establish bed occupancy, bed availability, or equipment utilization.</p></article>
+ </div>
+ <div class="closing-card"><span class="kicker">A NOTE ON INTERPRETATION</span><h2>Good analytics includes knowing where the data ends.</h2><p>The dashboards describe the fields available in the supplied datasets. They are not a substitute for clinical judgment or operational systems with real-time information.</p></div>
+</section>
+</main>
+
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">+</span><span>Hospital<span class="brand-sub">ANALYTICS</span></span></a><p>Hospital Operations &amp; Patient Analytics</p><span>© <span data-year></span> • Project portfolio</span></footer>
+
+</body></html>
