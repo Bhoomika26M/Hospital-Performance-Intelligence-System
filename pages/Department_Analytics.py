@@ -4,7 +4,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
+from plotly.subplots import make_subplots
 
 
 st.set_page_config(
@@ -424,27 +426,69 @@ else:
             "average_billing": "Average Billing",
         }
     )
-    figure = px.bar(
-        performance_long,
-        x="department",
-        y="value",
-        color="metric",
+    figure = make_subplots(specs=[[{"secondary_y": True}]])
+    for metric, secondary_y in (
+        ("Admissions", False),
+        ("Average Stay (Days)", True),
+        ("Average Billing", False),
+    ):
+        metric_data = performance_long[
+            performance_long["metric"] == metric
+        ]
+        hovertemplate = (
+            f"<b>%{{x}}</b><br>{metric}: %{{y:,.2f}}<extra></extra>"
+        )
+        if secondary_y:
+            trace = go.Scatter(
+                x=metric_data["department"],
+                y=metric_data["value"],
+                name=metric,
+                mode="lines+markers",
+                line=dict(color="#1D4ED8", width=3),
+                marker=dict(
+                    color="#1D4ED8",
+                    size=9,
+                    line=dict(color="#93C5FD", width=1.5),
+                ),
+                hovertemplate=hovertemplate,
+            )
+        else:
+            trace = go.Bar(
+                x=metric_data["department"],
+                y=metric_data["value"],
+                name=metric,
+                offsetgroup=metric,
+                marker_color=(
+                    "#3B82F6" if metric == "Admissions" else "#22C55E"
+                ),
+                hovertemplate=hovertemplate,
+            )
+        figure.add_trace(trace, secondary_y=secondary_y)
+    figure.update_layout(
         barmode="group",
         title="Admissions, Average Stay, and Average Billing",
-        labels={
-            "department": "Department",
-            "value": "Metric Value (different units)",
-            "metric": "Metric",
-        },
-        hover_data={"value": ":,.2f"},
+    )
+    figure.update_yaxes(
+        title_text="Admissions (records) and Average Billing (₹)",
+        secondary_y=False,
+    )
+    figure.update_yaxes(
+        title_text="Average Stay (Days)",
+        secondary_y=True,
     )
     show_figure(
-        style_figure(figure, "Department", "Metric Value", "Metric"),
+        style_figure(
+            figure,
+            "Department",
+            "Admissions (records) and Average Billing (₹)",
+            "Metric",
+        ),
         "No department performance comparison is available.",
     )
     st.caption(
-        "The grouped comparison shares an axis for metrics with different "
-        "units; use the department summary table for exact values."
+        "Blue and green bars show admissions and average billing on the "
+        "left axis; the dark-blue line shows average stay (days) on the "
+        "right axis."
     )
 
 left, right = st.columns(2)
