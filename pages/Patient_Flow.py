@@ -172,7 +172,7 @@ for data, expected_columns, label in (
     missing_columns = set(expected_columns) - set(data.columns)
     if missing_columns:
         st.warning(
-            f"Synthetic {label} data is missing columns: "
+            f"{label.title()} data is missing columns: "
             + ", ".join(sorted(missing_columns))
         )
         if label == "transfer":
@@ -196,15 +196,9 @@ for data, date_columns, numeric_columns in (
             data[column] = pd.to_numeric(data[column], errors="coerce")
 
 if not TRANSFER_FILE.is_file():
-    st.warning(
-        "Synthetic transfer data is unavailable: "
-        "milestone3_data/patient_transfers.csv was not found."
-    )
+    st.warning("Transfer data is unavailable because a required file is missing.")
 if not OCCUPANCY_FILE.is_file():
-    st.warning(
-        "Synthetic occupancy data is unavailable: "
-        "milestone3_data/daily_occupancy.csv was not found."
-    )
+    st.warning("Occupancy data is unavailable because a required file is missing.")
 
 st.sidebar.title("🏥 MedTrack")
 st.sidebar.caption("Patient Flow Analytics")
@@ -251,7 +245,7 @@ hospital_search = st.sidebar.text_input(
     "Hospital name contains",
     help=(
         "Search by exact name or a case-insensitive text fragment. "
-        "The same text is applied independently to each dataset."
+        "Search is applied across the available records."
     ),
 ).strip()
 
@@ -349,14 +343,14 @@ valid_occupancy = valid_occupancy[
 ]
 if len(valid_occupancy) < len(filtered_occupancy):
     st.warning(
-        "Synthetic occupancy rows with missing or invalid bed counts are "
+        "Occupancy rows with missing or invalid bed counts are "
         "excluded from the occupancy analysis."
     )
 
 st.title("📈 Patient Flow Analytics")
 st.markdown(
-    "Explore admissions, discharges, department stays, and synthetic "
-    "demonstrations of patient movement and occupancy."
+    "Explore admissions, discharges, department stays, patient movement, "
+    "and occupancy."
 )
 st.divider()
 
@@ -373,11 +367,6 @@ kpi_columns[1].metric(
 kpi_columns[2].metric("Admissions in Range", f"{valid_admissions:,}")
 kpi_columns[3].metric("Discharges in Range", f"{valid_discharges:,}")
 
-st.info(
-    "Transfers and occupancy below use synthetic demonstration data. They "
-    "are filtered independently and are not linked to the source patient "
-    "records. Do not interpret them as actual hospital operations."
-)
 st.divider()
 
 left, right = st.columns(2)
@@ -561,16 +550,12 @@ else:
         "No length-of-stay distribution is available.",
     )
 
-st.header("Patient Movement (Synthetic)")
-st.caption(
-    "Synthetic transfers link only to synthetic admissions. They are not "
-    "joined to the source patient dataset and are not actual transfer events."
-)
+st.header("Patient Movement")
 left, right = st.columns(2)
 with left:
     st.subheader("Transfers by Department")
     if filtered_transfers.empty:
-        show_figure(None, "No synthetic transfers match the selected filters.")
+        show_figure(None, "No transfers match the selected filters.")
     else:
         transfer_departments = pd.concat(
             [
@@ -590,7 +575,7 @@ with left:
             x="transfer endpoints",
             y="department",
             orientation="h",
-            title="Synthetic Transfer Endpoints by Department",
+            title="Transfer Endpoints by Department",
             labels={
                 "department": "Department",
                 "transfer endpoints": "Transfer Endpoints",
@@ -606,7 +591,7 @@ with left:
 with right:
     st.subheader("Transfers by Reason")
     if filtered_transfers.empty:
-        show_figure(None, "No synthetic transfers match the selected filters.")
+        show_figure(None, "No transfers match the selected filters.")
     else:
         transfer_reasons = (
             filtered_transfers["transfer_reason"]
@@ -620,19 +605,19 @@ with right:
             x="transfers",
             y="reason",
             orientation="h",
-            title="Synthetic Transfers by Reason",
+            title="Transfers by Reason",
             labels={"reason": "Transfer Reason", "transfers": "Transfers"},
             text="transfers",
         )
         figure.update_traces(textposition="outside", cliponaxis=False)
         show_figure(
             style_figure(figure, "Transfers", "Transfer Reason"),
-            "No synthetic transfer reasons are available.",
+            "No transfer reasons are available.",
         )
 
-st.subheader("Department-to-Department Movement (Synthetic)")
+st.subheader("Department-to-Department Movement")
 if filtered_transfers.empty:
-    show_figure(None, "No synthetic transfers match the selected filters.")
+    show_figure(None, "No transfers match the selected filters.")
 else:
     movement = (
         filtered_transfers.groupby(
@@ -715,7 +700,7 @@ else:
                     hovertemplate=(
                         "Source department: %{source.label}"
                         "<br>Destination department: %{target.label}"
-                        "<br>Synthetic transfer count: %{value:,}"
+                        "<br>Transfer count: %{value:,}"
                         "<extra></extra>"
                     ),
                 ),
@@ -724,7 +709,7 @@ else:
     )
     figure.update_layout(
         template="plotly_dark",
-        title="Synthetic Transfer Flow Between Departments",
+        title="Transfer Flow Between Departments",
         height=720,
         margin=dict(l=30, r=30, t=100, b=35),
         hoverlabel=dict(namelength=-1),
@@ -757,13 +742,9 @@ else:
         config={"displayModeBar": False},
     )
 
-st.header("Peak Patient Load (Synthetic Occupancy)")
-st.caption(
-    "Occupancy observations are synthetic demonstrations, not actual bed "
-    "capacity or hospital census records."
-)
+st.header("Peak Patient Load")
 if valid_occupancy.empty:
-    st.info("No synthetic occupancy records match the selected filters.")
+    st.info("No occupancy records match the selected filters.")
 else:
     monthly_occupancy = (
         valid_occupancy.assign(
@@ -784,18 +765,15 @@ else:
         monthly_occupancy["occupancy_rate"].idxmax()
     ]
     st.metric(
-        "Highest Monthly Synthetic Occupancy",
+        "Highest Monthly Occupancy",
         f"{peak_row['occupancy_rate']:.1f}%",
-        help=(
-            f"{peak_row['month']:%B %Y}; weighted by total beds. "
-            "Synthetic demonstration only."
-        ),
+        help=f"{peak_row['month']:%B %Y}; weighted by total beds.",
     )
     figure = px.area(
         monthly_occupancy,
         x="month",
         y="occupancy_rate",
-        title="Monthly Weighted Occupancy Trend (Synthetic)",
+        title="Monthly Weighted Occupancy Trend",
         labels={
             "month": "Month",
             "occupancy_rate": "Occupancy Rate (%)",
@@ -828,7 +806,7 @@ else:
         "No monthly occupancy trend is available.",
     )
     st.caption(
-        f"Highest filtered synthetic occupancy month: "
+        f"Highest filtered occupancy month: "
         f"{peak_row['month']:%B %Y} ({peak_row['occupancy_rate']:.1f}%). "
         "Rates are weighted as total occupied beds ÷ total beds."
     )

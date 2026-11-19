@@ -195,8 +195,7 @@ if missing_patient_columns:
 missing_occupancy_columns = set(OCCUPANCY_COLUMNS) - set(occupancy.columns)
 if missing_occupancy_columns:
     st.warning(
-        "Synthetic occupancy data is unavailable because its CSV is missing "
-        "columns: "
+    "Occupancy data is unavailable because required columns are missing: "
         + ", ".join(sorted(missing_occupancy_columns))
     )
     occupancy = pd.DataFrame(columns=OCCUPANCY_COLUMNS)
@@ -206,8 +205,8 @@ missing_readmission_columns = (
 )
 if missing_readmission_columns:
     st.warning(
-        "Synthetic readmission data is unavailable because its CSV is "
-        "missing columns: "
+        "Readmission data is unavailable because required columns are "
+        "missing: "
         + ", ".join(sorted(missing_readmission_columns))
     )
     readmissions = pd.DataFrame(columns=READMISSION_COLUMNS)
@@ -232,15 +231,9 @@ for data, date_columns, numeric_columns in (
             data[column] = pd.to_numeric(data[column], errors="coerce")
 
 if not OCCUPANCY_FILE.is_file():
-    st.warning(
-        "Synthetic occupancy data is unavailable: "
-        "milestone3_data/daily_occupancy.csv was not found."
-    )
+    st.warning("Occupancy data is unavailable because a required file is missing.")
 if not READMISSIONS_FILE.is_file():
-    st.warning(
-        "Synthetic readmission data is unavailable: "
-        "milestone3_data/synthetic_patient_readmissions.csv was not found."
-    )
+    st.warning("Readmission data is unavailable because a required file is missing.")
 
 st.sidebar.title("🏥 MedTrack")
 st.sidebar.caption("Hospital Analytics Platform")
@@ -285,7 +278,7 @@ hospital_search = st.sidebar.text_input(
     "Hospital name contains",
     help=(
         "Search by exact name or a case-insensitive text fragment. "
-        "The same text is applied independently to each dataset."
+        "Search is applied across the available records."
     ),
 ).strip()
 
@@ -346,7 +339,7 @@ valid_occupancy = valid_occupancy[
 ]
 if len(valid_occupancy) < len(filtered_occupancy):
     st.warning(
-        "Some synthetic occupancy rows have missing or invalid bed counts "
+        "Some occupancy rows have missing or invalid bed counts "
         "and are excluded from occupancy calculations."
     )
 occupancy_total_beds = valid_occupancy["total_beds"].sum()
@@ -365,7 +358,7 @@ readmission_data_valid = (
 )
 if not filtered_readmissions.empty and not readmission_data_valid:
     st.warning(
-        "Synthetic readmission rate is unavailable because the selected "
+        "Readmission rate is unavailable because the selected "
         "cohort has missing or invalid readmission flags."
     )
 readmission_rate = (
@@ -385,17 +378,12 @@ metric_columns[2].metric(
     f"₹{average_billing:,.2f}" if pd.notna(average_billing) else "N/A",
 )
 metric_columns[3].metric(
-    "Weighted Bed Occupancy Rate (Synthetic)",
+    "Weighted Bed Occupancy Rate",
     f"{occupancy_rate:.1%}" if pd.notna(occupancy_rate) else "N/A",
 )
 metric_columns[4].metric(
-    "Overall Synthetic Readmission Rate",
+    "Overall Readmission Rate",
     f"{readmission_rate:.1%}" if pd.notna(readmission_rate) else "N/A",
-)
-st.caption(
-    "Occupancy and readmission values are synthetic demonstrations, not "
-    "actual hospital performance. They are calculated from separate "
-    "synthetic datasets and are not linked to the patient records."
 )
 
 st.divider()
@@ -492,11 +480,11 @@ with left:
         )
 
 with right:
-    st.subheader("Occupancy Trends (Synthetic)")
+    st.subheader("Occupancy Trends")
     if valid_occupancy.empty:
         show_figure(
             None,
-            "No synthetic occupancy records match the selected filters.",
+            "No occupancy records match the selected filters.",
         )
     else:
         occupancy_by_date = (
@@ -515,7 +503,7 @@ with right:
             occupancy_by_date,
             x="date",
             y="occupancy_rate",
-            title="Daily Occupancy Rate (Synthetic)",
+            title="Daily Occupancy Rate",
             labels={
                 "date": "Snapshot Date",
                 "occupancy_rate": "Occupancy Rate (%)",
@@ -532,17 +520,16 @@ with right:
         figure.update_yaxes(ticksuffix="%", rangemode="tozero")
         show_figure(
             style_figure(figure, "Snapshot Date", "Occupancy Rate (%)"),
-            "No synthetic occupancy trend is available.",
+            "No occupancy trend is available.",
         )
-    st.caption("Synthetic demonstration data; not actual hospital occupancy.")
 
 left, right = st.columns(2)
 with left:
-    st.subheader("Occupancy by Department (Synthetic)")
+    st.subheader("Occupancy by Department")
     if valid_occupancy.empty:
         show_figure(
             None,
-            "No synthetic occupancy records match the selected filters.",
+            "No occupancy records match the selected filters.",
         )
     else:
         occupancy_by_department = (
@@ -588,14 +575,13 @@ with left:
             style_figure(figure, "Occupancy Rate (%)", "Department"),
             "No department occupancy data is available.",
         )
-    st.caption("Synthetic demonstration data; not actual hospital occupancy.")
 
 with right:
-    st.subheader("Readmission by Department (Synthetic)")
+    st.subheader("Readmission by Department")
     if not readmission_data_valid:
         show_figure(
             None,
-            "No valid synthetic readmission cohort matches the selected filters.",
+            "No valid readmission cohort matches the selected filters.",
         )
     else:
         readmission_by_department = (
@@ -615,11 +601,11 @@ with right:
             x="readmission_rate",
             y="department",
             orientation="h",
-            title="Flagged Synthetic Admissions by Department",
+            title="Flagged Admissions by Department",
             labels={
                 "department": "Department",
                 "readmission_rate": "Readmission Rate (%)",
-                "admissions": "Synthetic Admissions",
+                "admissions": "Admissions",
                 "readmissions": "Flagged Admissions",
             },
             custom_data=["readmissions", "admissions"],
@@ -631,7 +617,7 @@ with right:
             hovertemplate=(
                 "<b>%{y}</b><br>Readmission rate: %{x:.1f}%"
                 "<br>Flagged admissions: %{customdata[0]:,.0f}"
-                "<br>Total synthetic admissions: %{customdata[1]:,.0f}"
+                "<br>Total admissions: %{customdata[1]:,.0f}"
                 "<extra></extra>"
             ),
         )
@@ -641,8 +627,7 @@ with right:
             "No department readmission data is available.",
         )
     st.caption(
-        "Synthetic demonstration data; readmissions are defined by the "
-        "source file's 30-day flag and are not linked to patient records."
+        "Readmissions are identified using the 30-day readmission flag."
     )
 
 left, right = st.columns(2)

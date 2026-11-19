@@ -36,12 +36,6 @@ PATIENT_COLUMNS = [
     "department", "hospital", "date_of_admission", "length_of_stay",
     "billing_amount",
 ]
-SYNTHETIC_DISCLAIMER = (
-    "Staff allocation, equipment utilization and occupancy datasets contain "
-    "synthetic demonstration data generated for academic project purposes. "
-    "These values do not represent actual hospital operational records and "
-    "must not be used for clinical decision-making."
-)
 
 
 @st.cache_data
@@ -95,18 +89,27 @@ def load_required(
     return data
 
 
+@st.cache_data
+def get_department_options(
+    source_versions: tuple[float | None, ...],
+    _frames: tuple[pd.DataFrame, ...],
+) -> list[str]:
+    department_values: set[str] = set()
+    for frame in _frames:
+        if "department" in frame.columns:
+            department_values.update(frame["department"].dropna().astype(str))
+    return sorted(department_values)
+
+
 def filter_data(
     data: pd.DataFrame,
     date_column: str,
     date_range: tuple,
     departments: list[str],
-    hospitals: list[str],
 ) -> pd.DataFrame:
     result = data
-    if "department" in result.columns:
+    if "department" in result.columns and departments:
         result = result[result["department"].isin(departments)]
-    if "hospital" in result.columns:
-        result = result[result["hospital"].isin(hospitals)]
     if date_column in result.columns and date_range:
         start_date, end_date = date_range
         result = result[
@@ -233,41 +236,32 @@ if not available_dates.empty:
     if isinstance(date_value, (tuple, list)) and len(date_value) == 2:
         selected_date_range = (date_value[0], date_value[1])
 
-department_values: set[str] = set()
-hospital_values: set[str] = set()
-for frame in (patients, occupancy, staff, equipment):
-    if "department" in frame.columns:
-        department_values.update(frame["department"].dropna().astype(str))
-    if "hospital" in frame.columns:
-        hospital_values.update(frame["hospital"].dropna().astype(str))
-department_options = sorted(department_values)
-hospital_options = sorted(hospital_values)
+department_sources = (PATIENT_FILE, OCCUPANCY_FILE, STAFF_FILE, EQUIPMENT_FILE)
+department_options = get_department_options(
+    tuple(modified_time(path) for path in department_sources),
+    (patients, occupancy, staff, equipment),
+)
 selected_departments = st.sidebar.multiselect(
     "Department",
     department_options,
     default=department_options,
 )
-selected_hospitals = st.sidebar.multiselect(
-    "Hospital",
-    hospital_options,
-    default=hospital_options,
-)
 
 filtered_patients = filter_data(
     patients, "date_of_admission", selected_date_range,
-    selected_departments, selected_hospitals,
+    selected_departments,
 )
 filtered_occupancy = filter_data(
     occupancy, "date", selected_date_range,
-    selected_departments, selected_hospitals,
+    selected_departments,
 )
 filtered_staff = filter_data(
     staff, "date", selected_date_range,
-    selected_departments, selected_hospitals,
+    selected_departments,
 )
 filtered_equipment = filter_data(
     equipment, "date", selected_date_range,
-    selected_departments, selected_hospitals,
+    selected_departments,
 )
 
 valid_occupancy = filtered_occupancy.dropna(
@@ -332,10 +326,9 @@ if len(valid_equipment) < len(filtered_equipment):
 
 st.title("🏥 Resource Utilization")
 st.markdown(
-    "Explore bed capacity, synthetic staffing demonstrations, and synthetic "
-    "equipment utilization for the selected period and locations."
+    "Explore bed capacity, staff allocation, and equipment utilization "
+    "for the selected period and departments."
 )
-st.info(SYNTHETIC_DISCLAIMER)
 
 st.header("Bed Utilization")
 st.caption(
@@ -354,7 +347,7 @@ else:
     bed_cols[1].metric("Occupied Beds (Bed-Days)", safe_metric(occupied_beds))
     bed_cols[2].metric("Available Beds (Bed-Days)", safe_metric(available_beds))
     bed_cols[3].metric(
-        "Weighted Bed Occupancy Rate (Synthetic)",
+        "Weighted Bed Occupancy Rate",
         safe_metric(occupancy_rate, "%", 1),
     )
 
@@ -377,7 +370,6 @@ else:
         .agg(
             total_beds=("total_beds", "sum"),
             occupied_beds=("occupied_beds", "sum"),
-            available_beds=("available_beds", "sum"),
         )
     )
     monthly_beds["occupancy_rate"] = (
@@ -464,19 +456,7 @@ else:
         )
         show_figure(style_figure(fig, "Bed-Days", "Department", "Bed Status"),
                     "No bed comparison is available.")
-    with right:
-        st.subheader("Bed Availability Over Time")
-        fig = px.area(
-            monthly_beds,
-            x="month",
-            y="available_beds",
-            title="Available Bed-Days by Month",
-            labels={"month": "Month", "available_beds": "Available Bed-Days"},
-        )
-        show_figure(style_figure(fig, "Month", "Available Bed-Days"),
-                    "No bed availability trend is available.")
-
-st.header("Staff Allocation Monitoring (Synthetic Demonstration)")
+st.header("Staff Allocation Monitoring")
 st.caption(
     "Staff metrics are summed staff-shifts across selected dates and roles; "
     "they are not unique-person headcounts. Available staff is distinct from "
@@ -703,7 +683,7 @@ else:
         show_figure(style_figure(fig, "Month", "Available Staff-Shifts"),
                     "No monthly staff availability trend is available.")
 
-st.header("Equipment Utilization (Synthetic Demonstration)")
+st.header("Equipment Utilization")
 st.caption(
     "Weighted equipment utilization is total in-use units divided by total "
     "operational units (total units minus maintenance units)."
@@ -937,7 +917,7 @@ else:
         hide_index=True,
     )
 
-st.header("Capacity Planning (Academic Demonstration)")
+st.header("Capacity Planning")
 st.caption(
     "Thresholds: bed occupancy High ≥80%, Moderate 60–<80%, Low <60%; "
     "staff shortage ratio High ≥10%, Moderate 5–<10%, Low <5%; equipment "
@@ -1108,7 +1088,6 @@ if not valid_occupancy.empty:
             {
                 "department": department,
                 "resource": "Beds",
-                "available": row["available"],
                 "availability_pct": weighted_ratio(
                     row["available"], row["denominator"]
                 ),
@@ -1126,7 +1105,6 @@ if not valid_staff.empty:
             {
                 "department": department,
                 "resource": "Staff",
-                "available": row["available"],
                 "availability_pct": weighted_ratio(
                     row["available"], row["denominator"]
                 ),
@@ -1147,7 +1125,6 @@ if not valid_equipment.empty:
             {
                 "department": department,
                 "resource": "Equipment",
-                "available": row["available"],
                 "availability_pct": weighted_ratio(
                     row["available"], row["denominator"]
                 ),
@@ -1184,37 +1161,9 @@ else:
             style_figure(fig, "Department", "Availability (%)", "Resource"),
             "No availability percentage comparison is available.",
         )
-    with right:
-        st.subheader("Available Resource Counts")
-        fig = px.bar(
-            availability,
-            x="available",
-            y="department",
-            color="resource",
-            barmode="group",
-            orientation="h",
-            title="Available Counts (Resource-Specific Units)",
-            labels={
-                "department": "Department",
-                "available": "Available Bed-Days / Staff-Shifts / Units",
-                "resource": "Resource",
-            },
-        )
-        show_figure(
-            style_figure(
-                fig,
-                "Available Counts (Units Differ by Resource)",
-                "Department",
-                "Resource",
-            ),
-            "No available resource counts are available.",
-        )
 
-st.header("Source-Data Workload Indicators")
-st.caption(
-    "These measures use original patient records and are not joined to "
-    "synthetic occupancy, staff, or equipment data."
-)
+st.header("Workload Indicators")
+st.caption("Patient workload metrics summarize the records matching the selected filters.")
 patient_metrics = st.columns(3)
 patient_metrics[0].metric("Admission Records", f"{len(filtered_patients):,}")
 average_stay = filtered_patients["length_of_stay"].mean()
@@ -1248,7 +1197,7 @@ else:
             x="admission_records",
             y="department",
             orientation="h",
-            title="Source Admission Records",
+            title="Admission Records",
             labels={
                 "department": "Department",
                 "admission_records": "Admission Records",
@@ -1265,7 +1214,7 @@ else:
             x="average_length_of_stay",
             y="department",
             orientation="h",
-            title="Average Source-Data Length of Stay",
+            title="Average Length of Stay",
             labels={
                 "department": "Department",
                 "average_length_of_stay": "Average Stay (Days)",
@@ -1280,48 +1229,7 @@ else:
         show_figure(style_figure(fig, "Average Stay (Days)", "Department"),
                     "No length-of-stay summary is available.")
 
-    if "doctor" in filtered_patients.columns:
-        st.subheader("Admissions per Listed Doctor Name — Descriptive Only")
-        doctor_summary = (
-            filtered_patients.groupby("department", as_index=False, observed=True)
-            .agg(
-                admission_records=("department", "size"),
-                distinct_names=("doctor", "nunique"),
-            )
-        )
-        doctor_summary["admissions_per_name"] = (
-            doctor_summary["admission_records"]
-            / doctor_summary["distinct_names"].replace(0, np.nan)
-        )
-        fig = px.bar(
-            doctor_summary.sort_values("admissions_per_name"),
-            x="admissions_per_name",
-            y="department",
-            orientation="h",
-            title="Admissions per Distinct Listed Doctor Name",
-            labels={
-                "department": "Department",
-                "admissions_per_name": "Admissions per Listed Name",
-            },
-            custom_data=["admission_records", "distinct_names"],
-        )
-        fig.update_traces(
-            hovertemplate=(
-                "<b>%{y}</b><br>Admissions per name: %{x:.2f}"
-                "<br>Admissions: %{customdata[0]:,.0f}"
-                "<br>Distinct names: %{customdata[1]:,.0f}<extra></extra>"
-            )
-        )
-        show_figure(
-            style_figure(fig, "Admissions per Listed Name", "Department"),
-            "No listed-name summary is available.",
-        )
-        st.caption(
-            "Listed names are descriptive source-data values, not staff "
-            "availability, allocation, or staffing levels."
-        )
-
-    st.subheader("Resource Summary by Department — Source Data")
+    st.subheader("Resource Summary by Department")
     st.dataframe(patient_department, width="stretch", hide_index=True)
     st.download_button(
         "Download Resource Summary",

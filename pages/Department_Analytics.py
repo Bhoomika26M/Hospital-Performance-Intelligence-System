@@ -189,7 +189,7 @@ for data, expected, label in (
     missing_columns = set(expected) - set(data.columns)
     if missing_columns:
         st.warning(
-            f"Synthetic {label} data is missing columns: "
+            f"{label.title()} data is missing columns: "
             + ", ".join(sorted(missing_columns))
         )
         if label == "readmission":
@@ -212,15 +212,9 @@ for data, date_column, numeric_columns in (
             data[column] = pd.to_numeric(data[column], errors="coerce")
 
 if not READMISSION_FILE.is_file():
-    st.warning(
-        "Synthetic readmission data is unavailable: "
-        "milestone3_data/synthetic_patient_readmissions.csv was not found."
-    )
+    st.warning("Readmission data is unavailable because a required file is missing.")
 if not OCCUPANCY_FILE.is_file():
-    st.warning(
-        "Synthetic occupancy data is unavailable: "
-        "milestone3_data/daily_occupancy.csv was not found."
-    )
+    st.warning("Occupancy data is unavailable because a required file is missing.")
 
 st.sidebar.title("🏥 MedTrack")
 st.sidebar.caption("Department Analytics")
@@ -264,7 +258,7 @@ hospital_search = st.sidebar.text_input(
     "Hospital name contains",
     help=(
         "Search by exact name or a case-insensitive text fragment. "
-        "The same text is applied independently to each dataset."
+        "Search is applied across the available records."
     ),
 ).strip()
 
@@ -305,18 +299,15 @@ valid_occupancy = valid_occupancy[
 ]
 if len(valid_occupancy) < len(filtered_occupancy):
     st.warning(
-        "Synthetic occupancy rows with missing or inconsistent bed counts "
+        "Occupancy rows with missing or inconsistent bed counts "
         "are excluded from the capacity analysis."
     )
 
 st.title("📊 Department Analytics")
-st.markdown(
-    "Compare source-data department performance with separately filtered "
-    "synthetic readmission and bed-capacity demonstrations."
-)
+st.markdown("Explore department performance, readmissions, and treatment capacity.")
 st.divider()
 
-st.subheader("Department Performance — Source Patient Data")
+st.subheader("Department Performance")
 total_admissions = len(filtered_patients)
 average_stay = filtered_patients["length_of_stay"].mean()
 average_billing = filtered_patients["billing_amount"].mean()
@@ -519,11 +510,10 @@ with right:
             "No condition distribution is available.",
         )
 
-st.header("Readmission by Department (Synthetic)")
+st.header("Readmission by Department")
 st.caption(
-    "Synthetic demonstration only. These admissions are not linked to the "
-    "original patient dataset. Rate = flagged synthetic admissions divided "
-    "by all synthetic admissions in the selected cohort."
+    "Readmission rate is calculated as flagged admissions divided by all "
+    "admissions in the selected cohort."
 )
 readmission_flags = filtered_readmissions.get(
     "readmission_flag", pd.Series(dtype="float64")
@@ -536,11 +526,11 @@ readmission_data_valid = (
 )
 if not filtered_readmissions.empty and not readmission_data_valid:
     st.warning(
-        "Synthetic readmission results are unavailable because the selected "
+        "Readmission results are unavailable because the selected "
         "cohort has missing or invalid readmission flags."
     )
 if not readmission_data_valid:
-    st.info("No valid synthetic readmissions match the selected filters.")
+    st.info("No valid readmissions match the selected filters.")
 else:
     readmission_by_department = (
         filtered_readmissions.groupby("department", as_index=False)
@@ -556,14 +546,14 @@ else:
     )
     readmission_kpis = st.columns(3)
     readmission_kpis[0].metric(
-        "Synthetic Admissions", f"{len(filtered_readmissions):,}"
+        "Admissions", f"{len(filtered_readmissions):,}"
     )
     readmission_kpis[1].metric(
-        "Synthetic Readmission Count",
+        "Readmission Count",
         f"{int(valid_flags.sum()):,}",
     )
     readmission_kpis[2].metric(
-        "Overall Synthetic Readmission Rate",
+        "Overall Readmission Rate",
         f"{valid_flags.mean():.1%}",
     )
     figure = px.bar(
@@ -575,11 +565,11 @@ else:
         orientation="h",
         color="readmission_rate",
         color_continuous_scale="Teal",
-        title="Synthetic Readmission Rate by Department",
+        title="Readmission Rate by Department",
         labels={
             "department": "Department",
             "readmission_rate": "Readmission Rate (%)",
-            "synthetic_admissions": "Synthetic Admissions",
+            "synthetic_admissions": "Admissions",
             "readmission_count": "Flagged Admissions",
         },
         text="readmission_rate",
@@ -592,16 +582,16 @@ else:
         hovertemplate=(
             "<b>%{y}</b><br>Rate: %{x:.2f}%"
             "<br>Flagged: %{customdata[0]:,.0f}"
-            "<br>Synthetic admission denominator: %{customdata[1]:,.0f}"
+            "<br>Total admissions: %{customdata[1]:,.0f}"
             "<extra></extra>"
         ),
     )
     figure.update_xaxes(ticksuffix="%", rangemode="tozero")
     show_figure(
         style_figure(
-            figure, "Synthetic Readmission Rate (%)", "Department"
+            figure, "Readmission Rate (%)", "Department"
         ),
-        "No synthetic department readmission data is available.",
+        "No department readmission data is available.",
     )
 
 st.header("Department Efficiency Comparison")
@@ -683,13 +673,9 @@ else:
         "A provisional score cannot be calculated without listed doctor data."
     )
 
-st.header("Treatment Capacity (Synthetic Occupancy)")
-st.caption(
-    "Synthetic demonstration data only. It is not actual hospital bed "
-    "capacity or patient census and is not linked to source patient records."
-)
+st.header("Treatment Capacity")
 if valid_occupancy.empty:
-    st.info("No valid synthetic occupancy observations match the filters.")
+    st.info("No valid occupancy observations match the filters.")
 else:
     occupied_total = valid_occupancy["occupied_beds"].sum()
     capacity_total = valid_occupancy["total_beds"].sum()
@@ -698,13 +684,13 @@ else:
     )
     occupancy_metrics = st.columns(2)
     occupancy_metrics[0].metric(
-        "Weighted Bed Occupancy Rate (Synthetic)",
+        "Weighted Bed Occupancy Rate",
         f"{weighted_occupancy:.1%}"
         if pd.notna(weighted_occupancy)
         else "N/A",
     )
     occupancy_metrics[1].metric(
-        "Synthetic Occupancy Observations",
+        "Occupancy Observations",
         f"{len(valid_occupancy):,}",
     )
 
@@ -768,7 +754,7 @@ else:
             orientation="h",
             color="occupancy_rate",
             color_continuous_scale="Teal",
-            title="Weighted Synthetic Occupancy Rate",
+            title="Weighted Occupancy Rate",
             labels={
                 "department": "Department",
                 "occupancy_rate": "Occupancy Rate (%)",
@@ -794,7 +780,7 @@ else:
             "No department occupancy rates are available.",
         )
 
-    st.subheader("Monthly Occupancy by Department (Synthetic)")
+    st.subheader("Monthly Occupancy by Department")
     monthly_occupancy = (
         valid_occupancy.assign(
             month=valid_occupancy["date"].dt.to_period("M").dt.to_timestamp()
@@ -838,12 +824,12 @@ else:
             monthly_occupancy["occupancy_rate"].idxmax()
         ]
         st.caption(
-            f"Highest filtered synthetic occupancy: "
+            f"Highest filtered occupancy: "
             f"{peak_month['department']} in {peak_month['month']:%B %Y} "
             f"({peak_month['occupancy_rate']:.1f}%)."
         )
 
-st.subheader("Detailed Department Summary — Source Patient Data")
+st.subheader("Detailed Department Summary")
 if department_summary.empty:
     st.info("No department summary matches the selected filters.")
 else:
